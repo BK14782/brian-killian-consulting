@@ -36,7 +36,16 @@ const Badge = ({ className = "", variant, children }: any) => {
   return <span className={`${base} ${styles} ${className}`}>{children}</span>;
 };
 
-const Section = ({ id, kicker, title, subtitle, children }) => (
+type SectionProps = {
+  id: string;
+  kicker?: string;
+  title: string;
+  subtitle?: string;
+  children: React.ReactNode;
+};
+
+const Section = ({ id, kicker, title, subtitle, children }: SectionProps) => (
+
   <section id={id} className="scroll-mt-24 py-14 md:py-18">
     <div className="mx-auto max-w-6xl px-4">
       <div className="max-w-3xl">
