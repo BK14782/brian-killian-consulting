@@ -241,7 +241,17 @@ const services = [
   },
 ];
 
-const CaseStudyCard = ({ tag, title, outcome, context, bullets, metrics }) => (
+type CaseStudyCardProps = {
+  tag: string;
+  title: string;
+  outcome: string;
+  context: string;
+  bullets: string[];
+  metrics?: string[];
+};
+
+const CaseStudyCard = ({ tag, title, outcome, context, bullets, metrics }: CaseStudyCardProps) => (
+
   <Card className="rounded-3xl shadow-sm">
     <CardContent className="p-6">
       <div className="flex flex-wrap items-center gap-2">
