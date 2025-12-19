@@ -114,83 +114,64 @@ type HeroProps = {
 
 const Hero = ({ onNav }: HeroProps) => (
 
-  <header className="relative overflow-hidden">
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-foreground/5 blur-3xl" />
-      <div className="absolute -right-40 -bottom-40 h-[520px] w-[520px] rounded-full bg-foreground/5 blur-3xl" />
-    </div>
-    <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
-      <div className="grid items-center gap-10 md:grid-cols-12">
-        <div className="md:col-span-7">
-          <div className="inline-flex flex-wrap items-center gap-2">
-            <Badge variant="secondary" className="rounded-full">Providing nationwide advisory services to real estate owners and operators.</Badge>
-            <Badge variant="secondary" className="rounded-full">Office • Retail • Mixed-use • Multifamily</Badge>
-            <Badge variant="secondary" className="rounded-full">Owner & Investor Reporting</Badge>
-          </div>
-          <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
-            Turn operations into measurable asset performance.
-          </h1>
-          <p className="mt-4 max-w-2xl text-muted-foreground md:text-lg">
-            I help owners, operators, and asset teams improve NOI, modernize reporting, and build repeatable operating frameworks—without adding noise.
-            If your portfolio needs tighter controls, clearer narratives, and better execution, I can step in quickly.
-          </p>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Button className="rounded-2xl" onClick={() => onNav("contact")}>Request a consult</Button>
-            <Button variant="outline" className="rounded-2xl" onClick={() => onNav("case-studies")}>View case studies</Button>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <Card className="rounded-2xl shadow-sm">
-              <CardContent className="p-4">
-                <div className="text-xs text-muted-foreground">Typical outcomes</div>
-                <div className="mt-1 text-lg font-semibold">NOI & recovery lift</div>
-                <div className="mt-2 text-sm text-muted-foreground">Expense control, utility recovery, vendor optimization.</div>
-              </CardContent>
-            </Card>
-            <Card className="rounded-2xl shadow-sm">
-              <CardContent className="p-4">
-                <div className="text-xs text-muted-foreground">Execution focus</div>
-                <div className="mt-1 text-lg font-semibold">Process efficiency</div>
-                <div className="mt-2 text-sm text-muted-foreground">Digitize, automate, and steamline accurate data.</div>
-              </CardContent>
-            </Card>
-            <Card className="rounded-2xl shadow-sm">
-              <CardContent className="p-4">
-                <div className="text-xs text-muted-foreground">Clarity</div>
-                <div className="mt-1 text-lg font-semibold">Reporting that lands</div>
-                <div className="mt-2 text-sm text-muted-foreground">Board- and investor-ready narratives from the numbers.</div>
-              </CardContent>
-            </Card>
-          </div>
+<header className="relative overflow-hidden">
+  {/* Warm background wash */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-amber-500/10 blur-3xl" />
+    <div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-sky-500/10 blur-3xl" />
+    <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/60" />
+  </div>
+
+  <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <div className="max-w-3xl">
+      <div className="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground">
+        <span className="h-2 w-2 rounded-full bg-amber-500/60" />
+        Nationwide consulting • Commercial & residential portfolios
+      </div>
+
+      <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
+        Clear thinking and steady execution for complex real estate portfolios
+      </h1>
+
+      <p className="mt-5 text-base text-muted-foreground md:text-lg">
+        With over 20 years in property and asset operations, I help owners and investors bring structure,
+        visibility, and confidence to portfolio decisions.
+      </p>
+
+      {/* Trust strip */}
+      <div className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
+        <div className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          20+ years in property & asset operations
         </div>
-        <div className="md:col-span-5">
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-6">
-              <div className="text-sm font-semibold">How I typically engage</div>
-              <div className="mt-4 space-y-3 text-sm">
-                {["Rapid diagnostic (2–3 weeks)", "90-day operating reset", "Quarterly portfolio performance cadence", "Interim leadership / stand-up function"].map((t) => (
-                  <div key={t} className="flex items-start gap-3">
-                    <div className="mt-0.5 grid h-7 w-7 place-items-center rounded-xl border bg-background">
-                      <Check className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-medium">{t}</div>
-                      <div className="text-muted-foreground">Tailored scope, measurable deliverables, clean handoff.</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 rounded-2xl border bg-background/60 p-4">
-                <div className="text-xs text-muted-foreground">Best fit for</div>
-                <div className="mt-1 text-sm">
-                  Owners/operators who need tighter NOI controls, clearer reporting, improved customer experience, and repeatable processes.
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          Office, mixed-use, industrial, multifamily
+        </div>
+        <div className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          Institutional + private ownership experience
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        <a
+          href="#contact"
+          className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+        >
+          Book a free 30-minute portfolio review
+          <ChevronRight className="ml-2 h-4 w-4" />
+        </a>
+
+        <div className="text-sm text-muted-foreground">
+          No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
+
 );
 
 const services = [
@@ -380,59 +361,80 @@ export default function Website() {
       <Nav active={active} onNav={scrollTo} />
       <Hero onNav={scrollTo} />
 
-      <Section
-        id="services"
-        kicker="What I do"
-        title="Consulting services"
-        subtitle="Flexible engagement models that strengthen performance, improve reporting, and make operations more predictable."
+<Section
+  id="why"
+  kicker="Why work with me"
+  title="A calm, operator-first approach"
+  subtitle="Consulting that feels like an experienced partner — not a slide deck."
+>
+  <div className="grid gap-4 lg:grid-cols-3">
+    <Card className="rounded-3xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-amber-500/30">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">I speak “owner” and “operations”</div>
+        <p className="mt-3 text-sm text-muted-foreground">
+          I translate on-the-ground realities into clear reporting, decisions, and accountability.
+          The goal is a steady cadence owners can trust — and teams can actually execute.
+        </p>
+      </CardContent>
+    </Card>
+
+    <Card className="rounded-3xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-amber-500/30">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">Practical, not theoretical</div>
+        <p className="mt-3 text-sm text-muted-foreground">
+          You’ll get simple frameworks, clean templates, and a realistic plan your team can follow.
+          I focus on the few levers that move performance — and remove the noise.
+        </p>
+      </CardContent>
+    </Card>
+
+    <Card className="rounded-3xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-amber-500/30">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">Fast clarity, measurable outcomes</div>
+        <p className="mt-3 text-sm text-muted-foreground">
+          We’ll define success upfront — reporting standards, cost controls, a capital roadmap, or an execution cadence —
+          and track progress with a simple scorecard.
+        </p>
+      </CardContent>
+    </Card>
+  </div>
+
+  <div className="mt-6 rounded-3xl border bg-background/60 p-6">
+    <div className="text-sm font-semibold">What you can expect on the free 30-minute call</div>
+    <ul className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+      <li className="flex items-start gap-2">
+        <Check className="mt-0.5 h-4 w-4" />
+        A quick read on what’s driving pain (reporting, cost, capital, execution)
+      </li>
+      <li className="flex items-start gap-2">
+        <Check className="mt-0.5 h-4 w-4" />
+        The first 2–3 moves that will create momentum
+      </li>
+      <li className="flex items-start gap-2">
+        <Check className="mt-0.5 h-4 w-4" />
+        Whether I’m the right fit — and if not, what to do next
+      </li>
+      <li className="flex items-start gap-2">
+        <Check className="mt-0.5 h-4 w-4" />
+        A simple scope option with clear outcomes (if you want one)
+      </li>
+    </ul>
+
+    <div className="mt-5 flex flex-wrap items-center gap-3">
+      <a
+        href="#contact"
+        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
       >
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Card key={s.title} className="rounded-3xl shadow-sm">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-2xl border bg-background">
-                    <s.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-base font-semibold">{s.title}</div>
-                    <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex gap-2">
-                          <Check className="mt-0.5 h-4 w-4 text-foreground" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        <div className="mt-8 rounded-3xl border bg-background/60 p-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            <div>
-              <div className="text-sm font-semibold">Common deliverables</div>
-              <div className="mt-2 text-sm text-muted-foreground">
-                MOR templates • budget models • dashboards • vendor KPI/SLA scorecards • capital plans • SOP playbooks • executive narratives
-              </div>
-            </div>
-            <div>
-              <div className="text-sm font-semibold">Industries & portfolios</div>
-              <div className="mt-2 text-sm text-muted-foreground">
-                Office • mixed-use • multifamily • campus environments • retail components • data center adjacency
-              </div>
-            </div>
-            <div>
-              <div className="text-sm font-semibold">How we start</div>
-              <div className="mt-2 text-sm text-muted-foreground">
-                30-minute intro call → data request → rapid diagnostic → prioritized roadmap and quick wins.
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
+        Book a free 30-minute portfolio review
+        <ChevronRight className="ml-2 h-4 w-4" />
+      </a>
+      <div className="text-sm text-muted-foreground">
+        Typical engagements range from 2–6 weeks depending on portfolio size and complexity.
+      </div>
+    </div>
+  </div>
+</Section>
+
 
       <Section
         id="case-studies"
