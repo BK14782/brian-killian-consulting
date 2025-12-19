@@ -149,8 +149,8 @@ const Hero = ({ onNav }: HeroProps) => (
             <Card className="rounded-2xl shadow-sm">
               <CardContent className="p-4">
                 <div className="text-xs text-muted-foreground">Execution focus</div>
-                <div className="mt-1 text-lg font-semibold">Capital planning</div>
-                <div className="mt-2 text-sm text-muted-foreground">Prioritize, phase, and deliver projects with stakeholder alignment.</div>
+                <div className="mt-1 text-lg font-semibold">Process efficiency</div>
+                <div className="mt-2 text-sm text-muted-foreground">Digitize, automate, and steamline accurate data.</div>
               </CardContent>
             </Card>
             <Card className="rounded-2xl shadow-sm">
@@ -239,7 +239,17 @@ const services = [
       "Escalation protocols and incident response",
     ],
   },
+   {
+    icon: ShieldCheck,
+    title: "Leadership & Coaching",
+    bullets: [
+      "One-on-one mentorship",
+      "Growth & servant leadership development",
+      "Cross-functional team building",
+    ],
+  },
 ];
+
 
 type CaseStudyCardProps = {
   tag: string;
