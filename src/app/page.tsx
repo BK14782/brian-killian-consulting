@@ -124,7 +124,7 @@ const Hero = ({ onNav }: HeroProps) => (
         <div className="md:col-span-7">
           <div className="inline-flex flex-wrap items-center gap-2">
             <Badge variant="secondary" className="rounded-full">Providing nationwide advisory services to real estate owners and operators.</Badge>
-            <Badge variant="secondary" className="rounded-full">Office • Mixed-use • Multifamily</Badge>
+            <Badge variant="secondary" className="rounded-full">Office • Retail • Mixed-use • Multifamily</Badge>
             <Badge variant="secondary" className="rounded-full">Owner & Investor Reporting</Badge>
           </div>
           <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
