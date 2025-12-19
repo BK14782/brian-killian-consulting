@@ -108,7 +108,12 @@ const Nav = ({ active, onNav }: NavProps) => {
   );
 };
 
-const Hero = ({ onNav }) => (
+type HeroProps = {
+  onNav: (id: string) => void;
+};
+
+const Hero = ({ onNav }: HeroProps) => (
+
   <header className="relative overflow-hidden">
     <div className="absolute inset-0 -z-10">
       <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-foreground/5 blur-3xl" />
