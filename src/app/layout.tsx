@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://briankillianconsulting.com"),
   title: {
-    default: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
+    default:
+      "Brian Killian Consulting | Commercial/Residential Property & Portfolio Strategy",
     template: "%s | Brian Killian Consulting",
   },
   description:
-  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
-
+    "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   alternates: {
     canonical: "https://briankillianconsulting.com",
   },
@@ -34,17 +34,13 @@ export const metadata: Metadata = {
     siteName: "Brian Killian Consulting",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-
-  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
-
+      "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      "Operational description:
-  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
-
+      "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   },
 };
 
@@ -57,7 +53,7 @@ export default function RootLayout({
     <html lang="en">
       {/* Google Analytics */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        src="https://www.googletagmanager.com/gtag/js?id=G-9556P3Q5N4"
         strategy="afterInteractive"
       />
       <Script id="ga4" strategy="afterInteractive">
@@ -65,15 +61,14 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX');
+          gtag('config', 'G-9556P3Q5N4');
         `}
       </Script>
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
   );
 }
+
