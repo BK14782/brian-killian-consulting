@@ -534,17 +534,20 @@ export default function Website() {
               <p className="mt-3 text-sm text-muted-foreground">
                 Replace the contact details below with your preferred email and add a scheduling link if you’d like.
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border bg-background/60 p-4">
-                  <div className="flex items-center gap-2 text-sm font-medium"><Mail className="h-4 w-4" /> Email</div>
-                  <div className="mt-2 text-sm text-muted-foreground">brian@briankillianconsulting.com</div>
-                </div>
-                <div className="rounded-2xl border bg-background/60 p-4">
-                  <div className="flex items-center gap-2 text-sm font-medium">
-                  <div className="mt-2 text-sm text-muted-foreground">
-                </div>
-              </div>
-<div className="flex flex-wrap gap-3">
+<div className="mt-6 grid gap-3">
+  <div className="rounded-2xl border bg-background/60 p-4">
+    <div className="flex items-center gap-2 text-sm font-medium">
+      <Mail className="h-4 w-4" /> Email
+    </div>
+    <div className="mt-2 text-sm text-muted-foreground">
+      <a href="mailto:brian@briankillianconsulting.com" className="underline underline-offset-4">
+        brian@briankillianconsulting.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<div className="mt-4 flex flex-wrap gap-3">
   <a
     href="mailto:brian@briankillianconsulting.com"
     className="inline-flex items-center justify-center rounded-2xl border px-4 py-2"
@@ -568,6 +571,7 @@ export default function Website() {
     Capabilities PDF (coming soon)
   </button>
 </div>
+
 
 
             </CardContent>
