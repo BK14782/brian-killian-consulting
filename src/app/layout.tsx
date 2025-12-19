@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "https://briankillianconsulting.com",
   },
   verification: {
-    google: <meta name="google-site-verification" content="3C_UIVfc0azY997QS-qHd-VfVxCvsTIIrPnKaDxHNGw" />
+    google: "3C_UIVfc0azY997QS-qHd-VfVxCvsTIIrPnKaDxHNGw",
   },
   openGraph: {
     type: "website",
@@ -44,11 +45,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        strategy="afterInteractive"
+      />
+      <Script id="ga4" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}
+      </Script>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
