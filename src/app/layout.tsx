@@ -20,7 +20,8 @@ export const metadata: Metadata = {
     template: "%s | Brian Killian Consulting",
   },
   description:
-    "Operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+
   alternates: {
     canonical: "https://briankillianconsulting.com",
   },
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Brian Killian Consulting",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      description:
+
   "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
 
   },

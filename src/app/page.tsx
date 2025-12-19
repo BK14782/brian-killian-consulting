@@ -544,10 +544,15 @@ export default function Website() {
                   <div className="mt-2 text-sm text-muted-foreground">
                 </div>
               </div>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button className="rounded-2xl">
-                <Button variant="outline" className="rounded-2xl">
-              </div>
+             <div className="flex flex-wrap gap-3">
+  <a
+    href="mailto:brian@briankillianconsulting.com"
+    className="inline-flex items-center justify-center rounded-2xl border px-4 py-2"
+  >
+    Email Brian
+  </a>
+</div>
+
             </CardContent>
           </Card>
           <Card className="rounded-3xl shadow-sm">
