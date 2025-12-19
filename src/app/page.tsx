@@ -337,8 +337,8 @@ export default function Website() {
         metrics: ["7-property portfolio", "+15%–20% NOI"],
       },
       {
-        tag: "Enterprise / Public-Facing Campus",
-        title: "Scaled reporting + vendor governance across 4.5M SF",
+        tag: "Operations to Strategy",
+        title: "SOP playbook to unify and improve performance",
         context:
           "Led operational oversight for a 4.5M SF Class A office portfolio with major retail and high service expectations.",
         outcome:
@@ -351,16 +351,16 @@ export default function Website() {
         metrics: ["4.5M SF", "$100M contracts", "$60M CapEx"],
       },
       {
-        tag: "Operations to Strategy",
-        title: "SOP playbook to unify performance across teams",
+        tag: "Construction, Development, and Opertaions ",
+        title: "Create lease-up blueprint from development to stabilization",
         context:
-          "Created standardized operating procedures spanning management, accounting, engineering, and project management.",
+          "Oversaw cross functional operations: Proforma through disposition.",
         outcome:
-          "Reduced friction, improved consistency, and made performance easier to measure and scale.",
+          "Exceeded occupancy, revenue, and customer satisfaction goals.",
         bullets: [
-          "Defined role clarity and approval lanes",
-          "Built reporting cadence and common KPIs",
-          "Created practical templates for teams to adopt",
+          "Provided coaching and mentorship for lease-ups",
+          "Built building specific programs around branding",
+          "Built budget templates and business plans",
         ],
         metrics: ["Cross-functional"],
       },
