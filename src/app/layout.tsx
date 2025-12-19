@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://briankillianconsulting.com",
   },
+  verification: {
+    google: "3C_UIVfc0azY997QS-qHd-VfVxCvsTIIrPnKaDxHNGw"
+  },
   openGraph: {
     type: "website",
     url: "https://briankillianconsulting.com",
