@@ -63,7 +63,13 @@ const Section = ({ id, kicker, title, subtitle, children }: SectionProps) => (
   </section>
 );
 
-const Nav = ({ active, onNav }) => {
+type NavProps = {
+  active: string;
+  onNav: (id: string) => void;
+};
+
+const Nav = ({ active, onNav }: NavProps) => {
+
   const items = [
     { id: "services", label: "Services" },
     { id: "case-studies", label: "Case Studies" },
