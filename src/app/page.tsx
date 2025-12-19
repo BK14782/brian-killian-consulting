@@ -123,7 +123,7 @@ const Hero = ({ onNav }: HeroProps) => (
       <div className="grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <div className="inline-flex flex-wrap items-center gap-2">
-            <Badge variant="secondary" className="rounded-full">Providing nationwide advisory services real estate owners and operators.</Badge>
+            <Badge variant="secondary" className="rounded-full">Providing nationwide advisory services to real estate owners and operators.</Badge>
             <Badge variant="secondary" className="rounded-full">Office • Mixed-use • Multifamily</Badge>
             <Badge variant="secondary" className="rounded-full">Owner & Investor Reporting</Badge>
           </div>
@@ -284,7 +284,7 @@ const Footer = () => (
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
         <div>
           <div className="text-sm font-semibold">Brian Killian Consulting</div>
-          <div className="mt-1 text-sm text-muted-foreground">Seattle, WA • Serving the Pacific Northwest</div>
+          <div className="mt-1 text-sm text-muted-foreground">Based in Seattle, serving clients nationwide</div>
         </div>
         <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} • All rights reserved</div>
       </div>
