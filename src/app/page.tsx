@@ -324,7 +324,7 @@ export default function Website() {
       },
       {
         tag: "Mixed-Use / Multifamily Portfolio",
-        title: "Utility audit platform to drive recurring NOI recovery",
+        title: "Increase revenues and occupancies, decrease expenses.",
         context:
           "Designed and implemented a utility audit approach across a multi-property portfolio to improve cost recovery and reporting discipline.",
         outcome:
