@@ -532,21 +532,21 @@ export default function Website() {
             <CardContent className="p-6">
               <div className="text-sm font-semibold">Quick note</div>
               <p className="mt-3 text-sm text-muted-foreground">
-                Replace the contact details below with your preferred email/phone and add a scheduling link if you’d like.
+                Replace the contact details below with your preferred email and add a scheduling link if you’d like.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl border bg-background/60 p-4">
                   <div className="flex items-center gap-2 text-sm font-medium"><Mail className="h-4 w-4" /> Email</div>
-                  <div className="mt-2 text-sm text-muted-foreground">killianbrian82@gmail.com</div>
+                  <div className="mt-2 text-sm text-muted-foreground">brian@briankillianconsulting.com</div>
                 </div>
                 <div className="rounded-2xl border bg-background/60 p-4">
-                  <div className="flex items-center gap-2 text-sm font-medium"><Phone className="h-4 w-4" /> Phone</div>
-                  <div className="mt-2 text-sm text-muted-foreground">(Add your preferred number)</div>
+                  <div className="flex items-center gap-2 text-sm font-medium">
+                  <div className="mt-2 text-sm text-muted-foreground">
                 </div>
               </div>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button className="rounded-2xl">Add Calendly link</Button>
-                <Button variant="outline" className="rounded-2xl">Download capabilities PDF</Button>
+                <Button className="rounded-2xl">
+                <Button variant="outline" className="rounded-2xl">
               </div>
             </CardContent>
           </Card>
