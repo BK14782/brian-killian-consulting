@@ -123,7 +123,7 @@ const Hero = ({ onNav }: HeroProps) => (
       <div className="grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <div className="inline-flex flex-wrap items-center gap-2">
-            <Badge variant="secondary" className="rounded-full">Pacific Northwest</Badge>
+            <Badge variant="secondary" className="rounded-full">Providing nationwide advisory services real estate owners and operators.</Badge>
             <Badge variant="secondary" className="rounded-full">Office • Mixed-use • Multifamily</Badge>
             <Badge variant="secondary" className="rounded-full">Owner & Investor Reporting</Badge>
           </div>

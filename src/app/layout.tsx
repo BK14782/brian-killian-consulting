@@ -33,13 +33,17 @@ export const metadata: Metadata = {
     siteName: "Brian Killian Consulting",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      "Operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+      description:
+  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+
   },
   twitter: {
     card: "summary_large_image",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      "Operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+      "Operational description:
+  "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+
   },
 };
 
