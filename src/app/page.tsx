@@ -357,7 +357,8 @@ export default function Website() {
     []
   );
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
+
     setActive(id);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
