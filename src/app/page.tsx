@@ -318,6 +318,7 @@ export default function Website() {
           "Audited operating performance and optimized vendor + energy programs",
           "Delivered modernization projects with tight budget control",
           "Built 1–5-year improvement plan tied to tenant satisfaction and CapEx planning",
+          "Developed energy and sustainability programs for aging equipment"
         ],
         metrics: ["1M SF", "$25M CapEx", "+10% NOI", "88%→97% occupancy"],
       },
