@@ -502,7 +502,7 @@ export default function Website() {
             <CardContent className="p-6">
               <div className="text-sm font-semibold">Background</div>
               <p className="mt-3 text-sm text-muted-foreground">
-                I’ve led operations across office, mixed-use, and multifamily portfolios—including campus environments with complex service delivery.
+                I’ve led operations across office, retail, mixed-use, and multifamily portfolios—including campus environments with complex service delivery.
                 My work focuses on improving NOI and tenant experience through better reporting, tighter controls, and stronger execution.
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
