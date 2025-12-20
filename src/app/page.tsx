@@ -400,6 +400,25 @@ const CaseStudyCard = ({
   </Card>
 );
 
+const Footer = () => (
+  <footer className="border-t py-10 mt-16">
+    <div className="mx-auto max-w-6xl px-4 text-sm text-muted-foreground flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <div>
+        © {new Date().getFullYear()} Brian Killian Consulting
+      </div>
+      <div className="flex gap-4">
+        <a
+          href="mailto:brian@briankillianconsulting.com"
+          className="hover:text-foreground transition"
+        >
+          brian@briankillianconsulting.com
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+
 export default function Page() {
   const [active, setActive] = useState("services");
 
