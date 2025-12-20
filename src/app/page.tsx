@@ -69,15 +69,14 @@ type NavProps = {
 };
 
 const Nav = ({ active, onNav }: NavProps) => {
-
-const items = [
-  { id: "services", label: "Services" },
-  { id: "case-studies", label: "Case Studies" },
-  { id: "performance", label: "Performance" }, // ← ADD THIS
-  { id: "approach", label: "Approach" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-];
+  const items = [
+    { id: "services", label: "Services" },
+    { id: "case-studies", label: "Case Studies" },
+    { id: "performance", label: "Performance" },
+    { id: "approach", label: "Approach" },
+    { id: "about", label: "About" },
+    { id: "contact", label: "Contact" },
+  ];
 
   return (
     <div className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
@@ -86,33 +85,38 @@ const items = [
           <div className="grid h-9 w-9 place-items-center rounded-2xl border bg-background shadow-sm">
             <Building2 className="h-5 w-5" />
           </div>
-<div className="leading-tight">
-  <div className="text-sm font-semibold">Brian Killian Consulting</div>
-  <div className="text-xs text-muted-foreground">
-    Asset performance • Financial clarity • Operational discipline
-  </div>
-</div>
-
-
+          <div className="leading-tight">
+            <div className="text-sm font-semibold">Brian Killian Consulting</div>
+            <div className="text-xs text-muted-foreground">
+              Asset performance • Financial clarity • Operational discipline
+            </div>
+          </div>
         </div>
+
         <div className="hidden items-center gap-6 md:flex">
           {items.map((it) => (
             <button
               key={it.id}
               onClick={() => onNav(it.id)}
-              className={`text-sm transition ${active === it.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              className={`text-sm transition ${
+                active === it.id
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {it.label}
             </button>
           ))}
         </div>
+
         <Button onClick={() => onNav("contact")} className="rounded-2xl">
           Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>
   );
-};
+}; 
+
 
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
