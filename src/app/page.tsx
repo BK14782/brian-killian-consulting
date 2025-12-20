@@ -435,6 +435,91 @@ export default function Website() {
   </div>
 </Section>
 
+<Section
+  id="performance"
+  kicker="Performance Philosophy"
+  title="How I think about performance"
+  subtitle="Clear metrics. Fewer surprises. Decisions that compound."
+>
+  <div className="grid gap-4 lg:grid-cols-3">
+    <Card className="rounded-3xl shadow-sm lg:col-span-2">
+      <CardContent className="p-6">
+        <p className="text-sm text-muted-foreground">
+          I approach real estate performance through a small set of disciplined, repeatable principles.
+          Across portfolios, property types, and ownership structures, the work is different—but the
+          performance logic stays the same.
+        </p>
+
+        <div className="mt-6 space-y-4">
+          {[
+            {
+              title: "Predictability matters more than perfection",
+              body:
+                "Owners don’t expect zero variance—they expect to understand it. I focus on tightening forecast accuracy, reducing surprise, and ensuring decisions are informed by operational reality (not just prior-year actuals).",
+            },
+            {
+              title: "Decision quality is a performance metric",
+              body:
+                "Slow approvals, rework, and unclear proposals create hidden costs. I design systems that shorten decision cycles, improve first-pass approvals, and keep leadership discussions moving forward instead of backward.",
+            },
+            {
+              title: "Communication is an operating system",
+              body:
+                "Most volatility isn’t financial—it’s informational. When teams operate in silos, performance suffers. I align operations, accounting, engineering, and construction so accurate information moves quickly and consistently.",
+            },
+            {
+              title: "Time is a controllable asset",
+              body:
+                "When teams spend less time reacting, they gain time to prevent issues. Reducing back-and-forth, escalations, and noise creates capacity for proactive work that improves outcomes across the portfolio.",
+            },
+            {
+              title: "Metrics must reflect reality—not just reporting",
+              body:
+                "I focus on metrics that mirror how assets actually operate: forecast variance, decision velocity, escalation frequency, lease-up efficiency, and stabilization timelines—not vanity KPIs.",
+            },
+          ].map((p) => (
+            <div key={p.title} className="rounded-2xl border bg-background/60 p-4">
+              <div className="text-sm font-semibold">{p.title}</div>
+              <div className="mt-2 text-sm text-muted-foreground">{p.body}</div>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+
+    <Card className="rounded-3xl shadow-sm">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">Metrics I care about</div>
+        <div className="mt-4 space-y-3 text-sm">
+          {[
+            "Forecast variance reduction (target: ≥40–50%)",
+            "Approval cycle time (weeks → days)",
+            "Escalation frequency (reduced 30–40%)",
+            "Variance volatility control (stabilized reporting)",
+            "Lease-up efficiency vs pro forma",
+            "Time-to-stabilization improvements",
+          ].map((t) => (
+            <div key={t} className="flex items-start gap-3">
+              <div className="mt-0.5 grid h-7 w-7 place-items-center rounded-xl border bg-background">
+                <Check className="h-4 w-4" />
+              </div>
+              <div className="text-muted-foreground">{t}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 rounded-2xl border bg-background/60 p-4">
+          <div className="text-xs text-muted-foreground">Simple filter</div>
+          <div className="mt-1 text-sm">
+            If a metric doesn’t change decisions, it’s noise.
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+</Section>
+
+
 
       <Section
         id="case-studies"
