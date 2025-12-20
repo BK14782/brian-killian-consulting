@@ -86,11 +86,13 @@ const items = [
           <div className="grid h-9 w-9 place-items-center rounded-2xl border bg-background shadow-sm">
             <Building2 className="h-5 w-5" />
           </div>
-          <div className="leading-tight">
-            <div className="text-sm font-semibold">Brian Killian Consulting</div>
-<div className="text-xs text-muted-foreground">
-  Asset performance • Financial clarity • Operational discipline
+<div className="leading-tight">
+  <div className="text-sm font-semibold">Brian Killian Consulting</div>
+  <div className="text-xs text-muted-foreground">
+    Asset performance • Financial clarity • Operational discipline
+  </div>
 </div>
+
 
         </div>
         <div className="hidden items-center gap-6 md:flex">
@@ -110,6 +112,7 @@ const items = [
       </div>
     </div>
   );
+};
 
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
