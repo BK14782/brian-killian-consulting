@@ -235,122 +235,96 @@ const services = [
 ];
 
 
-type CaseStudyCardProps = {
+type CaseStudy = {
   tag: string;
   title: string;
   outcome: string;
   context: string;
-  bullets: string[];
-  metrics?: string[];
+  bullets?: string[];
+  metrics: string[];
+  href?: string; // optional future link to dedicated page
 };
 
-const CaseStudyCard = ({ tag, title, outcome, context, bullets, metrics }: CaseStudyCardProps) => (
+type CaseStudyCardProps = CaseStudy;
 
+const CaseStudyCard = ({
+  tag,
+  title,
+  outcome,
+  context,
+  bullets = [],
+  metrics,
+  href,
+}: CaseStudyCardProps) => (
   <Card className="rounded-3xl shadow-sm">
     <CardContent className="p-6">
-      <div className="flex flex-wrap items-center gap-2">
-        <Badge variant="secondary" className="rounded-full">{tag}</Badge>
-        {metrics?.map((m) => (
-          <Badge key={m} className="rounded-full" variant="outline">{m}</Badge>
-        ))}
+      {/* Top line: Tag + optional link */}
+      <div className="flex items-start justify-between gap-4">
+        <div className="inline-flex items-center gap-2">
+          <span className="rounded-full border bg-background px-3 py-1 text-xs font-medium">
+            {tag}
+          </span>
+        </div>
+
+        {/* Optional future link to dedicated case study page */}
+        {href ? (
+          <a
+            href={href}
+            className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-4"
+          >
+            View details
+          </a>
+        ) : null}
       </div>
-      <div className="mt-4 text-lg font-semibold">{title}</div>
-      <div className="mt-2 text-sm text-muted-foreground">{context}</div>
-      <div className="mt-4 rounded-2xl border bg-background/60 p-4">
-        <div className="text-xs text-muted-foreground">Outcome</div>
-        <div className="mt-1 text-sm font-medium">{outcome}</div>
+
+      {/* Headline + outcome */}
+      <div className="mt-4 text-base font-semibold leading-snug">{title}</div>
+      <div className="mt-2 text-sm text-muted-foreground">{outcome}</div>
+
+      {/* Metrics: the money section */}
+      <div className="mt-5 rounded-2xl border bg-background/60 p-4">
+        <div className="text-xs font-semibold tracking-wide text-muted-foreground">
+          Performance metrics
+        </div>
+        <ul className="mt-3 space-y-2">
+          {metrics.map((m) => (
+            <li key={m} className="flex items-start gap-3 text-sm">
+              <span className="mt-1 inline-block h-2 w-2 rounded-full border" />
+              <span>{m}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="mt-4 space-y-2 text-sm">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-2">
-            <Check className="mt-0.5 h-4 w-4" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
+
+      {/* Context + methods */}
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border bg-background/60 p-4">
+          <div className="text-xs font-semibold tracking-wide text-muted-foreground">
+            Context
+          </div>
+          <div className="mt-2 text-sm text-muted-foreground">{context}</div>
+        </div>
+
+        {bullets.length ? (
+          <div className="rounded-2xl border bg-background/60 p-4">
+            <div className="text-xs font-semibold tracking-wide text-muted-foreground">
+              What changed
+            </div>
+            <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
+              {bullets.slice(0, 4).map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <Check className="mt-0.5 h-4 w-4" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
     </CardContent>
   </Card>
 );
 
-const Footer = () => (
-  <footer className="border-t py-10">
-    <div className="mx-auto max-w-6xl px-4">
-      <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
-        <div>
-          <div className="text-sm font-semibold">Brian Killian Consulting</div>
-          <div className="mt-1 text-sm text-muted-foreground">Based in Seattle, serving clients nationwide</div>
-        </div>
-        <div className="text-sm text-muted-foreground">© {new Date().getFullYear()} • All rights reserved</div>
-      </div>
-    </div>
-  </footer>
-);
-
-export default function Website() {
-  const [active, setActive] = useState("services");
-
-  const caseStudies = useMemo(
-    () => [
-      {
-        tag: "Office / Tech Campus",
-        title: "NOI lift + capital delivery + occupancy recovery",
-        context:
-          "Operational reset for a 1M SF commercial portfolio including tech campus, offices, and a data center—alongside major capital delivery.",
-        outcome:
-          "Improved NOI and tenant experience while keeping capital delivery predictable and reporting investor-ready.",
-        bullets: [
-          "Audited operating performance and optimized vendor + energy programs",
-          "Delivered modernization projects with tight budget control",
-          "Built 1–5-year improvement plan tied to tenant satisfaction and CapEx planning",
-          "Developed energy and sustainability programs for aging equipment"
-        ],
-        metrics: ["1M SF", "$25M CapEx", "+10% NOI", "88%→97% occupancy"],
-      },
-      {
-        tag: "Mixed-Use / Multifamily Portfolio",
-        title: "Increase revenues and occupancies, decrease expenses.",
-        context:
-          "Designed and implemented a utility audit approach across a multi-property portfolio to improve cost recovery and reporting discipline.",
-        outcome:
-          "Created repeatable process and controls that improved recoveries and supported long-term expense management.",
-        bullets: [
-          "Built cross-functional workflow with accounting + operations",
-          "Standardized documentation and exception handling",
-          "Connected KPIs to client objectives for transparency",
-        ],
-        metrics: ["7-property portfolio", "+15%–20% NOI"],
-      },
-      {
-        tag: "Operations to Strategy",
-        title: "SOP playbook to unify and improve performance",
-        context:
-          "Led operational oversight for a 4.5M SF Class A office portfolio with major retail and high service expectations.",
-        outcome:
-          "Improved service delivery, accelerated approvals, and strengthened executive reporting.",
-        bullets: [
-          "Negotiated major service agreements; tightened SLAs/KPIs",
-          "Integrated operating policies across campus",
-          "Produced exec-ready operational and financial reporting",
-        ],
-        metrics: ["4.5M SF", "$100M contracts", "$60M CapEx"],
-      },
-      {
-        tag: "Construction, Development, and Opertaions ",
-        title: "Create lease-up blueprint from development to stabilization",
-        context:
-          "Oversaw cross functional operations: Proforma through disposition.",
-        outcome:
-          "Exceeded occupancy, revenue, and customer satisfaction goals.",
-        bullets: [
-          "Provided coaching and mentorship for lease-ups",
-          "Built building specific programs around branding",
-          "Built budget templates and business plans",
-        ],
-        metrics: ["Cross-functional"],
-      },
-    ],
-    []
-  );
 
   const scrollTo = (id: string) => {
 
