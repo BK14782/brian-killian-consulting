@@ -111,11 +111,8 @@ const items = [
     </div>
   );
 
-type HeroProps = {
-  onNav: (id: string) => void;
-};
+const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
-const Hero = ({ onNav }: HeroProps) => (
 
 <header className="relative overflow-hidden">
   {/* Warm background wash */}
