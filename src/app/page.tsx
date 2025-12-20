@@ -329,6 +329,8 @@ const CaseStudyCard = ({
   </Card>
 );
 
+export default function Page() {
+  const [active, setActive] = useState("services");
 
   const scrollTo = (id: string) => {
 
