@@ -117,6 +117,77 @@ const Nav = ({ active, onNav }: NavProps) => {
   );
 }; 
 
+const caseStudies = [
+  {
+    tag: "Office / Industrial Portfolio",
+    title: "Stabilizing forecast accuracy across a multi-asset portfolio",
+    outcome: "Reduced month-end variance and improved NOI predictability",
+    context:
+      "A mixed office and industrial portfolio experiencing frequent forecast misses and owner escalations.",
+    bullets: [
+      "Rebuilt forecasts around real operating conditions",
+      "Aligned ops, accounting, and vendors on scope clarity",
+      "Introduced proactive issue surfacing before month-end",
+    ],
+    metrics: [
+      "≈50% reduction in month-end variance",
+      "NOI predictability tightened to within ±2.5%",
+      "Owner escalation cadence normalized within 2 cycles",
+    ],
+  },
+  {
+    tag: "Proposal & Approval Workflow",
+    title: "Accelerating owner approvals through standardized proposals",
+    outcome: "Cut approval timelines from weeks to days",
+    context:
+      "Capital and operational proposals were repeatedly rejected due to inconsistent formatting and unclear intent.",
+    bullets: [
+      "Created step-by-step proposal standards",
+      "Trained teams on owner decision criteria",
+      "Removed reuse of outdated proposal templates",
+    ],
+    metrics: [
+      "Approval time reduced from 3–4 weeks to 3–4 days",
+      "First-pass approval rate increased significantly",
+      "Owner clarification requests reduced by ~30–40%",
+    ],
+  },
+  {
+    tag: "Cross-Functional Operations",
+    title: "Reintegrating siloed teams to stabilize reporting",
+    outcome: "Reduced variance volatility and restored owner confidence",
+    context:
+      "Operations, accounting, engineering, and construction teams operated independently with inconsistent data.",
+    bullets: [
+      "Reset communication norms across teams",
+      "Clarified ownership of updates and decisions",
+      "Removed duplicated effort and bottlenecks",
+    ],
+    metrics: [
+      "Variance volatility reduced by up to 90%",
+      "Owner involvement normalized within ~100 days",
+      "Bi-weekly calls shifted from reactive to forward-looking",
+    ],
+  },
+  {
+    tag: "Residential Lease-Up",
+    title: "Driving absorption while controlling concessions",
+    outcome: "Improved lease-up velocity without eroding long-term rents",
+    context:
+      "Ground-up residential lease-ups competing in aggressive submarkets.",
+    bullets: [
+      "Balanced concessions with pricing integrity",
+      "Aligned marketing, leasing, and operations cadence",
+      "Tracked real-time absorption and lead quality",
+    ],
+    metrics: [
+      "Faster absorption without excessive concession creep",
+      "Earlier concession normalization",
+      "Stronger in-place rents at stabilization",
+    ],
+  },
+];
+
 
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
