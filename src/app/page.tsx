@@ -70,13 +70,15 @@ type NavProps = {
 
 const Nav = ({ active, onNav }: NavProps) => {
 
-  const items = [
-    { id: "services", label: "Services" },
-    { id: "case-studies", label: "Case Studies" },
-    { id: "approach", label: "Approach" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
-  ];
+const items = [
+  { id: "services", label: "Services" },
+  { id: "case-studies", label: "Case Studies" },
+  { id: "performance", label: "Performance" }, // ← ADD THIS
+  { id: "approach", label: "Approach" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
   return (
     <div className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -86,8 +88,10 @@ const Nav = ({ active, onNav }: NavProps) => {
           </div>
           <div className="leading-tight">
             <div className="text-sm font-semibold">Brian Killian Consulting</div>
-            <div className="text-xs text-muted-foreground">Operational asset performance • Reporting • Process improvement</div>
-          </div>
+<div className="text-xs text-muted-foreground">
+  Asset performance • Financial clarity • Operational discipline
+</div>
+
         </div>
         <div className="hidden items-center gap-6 md:flex">
           {items.map((it) => (
