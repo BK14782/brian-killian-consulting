@@ -110,7 +110,6 @@ const items = [
       </div>
     </div>
   );
-};
 
 type HeroProps = {
   onNav: (id: string) => void;
