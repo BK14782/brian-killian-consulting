@@ -119,74 +119,67 @@ const Nav = ({ active, onNav }: NavProps) => {
 
 const caseStudies = [
   {
-    tag: "Office / Industrial Portfolio",
-    title: "Stabilizing forecast accuracy across a multi-asset portfolio",
-    outcome: "Reduced month-end variance and improved NOI predictability",
+    tag: "Forecasting & Controls",
+    title: "Restoring Forecast Accuracy and NOI Predictability",
     context:
-      "A mixed office and industrial portfolio experiencing frequent forecast misses and owner escalations.",
+      "Campus-style commercial asset experiencing recurring budget surprises, change orders, and owner confidence erosion.",
+    outcome:
+      "Forecast accuracy stabilized and month-end volatility reduced through disciplined scoping and owner-aligned reporting.",
     bullets: [
-      "Rebuilt forecasts around real operating conditions",
-      "Aligned ops, accounting, and vendors on scope clarity",
-      "Introduced proactive issue surfacing before month-end",
+      "Forecast variance reduced ~50% within 3–5 cycles",
+      "NOI outcomes stabilized within ±2.5%",
+      "Month-end surprises largely eliminated",
     ],
-    metrics: [
-      "≈50% reduction in month-end variance",
-      "NOI predictability tightened to within ±2.5%",
-      "Owner escalation cadence normalized within 2 cycles",
-    ],
+    metrics:
+      "Owner confidence increased and reactive performance calls dropped significantly.",
   },
   {
-    tag: "Proposal & Approval Workflow",
-    title: "Accelerating owner approvals through standardized proposals",
-    outcome: "Cut approval timelines from weeks to days",
+    tag: "Capital Governance",
+    title: "Accelerating Approvals Through Proposal Discipline",
     context:
-      "Capital and operational proposals were repeatedly rejected due to inconsistent formatting and unclear intent.",
+      "Operational and capital proposals routinely required multiple revisions, delaying execution and increasing owner friction.",
+    outcome:
+      "Approval velocity improved by aligning proposal structure, language, and decision framing with owner expectations.",
     bullets: [
-      "Created step-by-step proposal standards",
-      "Trained teams on owner decision criteria",
-      "Removed reuse of outdated proposal templates",
+      "Approval cycles reduced from 3–4 weeks to 3–4 days",
+      "First-pass approvals became the norm",
+      "Owner follow-ups and clarification requests reduced",
     ],
-    metrics: [
-      "Approval time reduced from 3–4 weeks to 3–4 days",
-      "First-pass approval rate increased significantly",
-      "Owner clarification requests reduced by ~30–40%",
-    ],
+    metrics:
+      "Teams reclaimed time for property walks and tenant engagement, reducing downstream escalations by ~30–40%.",
   },
   {
-    tag: "Cross-Functional Operations",
-    title: "Reintegrating siloed teams to stabilize reporting",
-    outcome: "Reduced variance volatility and restored owner confidence",
+    tag: "Portfolio Operations",
+    title: "Reducing Variance Volatility Across a Siloed Portfolio",
     context:
-      "Operations, accounting, engineering, and construction teams operated independently with inconsistent data.",
+      "Office and industrial portfolio suffering from fragmented communication, inconsistent data, and reactive ownership oversight.",
+    outcome:
+      "Cross-functional alignment restored clarity, predictability, and trust without increasing reporting burden.",
     bullets: [
-      "Reset communication norms across teams",
-      "Clarified ownership of updates and decisions",
-      "Removed duplicated effort and bottlenecks",
-    ],
-    metrics: [
       "Variance volatility reduced by up to 90%",
-      "Owner involvement normalized within ~100 days",
-      "Bi-weekly calls shifted from reactive to forward-looking",
+      "Ownership cadence normalized to bi-weekly",
+      "Leadership involvement scaled back organically",
     ],
+    metrics:
+      "Trust became an operating asset, enabling faster decisions and fewer interruptions.",
   },
   {
     tag: "Residential Lease-Up",
-    title: "Driving absorption while controlling concessions",
-    outcome: "Improved lease-up velocity without eroding long-term rents",
+    title: "Driving Predictable Absorption Without Over-Concessioning",
     context:
-      "Ground-up residential lease-ups competing in aggressive submarkets.",
+      "Ground-up residential lease-ups requiring disciplined pricing, concession strategy, and operational readiness.",
+    outcome:
+      "Lease-up velocity achieved while protecting long-term rent roll and asset value.",
     bullets: [
-      "Balanced concessions with pricing integrity",
-      "Aligned marketing, leasing, and operations cadence",
-      "Tracked real-time absorption and lead quality",
+      "Concessions deployed strategically, not reactively",
+      "Stabilization achieved without rent roll erosion",
+      "Clear leasing guardrails aligned with return targets",
     ],
-    metrics: [
-      "Faster absorption without excessive concession creep",
-      "Earlier concession normalization",
-      "Stronger in-place rents at stabilization",
-    ],
+    metrics:
+      "Ownership avoided panic-driven discounting while maintaining predictable lease-up performance.",
   },
 ];
+
 
 
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
@@ -325,80 +318,46 @@ type CaseStudyCardProps = CaseStudy;
 const CaseStudyCard = ({
   tag,
   title,
-  outcome,
   context,
-  bullets = [],
+  outcome,
+  bullets,
   metrics,
-  href,
-}: CaseStudyCardProps) => (
-  <Card className="rounded-3xl shadow-sm">
-    <CardContent className="p-6">
-      {/* Top line: Tag + optional link */}
-      <div className="flex items-start justify-between gap-4">
-        <div className="inline-flex items-center gap-2">
-          <span className="rounded-full border bg-background px-3 py-1 text-xs font-medium">
-            {tag}
-          </span>
-        </div>
+}: {
+  tag: string;
+  title: string;
+  context: string;
+  outcome: string;
+  bullets: string[];
+  metrics: string;
+}) => (
+  <Card className="rounded-3xl shadow-sm hover:shadow-md transition">
+    <CardContent className="p-6 space-y-4">
+      <Badge variant="secondary" className="w-fit">
+        {tag}
+      </Badge>
 
-        {/* Optional future link to dedicated case study page */}
-        {href ? (
-          <a
-            href={href}
-            className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-4"
-          >
-            View details
-          </a>
-        ) : null}
-      </div>
+      <h3 className="text-lg font-semibold leading-tight">{title}</h3>
 
-      {/* Headline + outcome */}
-      <div className="mt-4 text-base font-semibold leading-snug">{title}</div>
-      <div className="mt-2 text-sm text-muted-foreground">{outcome}</div>
+      <p className="text-sm text-muted-foreground">{context}</p>
 
-      {/* Metrics: the money section */}
-      <div className="mt-5 rounded-2xl border bg-background/60 p-4">
-        <div className="text-xs font-semibold tracking-wide text-muted-foreground">
-          Performance metrics
-        </div>
-        <ul className="mt-3 space-y-2">
-          {metrics.map((m) => (
-            <li key={m} className="flex items-start gap-3 text-sm">
-              <span className="mt-1 inline-block h-2 w-2 rounded-full border" />
-              <span>{m}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <p className="text-sm font-medium">{outcome}</p>
 
-      {/* Context + methods */}
-      <div className="mt-5 grid gap-4 md:grid-cols-2">
-        <div className="rounded-2xl border bg-background/60 p-4">
-          <div className="text-xs font-semibold tracking-wide text-muted-foreground">
-            Context
-          </div>
-          <div className="mt-2 text-sm text-muted-foreground">{context}</div>
-        </div>
+      <ul className="space-y-2 text-sm">
+        {bullets.map((b) => (
+          <li key={b} className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4 flex-shrink-0" />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
 
-        {bullets.length ? (
-          <div className="rounded-2xl border bg-background/60 p-4">
-            <div className="text-xs font-semibold tracking-wide text-muted-foreground">
-              What changed
-            </div>
-            <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-              {bullets.slice(0, 4).map((b) => (
-                <li key={b} className="flex items-start gap-3">
-                  <Check className="mt-0.5 h-4 w-4" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+      <div className="rounded-2xl border bg-background/60 p-4 text-sm text-muted-foreground">
+        <strong>Result:</strong> {metrics}
       </div>
     </CardContent>
   </Card>
 );
+
 
 const Footer = () => (
   <footer className="border-t py-10 mt-16">
