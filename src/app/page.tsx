@@ -607,6 +607,69 @@ export default function Page() {
         </div>
       </Section>
 
+<Section
+  id="performance"
+  kicker="Performance philosophy"
+  title="How I think about asset performance"
+  subtitle="Reliable outcomes come from disciplined inputs, clear ownership alignment, and teams that operate with shared context."
+>
+  <div className="grid gap-4 md:grid-cols-2">
+    {[
+      {
+        title: "Predictability over perfection",
+        desc: "Owners don’t expect zero variance — they expect no surprises. Performance improves when teams understand expectations, pressure-test assumptions, and surface risks early.",
+        bullets: [
+          "Forecast accuracy tightened ~50% within 2–3 cycles",
+          "Variance conversations moved upstream",
+          "NOI outcomes stayed within ±2.5%",
+        ],
+      },
+      {
+        title: "Clarity beats volume",
+        desc: "More reports don’t equal better decisions. Clear narratives, consistent formats, and owner-aligned language reduce friction and speed approvals.",
+        bullets: [
+          "Approval cycles reduced from weeks to days",
+          "First-pass approvals became standard",
+          "Owner follow-ups and rework materially reduced",
+        ],
+      },
+      {
+        title: "Systems before heroics",
+        desc: "Strong performance is repeatable. I focus on workflows, decision lanes, and governance so results don’t depend on individual effort alone.",
+        bullets: [
+          "Standardized proposal and reporting templates",
+          "Clear approval authority by role",
+          "Reduced operational fire drills",
+        ],
+      },
+      {
+        title: "Trust is an operating asset",
+        desc: "When teams share context and communicate in each other’s language, volatility drops and leadership involvement naturally scales back.",
+        bullets: [
+          "Cross-team alignment reduced variance volatility",
+          "Ownership cadence normalized to bi-weekly",
+          "Leadership time shifted from troubleshooting to planning",
+        ],
+      },
+    ].map((x) => (
+      <Card key={x.title} className="rounded-3xl shadow-sm">
+        <CardContent className="p-6">
+          <div className="text-base font-semibold">{x.title}</div>
+          <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
+          <ul className="mt-4 space-y-2 text-sm">
+            {x.bullets.map((b) => (
+              <li key={b} className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 text-muted-foreground" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</Section>
+
       <Section
         id="approach"
         kicker="How it works"
