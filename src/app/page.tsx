@@ -8,6 +8,8 @@ const caseStudiesWithHref = caseStudies.map((c) => ({
 }));
 
 
+import LeadCaptureModal from "@/components/LeadCaptureModal";
+
 import Link from "next/link";
 
 import React, { useMemo, useState } from "react";
@@ -77,9 +79,10 @@ const Section = ({ id, kicker, title, subtitle, children }: SectionProps) => (
 type NavProps = {
   active: string;
   onNav: (id: string) => void;
+  onLetsTalk: () => void;
 };
 
-const Nav = ({ active, onNav }: NavProps) => {
+const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
   const items = [
     { id: "services", label: "Services" },
     { id: "case-studies", label: "Case Studies" },
@@ -120,9 +123,10 @@ const Nav = ({ active, onNav }: NavProps) => {
           ))}
         </div>
 
-        <Button onClick={() => onNav("contact")} className="rounded-2xl">
-          Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
-        </Button>
+
+<Button onClick={onLetsTalk}>
+  Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
+</Button>
       </div>
     </div>
   );
@@ -335,17 +339,19 @@ const Footer = () => (
 
 export default function Page() {
   const [active, setActive] = useState("services");
+  const [leadOpen, setLeadOpen] = useState(false); 
 
   const scrollTo = (id: string) => {
-
     setActive(id);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
+
     <div className="min-h-screen bg-background text-foreground">
-      <Nav active={active} onNav={scrollTo} />
+      <Nav active={active} onNav={scrollTo}
+      onLetsTalk={() => setLeadOpen(true)} />
       <Hero onNav={scrollTo} />
 
 <Section
@@ -745,6 +751,10 @@ export default function Page() {
           </Card>
         </div>
       </Section>
+
+<LeadCaptureModal isOpen={leadOpen} onClose={() => setLeadOpen(false)} />
+
+
 
       <Footer />
     </div>
