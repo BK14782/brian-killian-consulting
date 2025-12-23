@@ -1,18 +1,17 @@
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const cs = getCaseStudy(params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = getCaseStudy(slug);
 
   if (!cs) {
-    return {
-      title: "Case Study Not Found",
-    };
+    return { title: "Case Study Not Found" };
   }
 
   const title = `${cs.title} | Case Study`;
@@ -34,37 +33,19 @@ export function generateMetadata({
   };
 }
 
-
 export function generateStaticParams(): { slug: string }[] {
   return caseStudies.map((c) => ({ slug: c.slug }));
 }
 
-
-export default function CaseStudyPage({
+export default async function CaseStudyPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-const cs = getCaseStudy(params.slug);
+  const { slug } = await params;
 
-if (!cs) {
-  return (
-    <main className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="text-2xl font-semibold">Case study not found (debug)</h1>
-      <p className="mt-4">Requested slug: <code>{params.slug}</code></p>
-
-      <p className="mt-4 font-semibold">Available slugs:</p>
-      <ul className="mt-2 list-disc pl-6">
-        {caseStudies.map((c) => (
-          <li key={c.slug}>
-            <code>{c.slug}</code>
-          </li>
-        ))}
-      </ul>
-    </main>
-  );
-}
-
+  const cs = getCaseStudy(slug);
+  if (!cs) return notFound();
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
@@ -131,7 +112,10 @@ if (!cs) {
           {cs.tools?.length ? (
             <div className="mt-6 flex flex-wrap gap-2">
               {cs.tools.map((t) => (
-                <span key={t} className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
+                <span
+                  key={t}
+                  className="rounded-full border px-3 py-1 text-xs text-muted-foreground"
+                >
                   {t}
                 </span>
               ))}
@@ -139,27 +123,25 @@ if (!cs) {
           ) : null}
         </section>
       </div>
+
       <section className="mt-16 rounded-3xl border bg-background/60 p-8">
-  <h2 className="text-xl font-semibold">
-    Want similar outcomes?
-  </h2>
+        <h2 className="text-xl font-semibold">Want similar outcomes?</h2>
 
-  <p className="mt-3 max-w-2xl text-muted-foreground">
-    These results came from disciplined operating systems, clear ownership
-    communication, and practical execution. If you’re navigating similar
-    challenges, I’m happy to talk.
-  </p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          These results came from disciplined operating systems, clear ownership
+          communication, and practical execution. If you’re navigating similar
+          challenges, I’m happy to talk.
+        </p>
 
-  <div className="mt-6">
-    <a
-      href="/contact"
-      className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
-    >
-      Start a conversation →
-    </a>
-  </div>
-</section>
-
+        <div className="mt-6">
+          <a
+            href="/contact"
+            className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
+          >
+            Start a conversation →
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
