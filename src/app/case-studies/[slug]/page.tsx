@@ -45,8 +45,26 @@ export default function CaseStudyPage({
 }: {
   params: { slug: string };
 }) {
-  const cs = getCaseStudy(params.slug);
-  if (!cs) return notFound();
+const cs = getCaseStudy(params.slug);
+
+if (!cs) {
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-12">
+      <h1 className="text-2xl font-semibold">Case study not found (debug)</h1>
+      <p className="mt-4">Requested slug: <code>{params.slug}</code></p>
+
+      <p className="mt-4 font-semibold">Available slugs:</p>
+      <ul className="mt-2 list-disc pl-6">
+        {caseStudies.map((c) => (
+          <li key={c.slug}>
+            <code>{c.slug}</code>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
+
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
