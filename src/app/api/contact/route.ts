@@ -15,9 +15,8 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      // If your domain is verified in Resend, this will work.
-      // If not, we'll adjust the "from" in the next step.
-      from: "Brian Killian Consulting <no-reply@briankillianconsulting.com>",
+
+      from: "Brian Killian Consulting <onboarding@resend.dev>",
       to: ["brian@briankillianconsulting.com"],
       replyTo: email,
       subject: "New site inquiry",
