@@ -268,7 +268,8 @@ type CaseStudyCardProps = {
   context: string;
   outcome: string;
   bullets: string[];
-  metrics: string;
+  metrics: string[];
+
 };
 
 const CaseStudyCard = ({
@@ -280,6 +281,7 @@ const CaseStudyCard = ({
   bullets,
   metrics,
 }: CaseStudyCardProps) => (
+
   <Link href={href} className="block">
     <Card className="rounded-3xl shadow-sm hover:shadow-md transition">
       <CardContent className="p-6 space-y-4">
@@ -303,7 +305,7 @@ const CaseStudyCard = ({
         </ul>
 
         <div className="rounded-2xl border bg-background/60 p-4 text-sm text-muted-foreground">
-          <strong>Result:</strong> {metrics}
+         <strong>Results:</strong> {metrics.join(" • ")}
         </div>
       </CardContent>
     </Card>
