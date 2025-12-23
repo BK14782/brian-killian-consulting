@@ -14,17 +14,26 @@ export async function POST(req: Request) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
+      from: "Brian Killian Consulting <no-reply@briankillianconsulting.com>",
 
-      from: "Brian Killian Consulting <onboarding@resend.dev>",
       to: ["brian@briankillianconsulting.com"],
       replyTo: email,
       subject: "New site inquiry",
       text: `New inquiry from website:\n\nFirst name: ${firstName}\nLast name: ${lastName}\nEmail: ${email}\n`,
     });
 
-    return NextResponse.json({ ok: true });
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json(
+        { error: error.message ?? "Resend failed to send" },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ ok: true, id: data?.id });
   } catch (err) {
+    console.error("API error:", err);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 }
