@@ -1,5 +1,39 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const cs = getCaseStudy(params.slug);
+
+  if (!cs) {
+    return {
+      title: "Case Study Not Found",
+    };
+  }
+
+  const title = `${cs.title} | Case Study`;
+  const description = cs.outcome;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
+
 
 export function generateStaticParams(): { slug: string }[] {
   return caseStudies.map((c) => ({ slug: c.slug }));

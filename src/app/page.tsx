@@ -22,6 +22,7 @@ const CardContent = ({ className = "", children }: any) => (
 );
 
 const Button = ({ className = "", variant, children, ...props }: any) => {
+
   const base =
     "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium transition border";
   const styles =
@@ -259,8 +260,6 @@ type CaseStudy = {
   slug: string;
 };
 
-
-type CaseStudyCardProps = CaseStudy;
 
 type CaseStudyCardProps = {
   href: string;
