@@ -1,6 +1,12 @@
 "use client";
 
-import { caseStudiesWithHref } from "@/lib/caseStudies";
+import { caseStudies } from "@/lib/caseStudies";
+
+const caseStudiesWithHref = caseStudies.map((c) => ({
+  ...c,
+  href: `/case-studies/${c.slug}`,
+}));
+
 
 import Link from "next/link";
 
