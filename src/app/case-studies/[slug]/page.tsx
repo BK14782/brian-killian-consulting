@@ -121,6 +121,27 @@ export default function CaseStudyPage({
           ) : null}
         </section>
       </div>
+      <section className="mt-16 rounded-3xl border bg-background/60 p-8">
+  <h2 className="text-xl font-semibold">
+    Want similar outcomes?
+  </h2>
+
+  <p className="mt-3 max-w-2xl text-muted-foreground">
+    These results came from disciplined operating systems, clear ownership
+    communication, and practical execution. If you’re navigating similar
+    challenges, I’m happy to talk.
+  </p>
+
+  <div className="mt-6">
+    <a
+      href="/contact"
+      className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
+    >
+      Start a conversation →
+    </a>
+  </div>
+</section>
+
     </main>
   );
 }
