@@ -1,5 +1,9 @@
 "use client";
 
+import { caseStudiesWithHref } from "@/lib/caseStudies";
+
+import Link from "next/link";
+
 import React, { useMemo, useState } from "react";
 
 import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
@@ -116,71 +120,6 @@ const Nav = ({ active, onNav }: NavProps) => {
     </div>
   );
 }; 
-
-const caseStudies = [
-  {
-    tag: "Forecasting & Controls",
-    title: "Restoring Forecast Accuracy and NOI Predictability",
-    context:
-      "Campus-style commercial asset experiencing recurring budget surprises, change orders, and owner confidence erosion.",
-    outcome:
-      "Forecast accuracy stabilized and month-end volatility reduced through disciplined scoping and owner-aligned reporting.",
-    bullets: [
-      "Forecast variance reduced ~50% within 3–5 cycles",
-      "NOI outcomes stabilized within ±2.5%",
-      "Month-end surprises largely eliminated",
-    ],
-    metrics:
-      "Owner confidence increased and reactive performance calls dropped significantly.",
-  },
-  {
-    tag: "Capital Governance",
-    title: "Accelerating Approvals Through Proposal Discipline",
-    context:
-      "Operational and capital proposals routinely required multiple revisions, delaying execution and increasing owner friction.",
-    outcome:
-      "Approval velocity improved by aligning proposal structure, language, and decision framing with owner expectations.",
-    bullets: [
-      "Approval cycles reduced from 3–4 weeks to 3–4 days",
-      "First-pass approvals became the norm",
-      "Owner follow-ups and clarification requests reduced",
-    ],
-    metrics:
-      "Teams reclaimed time for property walks and tenant engagement, reducing downstream escalations by ~30–40%.",
-  },
-  {
-    tag: "Portfolio Operations",
-    title: "Reducing Variance Volatility Across a Siloed Portfolio",
-    context:
-      "Office and industrial portfolio suffering from fragmented communication, inconsistent data, and reactive ownership oversight.",
-    outcome:
-      "Cross-functional alignment restored clarity, predictability, and trust without increasing reporting burden.",
-    bullets: [
-      "Variance volatility reduced by up to 90%",
-      "Ownership cadence normalized to bi-weekly",
-      "Leadership involvement scaled back organically",
-    ],
-    metrics:
-      "Trust became an operating asset, enabling faster decisions and fewer interruptions.",
-  },
-  {
-    tag: "Residential Lease-Up",
-    title: "Driving Predictable Absorption Without Over-Concessioning",
-    context:
-      "Ground-up residential lease-ups requiring disciplined pricing, concession strategy, and operational readiness.",
-    outcome:
-      "Lease-up velocity achieved while protecting long-term rent roll and asset value.",
-    bullets: [
-      "Concessions deployed strategically, not reactively",
-      "Stabilization achieved without rent roll erosion",
-      "Clear leasing guardrails aligned with return targets",
-    ],
-    metrics:
-      "Ownership avoided panic-driven discounting while maintaining predictable lease-up performance.",
-  },
-];
-
-
 
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
@@ -308,55 +247,64 @@ type CaseStudy = {
   title: string;
   outcome: string;
   context: string;
-  bullets?: string[];
-  metrics: string[];
-  href?: string; // optional future link to dedicated page
+  bullets: string[];
+  metrics: string;
+  href: string;
+  slug: string;
 };
+
 
 type CaseStudyCardProps = CaseStudy;
 
-const CaseStudyCard = ({
-  tag,
-  title,
-  context,
-  outcome,
-  bullets,
-  metrics,
-}: {
+type CaseStudyCardProps = {
+  href: string;
   tag: string;
   title: string;
   context: string;
   outcome: string;
   bullets: string[];
   metrics: string;
-}) => (
-  <Card className="rounded-3xl shadow-sm hover:shadow-md transition">
-    <CardContent className="p-6 space-y-4">
-      <Badge variant="secondary" className="w-fit">
-        {tag}
-      </Badge>
+};
 
-      <h3 className="text-lg font-semibold leading-tight">{title}</h3>
+const CaseStudyCard = ({
+  href,
+  tag,
+  title,
+  context,
+  outcome,
+  bullets,
+  metrics,
+}: CaseStudyCardProps) => (
+  <Link href={href} className="block">
+    <Card className="rounded-3xl shadow-sm hover:shadow-md transition">
+      <CardContent className="p-6 space-y-4">
+        <Badge variant="secondary" className="w-fit">
+          {tag}
+        </Badge>
 
-      <p className="text-sm text-muted-foreground">{context}</p>
+        <h3 className="text-lg font-semibold leading-tight">{title}</h3>
 
-      <p className="text-sm font-medium">{outcome}</p>
+        <p className="text-sm text-muted-foreground">{context}</p>
 
-      <ul className="space-y-2 text-sm">
-        {bullets.map((b) => (
-          <li key={b} className="flex items-start gap-2">
-            <Check className="mt-0.5 h-4 w-4 flex-shrink-0" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
+        <p className="text-sm font-medium">{outcome}</p>
 
-      <div className="rounded-2xl border bg-background/60 p-4 text-sm text-muted-foreground">
-        <strong>Result:</strong> {metrics}
-      </div>
-    </CardContent>
-  </Card>
+        <ul className="space-y-2 text-sm">
+          {bullets.map((b) => (
+            <li key={b} className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4 flex-shrink-0" />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="rounded-2xl border bg-background/60 p-4 text-sm text-muted-foreground">
+          <strong>Result:</strong> {metrics}
+        </div>
+      </CardContent>
+    </Card>
+  </Link>
 );
+
 
 
 const Footer = () => (
@@ -560,9 +508,10 @@ export default function Page() {
         subtitle="Representative examples of outcomes and methods. Details can be anonymized for confidentiality."
       >
         <div className="grid gap-4 lg:grid-cols-2">
-          {caseStudies.map((c) => (
-            <CaseStudyCard key={c.title} {...c} />
-          ))}
+{caseStudiesWithHref.map((c) => (
+  <CaseStudyCard key={c.slug} {...c} />
+))}
+
         </div>
       </Section>
 

@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
 
-export function generateStaticParams() {
+export function generateStaticParams(): { slug: string }[] {
   return caseStudies.map((c) => ({ slug: c.slug }));
 }
+
 
 export default function CaseStudyPage({
   params,
