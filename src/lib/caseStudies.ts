@@ -11,117 +11,126 @@ export type CaseStudy = {
   tools?: string[];
   notes?: string;
 };
+export type CaseStudyWithHref = CaseStudy & {
+  href: string;
+};
 
 export const caseStudies: CaseStudy[] = [
-  {
-    slug: "forecasting-controls",
-    tag: "Forecasting + NOI predictability",
-    title: "Tightened forecasting and reduced variance volatility across a campus portfolio",
-    context:
-      "Portfolio reporting had high volatility and repeated surprises due to unclear scope, inconsistent assumptions, and reactive updates.",
-    outcome:
-      "Created predictable reporting cadence and clearer scope control so ownership saw fewer surprises and cleaner monthly narratives.",
-    bullets: [
-      "Standardized variance narrative + forward-looking risk flags",
-      "Aligned vendor scope to owner expectations before approvals",
-      "Introduced weekly “no surprises” updates ahead of MOR",
-    ],
-    metrics: [
-      "Reduced month-end variance by ~50% on average within 4–6 months",
-      "Improved NOI predictability to within ~2.5% once controls stabilized",
-      "Fewer change orders by tightening scopes before work began",
-    ],
-    whatIDid: [
-      "Built a simple forecasting standard (assumptions, timing, owner expectations)",
-      "Coached teams to verify field conditions vs. vendor-only inputs",
-      "Used weekly calls to surface risks early, not at month-end",
-    ],
-    timeline: "4–6 months to fully stabilize; visible improvement within ~2 cycles",
-    tools: ["Owner reporting cadence", "Vendor scope controls", "Variance standards"],
-  },
+  
+    {
+  slug: "forecasting-controls",
+  tag: "Forecast stability",
+  title: "Forecast stability through disciplined scope control and reporting cadence",
+  context:
+    "Multi-building campus-style commercial portfolio with recurring operating and capital activity across multiple vendors and internal teams.",
+  outcome:
+    "Restored predictable forecasting by tightening scope discipline and introducing a proactive reporting cadence that reduced surprises.",
+  bullets: [
+    "Forecast assumptions standardized and documented",
+    "Vendor scopes clarified prior to execution",
+    "Risks surfaced early through weekly updates",
+  ],
+  metrics: [
+    "Month-end variance reduced by ~50% within 4–6 months",
+    "NOI predictability improved to within ~±2.5%",
+    "Fewer change orders due to clearer upfront scoping",
+  ],
+  whatIDid: [
+    "Introduced a simple forecasting standard tied to assumptions and timing",
+    "Realigned vendor scope practices to reduce downstream change orders",
+    "Implemented weekly risk-focused updates ahead of monthly reporting",
+  ],
+  timeline: "Visible improvement within ~2 cycles; full stabilization over 4–6 months",
+},
+
 
   {
-    slug: "approval-cycle-time",
-    tag: "Approvals + decision velocity",
-    title: "Cut proposal back-and-forth and accelerated approvals for ownership decisions",
-    context:
-      "Approval packages were inconsistent and often reused from older templates, driving rework, delays, and owner follow-ups.",
-    outcome:
-      "Created repeatable proposal standards that made approvals faster and reduced noise so the team had more time for tenant-facing work.",
-    bullets: [
-      "Rebuilt proposal templates and formatting standards",
-      "Created step-by-step submission instructions",
-      "Trained managers on “owner-ready” packages",
-    ],
-    metrics: [
-      "Reduced approval cycle time from ~3–4 weeks to ~3–4 days",
-      "Moved to first-pass approvals within ~90 days",
-      "Reduced owner escalations by ~30–40% after ~2 cycles (time freed for proactive walks/tenant touchpoints)",
-    ],
-    whatIDid: [
-      "Mapped where packages broke (language, formatting, missing assumptions)",
-      "Built a checklist and examples of “good” submissions",
-      "Coached managers and QC’d early submissions until consistent",
-    ],
-    timeline: "~90 days to normalize first-pass approvals",
-    tools: ["Templates + checklists", "Training + QC loop", "Owner communications cadence"],
-  },
+  slug: "approval-cycle-time",
+  tag: "Decision velocity",
+  title: "Accelerating ownership approvals through proposal discipline",
+  context:
+    "Multi-asset commercial portfolio requiring frequent operational and capital approvals across varying ownership priorities.",
+  outcome:
+    "Reduced approval friction by standardizing proposal structure and decision framing.",
+  bullets: [
+    "Approval packages rebuilt for clarity and consistency",
+    "Submission standards aligned with ownership decision-making",
+    "Manager training reduced rework and delays",
+  ],
+  metrics: [
+    "Approval cycle time reduced from ~3–4 weeks to ~3–4 days",
+    "First-pass approvals normalized within ~90 days",
+    "Owner follow-ups and revisions declined significantly",
+  ],
+  whatIDid: [
+    "Rebuilt proposal templates to separate context, ask, and assumptions",
+    "Created submission guidelines and examples of owner-ready packages",
+    "Reviewed early submissions until standards became routine",
+  ],
+  timeline: "~90 days to normalize first-pass approvals",
+},
 
-  {
-    slug: "cross-functional-realignment",
-    tag: "Cross-functional operating model",
-    title: "Reintegrated siloed teams to stabilize performance and reduce ownership involvement",
-    context:
-      "Commercial portfolio (mostly office with some industrial) was operating in silos: ops, accounting, engineering, and construction lacked shared cadence and translation.",
-    outcome:
-      "Repaired team-to-team communication so reporting and decisions became consistent, reducing volatility and reactive owner involvement.",
-    bullets: [
-      "Set shared cadence + single point of contact expectations",
-      "Trained each team on how other functions think/communicate",
-      "Rebuilt rapport and escalations path with clear ownership",
-    ],
-    metrics: [
-      "Reduced variance volatility significantly (up to ~90% once teams shared timely updates)",
-      "Returned ownership to a predictable bi-weekly cadence after trust rebuilt",
-      "Stabilized communication and reduced reactive “status chasing” within ~100 days",
-    ],
-    whatIDid: [
-      "Translated norms across teams (accounting absolutes vs ops pragmatism, etc.)",
-      "Led guided working sessions to establish shared workflows",
-      "Stepped out once the system held without facilitation",
-    ],
-    timeline: "~100 days to rebuild trust and normalize operating rhythm",
-    tools: ["Cross-functional cadence", "Escalation model", "Reporting discipline"],
-  },
 
-  {
-    slug: "lease-up-concessions",
-    tag: "Lease-up strategy",
-    title: "Delivered ground-up lease-ups with controlled concessions and clear performance tracking",
-    context:
-      "Brand-new ground-up lease-ups required pace without eroding long-term rent integrity; concessions were a primary lever.",
-    outcome:
-      "Balanced velocity and rent health by tracking leasing funnels, concessions, and competitive positioning in real time.",
-    bullets: [
-      "Tracked concession strategy against absorption targets",
-      "Aligned leasing + ops + marketing to weekly decision cadence",
-      "Kept ownership informed with clear forward-looking reporting",
-    ],
-    metrics: [
-      "Concessions used as a controlled lever (tracked weekly vs absorption targets)",
-      "Improved decision clarity by tying incentives to measurable funnel health",
-      "Reduced reactive strategy shifts by standardizing weekly reporting",
-    ],
-    whatIDid: [
-      "Built weekly lease-up dashboards (traffic → tours → apps → leases)",
-      "Created decision rules for when to adjust concessions",
-      "Kept investor reporting focused on pace, rent health, and risk",
-    ],
-    timeline: "Ongoing through lease-up; weekly cadence throughout",
-    tools: ["Leasing funnel KPIs", "Concession governance", "Weekly reporting"],
-  },
+ {
+  slug: "cross-functional-realignment",
+  tag: "Operating alignment",
+  title: "Variance volatility reduction through cross-functional reintegration",
+  context:
+    "Commercial portfolio consisting of approximately 70% office and 30% industrial warehouse properties.",
+  outcome:
+    "Stabilized performance by reintegrating siloed teams and restoring disciplined communication.",
+  bullets: [
+    "Cross-team communication norms re-established",
+    "Single source of truth for ownership updates",
+    "Clear escalation paths and shared cadence",
+  ],
+  metrics: [
+    "Variance volatility reduced by up to ~90%",
+    "Ownership involvement reduced to bi-weekly cadence",
+    "Operational trust restored within ~100 days",
+  ],
+  whatIDid: [
+    "Trained teams on how other functions operate and communicate",
+    "Facilitated structured cross-team working sessions",
+    "Centralized ownership communication before stepping back",
+  ],
+  timeline: "~100 days to full stabilization",
+},
+
+
+{
+  slug: "lease-up-concessions",
+  tag: "Lease-up strategy",
+  title: "Delivering lease-up velocity without over-concessioning",
+  context:
+    "Ground-up residential lease-up projects requiring competitive positioning while protecting long-term rent integrity.",
+  outcome:
+    "Achieved predictable absorption by treating concessions as a controlled strategic lever.",
+  bullets: [
+    "Weekly funnel tracking tied concessions to absorption",
+    "Clear decision rules replaced reactive pricing",
+    "Ownership reporting focused on pace and rent health",
+  ],
+  metrics: [
+    "Concessions deployed deliberately rather than reactively",
+    "Lease-up velocity achieved without rent roll erosion",
+    "Reduced strategy churn through consistent reporting cadence",
+  ],
+  whatIDid: [
+    "Built weekly lease-up dashboards across the full funnel",
+    "Established concession adjustment thresholds",
+    "Kept ownership focused on forward-looking performance",
+  ],
+  timeline: "Ongoing throughout lease-up",
+},
+
 ];
+export const caseStudiesWithHref: CaseStudyWithHref[] = caseStudies.map((c) => ({
+  ...c,
+  href: `/case-studies/${c.slug}`,
+}));
 
-export function getCaseStudy(slug: string) {
+export function getCaseStudy(slug: string): CaseStudy | undefined {
   return caseStudies.find((c) => c.slug === slug);
 }
+
