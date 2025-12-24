@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
+import LeadCaptureButton from "@/components/LeadCaptureButton";
+
 
 export async function generateMetadata({
   params,
@@ -138,12 +140,8 @@ export default async function CaseStudyPage({
         </p>
 
         <div className="mt-6">
-          <a
-            href="/contact"
-            className="inline-flex items-center rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:opacity-90"
-          >
-            Start a conversation →
-          </a>
+          <LeadCaptureButton />
+
         </div>
       </section>
     </main>
