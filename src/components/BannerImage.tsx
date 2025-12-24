@@ -59,7 +59,8 @@ export default function BannerImage({
           priority={priority}
           width={1600}
           height={height}
-          className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px]"
+          className="h-[120px] w-full object-cover sm:h-[160px] md:h-[200px]"
+
         />
       </div>
 
