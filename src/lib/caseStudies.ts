@@ -10,6 +10,7 @@ export type CaseStudy = {
   timeline?: string;
   tools?: string[];
   notes?: string;
+  heroImage?: string;
 };
 export type CaseStudyWithHref = CaseStudy & {
   href: string;
@@ -41,6 +42,8 @@ export const caseStudies: CaseStudy[] = [
     "Implemented weekly risk-focused updates ahead of monthly reporting",
   ],
   timeline: "Visible improvement within ~2 cycles; full stabilization over 4–6 months",
+  heroImage: "/case-studies/forecasting-controls.jpg",
+
 },
 
 
@@ -68,6 +71,8 @@ export const caseStudies: CaseStudy[] = [
     "Reviewed early submissions until standards became routine",
   ],
   timeline: "~90 days to normalize first-pass approvals",
+  heroImage: "/case-studies/approval-cycle-time.jpg",
+
 },
 
 
@@ -95,6 +100,8 @@ export const caseStudies: CaseStudy[] = [
     "Centralized ownership communication before stepping back",
   ],
   timeline: "~100 days to full stabilization",
+  heroImage: "/case-studies/cross-functional-realignment.jpg",
+
 },
 
 
@@ -122,6 +129,8 @@ export const caseStudies: CaseStudy[] = [
     "Kept ownership focused on forward-looking performance",
   ],
   timeline: "Ongoing throughout lease-up",
+  heroImage: "/case-studies/lease-up-concessions.jpg",
+
 },
 
 ];

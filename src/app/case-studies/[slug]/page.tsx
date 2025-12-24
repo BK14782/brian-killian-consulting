@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
 import LeadCaptureButton from "@/components/LeadCaptureButton";
+import Image from "next/image";
+
 
 
 export async function generateMetadata({
@@ -50,7 +52,20 @@ export default async function CaseStudyPage({
   if (!cs) return notFound();
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12">
+    <main className="relative mx-auto max-w-6xl px-4 py-12">
+        {cs.heroImage ? (
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src={cs.heroImage}
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
+    ) : null}
+
       <div className="max-w-3xl">
         <div className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-xs">
           {cs.tag}
