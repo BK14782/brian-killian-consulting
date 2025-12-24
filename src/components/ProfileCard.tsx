@@ -19,6 +19,10 @@ export default function ProfileCard() {
           Principal, Brian Killian Consulting
         </div>
 
+<div className="mt-1 text-xs text-muted-foreground">
+          Seattle-based • Real estate operations consulting
+        </div>
+
         <Link
           href="https://www.linkedin.com/in/briannkillian"
           target="_blank"
