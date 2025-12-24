@@ -7,6 +7,7 @@ const caseStudiesWithHref = caseStudies.map((c) => ({
   href: `/case-studies/${c.slug}`,
 }));
 
+import ProfileCard from "@/components/ProfileCard";
 
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 
@@ -135,6 +136,8 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
 const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
 
+
+
 <header className="relative overflow-hidden">
   {/* Warm background wash */}
   <div className="absolute inset-0 -z-10">
@@ -192,6 +195,9 @@ const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
     </div>
   </div>
 </header>
+
+
+
 
 );
 
@@ -352,7 +358,12 @@ export default function Page() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav active={active} onNav={scrollTo}
       onLetsTalk={() => setLeadOpen(true)} />
-      <Hero onNav={scrollTo} />
+     <Hero onNav={scrollTo} />
+
+<div className="mx-auto max-w-6xl px-4 mt-10">
+  <ProfileCard />
+</div>
+
 
 <Section
   id="why"
