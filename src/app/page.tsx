@@ -6,15 +6,11 @@ const caseStudiesWithHref = caseStudies.map((c) => ({
   ...c,
   href: `/case-studies/${c.slug}`,
 }));
-
 import ProfileCard from "@/components/ProfileCard";
-
 import LeadCaptureModal from "@/components/LeadCaptureModal";
-
 import Link from "next/link";
-
 import React, { useMemo, useState } from "react";
-
+import FadeIn from "@/components/FadeIn";
 import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
 const Card = ({ className = "", children }: any) => (
   <div className={`border bg-background shadow-sm ${className}`}>{children}</div>
@@ -133,72 +129,69 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
   );
 }; 
 
-const Hero = ({ onNav }: { onNav: (id: string) => void }) => (
 
+ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
+  <header className="relative overflow-hidden">
+    {/* Warm background wash */}
+    <div className="absolute inset-0 -z-10">
+      <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-amber-500/15 blur-3xl" />
+      <div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-sky-500/15 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/60" />
+    </div>
 
+    <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div className="max-w-3xl">
+        <FadeIn delayMs={0}>
+          <div className="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground">
+            <span className="h-2 w-2 rounded-full bg-amber-500/60" />
+            Nationwide consulting • Commercial & residential portfolios
+          </div>
+        </FadeIn>
 
+        <FadeIn delayMs={80}>
+          <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
+            Clear thinking and steady execution for complex real estate portfolios
+          </h1>
+        </FadeIn>
 
-<header className="relative overflow-hidden">
-  {/* Warm background wash */}
-  <div className="absolute inset-0 -z-10">
-    <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-amber-500/10 blur-3xl" />
-    <div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-sky-500/10 blur-3xl" />
-    <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/60" />
-  </div>
+        <FadeIn delayMs={160}>
+          <p className="mt-5 text-base text-muted-foreground md:text-lg">
+            With over 20 years in property and asset operations, I help owners and investors bring structure,
+            visibility, and confidence to portfolio decisions.
+          </p>
+        </FadeIn>
 
-  <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-    <div className="max-w-3xl">
-      <div className="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground">
-        <span className="h-2 w-2 rounded-full bg-amber-500/60" />
-        Nationwide consulting • Commercial & residential portfolios
-      </div>
+        <FadeIn delayMs={240}>
+          <div className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
+            <div className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4" />
+              20+ years in property & asset operations
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4" />
+              Office, mixed-use, industrial, multifamily
+            </div>
+            <div className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4" />
+              Institutional + private ownership experience
+            </div>
+          </div>
+        </FadeIn>
 
-      <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
-        Clear thinking and steady execution for complex real estate portfolios
-      </h1>
+        <FadeIn delayMs={320}>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Button onClick={onLetsTalk}>
+              Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
 
-      <p className="mt-5 text-base text-muted-foreground md:text-lg">
-        With over 20 years in property and asset operations, I help owners and investors bring structure,
-        visibility, and confidence to portfolio decisions.
-      </p>
-
-      {/* Trust strip */}
-      <div className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
-        <div className="flex items-start gap-2">
-          <Check className="mt-0.5 h-4 w-4" />
-          20+ years in property & asset operations
-        </div>
-        <div className="flex items-start gap-2">
-          <Check className="mt-0.5 h-4 w-4" />
-          Office, mixed-use, industrial, multifamily
-        </div>
-        <div className="flex items-start gap-2">
-          <Check className="mt-0.5 h-4 w-4" />
-          Institutional + private ownership experience
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-8 flex flex-wrap items-center gap-3">
-        <a
-          href="#contact"
-          className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-        >
-          Book a free 30-minute portfolio review
-          <ChevronRight className="ml-2 h-4 w-4" />
-        </a>
-
-        <div className="text-sm text-muted-foreground">
-          No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
-        </div>
+            <div className="text-sm text-muted-foreground">
+              No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </div>
-  </div>
-</header>
-
-
-
-
+  </header>
 );
 
 const services = [
@@ -265,10 +258,11 @@ type CaseStudy = {
   outcome: string;
   context: string;
   bullets: string[];
-  metrics: string;
+  metrics: string[];
   href: string;
   slug: string;
 };
+
 
 
 type CaseStudyCardProps = {
@@ -342,28 +336,29 @@ const Footer = () => (
   </footer>
 );
 
-
 export default function Page() {
+  const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
-  const [leadOpen, setLeadOpen] = useState(false); 
 
   const scrollTo = (id: string) => {
-    setActive(id);
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-
     <div className="min-h-screen bg-background text-foreground">
-      <Nav active={active} onNav={scrollTo}
-      onLetsTalk={() => setLeadOpen(true)} />
-     <Hero onNav={scrollTo} />
+      <Nav
+        active={active}
+        onNav={scrollTo}
+        onLetsTalk={() => setLeadOpen(true)}
+      />
 
-<div className="mx-auto max-w-6xl px-4 mt-10">
-  <ProfileCard />
-</div>
+      <Hero onLetsTalk={() => setLeadOpen(true)} />
 
+      <div className="mx-auto max-w-6xl px-4 mt-10">
+        <ProfileCard />
+      </div>
 
 <Section
   id="why"
@@ -544,7 +539,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
       </Section>
 
 <Section
-  id="performance"
+  id="asset-performance"
   kicker="Performance philosophy"
   title="How I think about asset performance"
   subtitle="Asset performance is NOI under constraints—cashflow timing, reserves, debt service, and covenant discipline."
@@ -731,13 +726,14 @@ Across portfolios, property types, and ownership structures, the work varies—b
     Email Brian
   </a>
 
-  <button
-    type="button"
-    disabled
-    className="rounded-2xl border px-4 py-2 opacity-60 cursor-not-allowed"
+  <a
+    href="https://calendly.com/killianbrian82/30min"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
   >
-    Scheduling link (coming soon)
-  </button>
+    Schedule a Call
+  </a>
 
   <button
     type="button"
@@ -747,8 +743,6 @@ Across portfolios, property types, and ownership structures, the work varies—b
     Capabilities PDF (coming soon)
   </button>
 </div>
-
-
 
             </CardContent>
           </Card>
