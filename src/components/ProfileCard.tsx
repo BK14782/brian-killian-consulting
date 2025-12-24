@@ -10,6 +10,7 @@ export default function ProfileCard() {
         width={96}
         height={96}
         className="rounded-full"
+        unoptimized
       />
 
       <div>
