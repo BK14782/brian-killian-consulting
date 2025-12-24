@@ -60,7 +60,7 @@ export default async function CaseStudyPage({
       alt=""
       fill
       priority
-      className="object-cover opacity-45"
+      className="object-cover opacity-55"
     />
     <div className="absolute inset-0 bg-background/65" />
     <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
