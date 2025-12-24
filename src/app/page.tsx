@@ -443,15 +443,16 @@ export default function Page() {
   id="performance"
   kicker="Performance Philosophy"
   title="How I think about performance"
-  subtitle="Clear metrics. Fewer surprises. Decisions that compound."
+  subtitle="Operating clarity, decision discipline, and execution systems that reduce noise."
+
 >
   <div className="grid gap-4 lg:grid-cols-3">
     <Card className="rounded-3xl shadow-sm lg:col-span-2">
       <CardContent className="p-6">
         <p className="text-sm text-muted-foreground">
-          I approach real estate performance through a small set of disciplined, repeatable principles.
-          Across portfolios, property types, and ownership structures, the work is different—but the
-          performance logic stays the same.
+          I approach real estate performance through a small set of disciplined, repeatable operating principles.
+Across portfolios, property types, and ownership structures, the work varies—but the execution logic stays consistent.
+
         </p>
 
         <div className="mt-6 space-y-4">
@@ -459,27 +460,30 @@ export default function Page() {
             {
               title: "Predictability matters more than perfection",
               body:
-                "Owners don’t expect zero variance—they expect to understand it. I focus on tightening forecast accuracy, reducing surprise, and ensuring decisions are informed by operational reality (not just prior-year actuals).",
+                "Owners don’t expect zero variance—they expect to understand it. I focus on tightening forecast accuracy, reducing surprise, and ensuring teams surface operational risk early instead of explaining it late."
             },
             {
               title: "Decision quality is a performance metric",
               body:
-                "Slow approvals, rework, and unclear proposals create hidden costs. I design systems that shorten decision cycles, improve first-pass approvals, and keep leadership discussions moving forward instead of backward.",
+                "Slow approvals, unclear proposals, and rework create hidden operating drag. I design systems that shorten decision cycles, improve first-pass approvals, and keep leadership discussions moving forward instead of backward."
+
             },
             {
               title: "Communication is an operating system",
               body:
-                "Most volatility isn’t financial—it’s informational. When teams operate in silos, performance suffers. I align operations, accounting, engineering, and construction so accurate information moves quickly and consistently.",
+                "Most volatility starts as informational, not financial. When teams operate in silos, performance degrades. I align operations, accounting, engineering, and construction so context travels with the data."
+
             },
             {
               title: "Time is a controllable asset",
               body:
-                "When teams spend less time reacting, they gain time to prevent issues. Reducing back-and-forth, escalations, and noise creates capacity for proactive work that improves outcomes across the portfolio.",
+                "When teams spend less time reacting, they gain time to prevent issues. Reducing back-and-forth, escalations, and noise creates capacity for proactive work that compounds across the portfolio."
             },
             {
               title: "Metrics must reflect reality—not just reporting",
               body:
-                "I focus on metrics that mirror how assets actually operate: forecast variance, decision velocity, escalation frequency, lease-up efficiency, and stabilization timelines—not vanity KPIs.",
+                "I focus on metrics that reflect how work actually happens: forecast variance trends, decision velocity, escalation frequency, lease-up efficiency, and stabilization timelines—not vanity KPIs."
+
             },
           ].map((p) => (
             <div key={p.title} className="rounded-2xl border bg-background/60 p-4">
@@ -543,62 +547,68 @@ export default function Page() {
   id="performance"
   kicker="Performance philosophy"
   title="How I think about asset performance"
-  subtitle="Reliable outcomes come from disciplined inputs, clear ownership alignment, and teams that operate with shared context."
+  subtitle="Asset performance is NOI under constraints—cashflow timing, reserves, debt service, and covenant discipline."
 >
+  <p className="mb-6 max-w-3xl text-sm text-muted-foreground">
+    Once operating discipline is in place, financial performance becomes manageable
+    instead of reactive. This is where execution turns into protected cashflow and predictable lender outcomes.
+  </p>
+
   <div className="grid gap-4 md:grid-cols-2">
-    {[
-      {
-        title: "Predictability over perfection",
-        desc: "Owners don’t expect zero variance — they expect no surprises. Performance improves when teams understand expectations, pressure-test assumptions, and surface risks early.",
-        bullets: [
-          "Forecast accuracy tightened ~50% within 2–3 cycles",
-          "Variance conversations moved upstream",
-          "NOI outcomes stayed within ±2.5%",
-        ],
-      },
-      {
-        title: "Clarity beats volume",
-        desc: "More reports don’t equal better decisions. Clear narratives, consistent formats, and owner-aligned language reduce friction and speed approvals.",
-        bullets: [
-          "Approval cycles reduced from weeks to days",
-          "First-pass approvals became standard",
-          "Owner follow-ups and rework materially reduced",
-        ],
-      },
-      {
-        title: "Systems before heroics",
-        desc: "Strong performance is repeatable. I focus on workflows, decision lanes, and governance so results don’t depend on individual effort alone.",
-        bullets: [
-          "Standardized proposal and reporting templates",
-          "Clear approval authority by role",
-          "Reduced operational fire drills",
-        ],
-      },
-      {
-        title: "Trust is an operating asset",
-        desc: "When teams share context and communicate in each other’s language, volatility drops and leadership involvement naturally scales back.",
-        bullets: [
-          "Cross-team alignment reduced variance volatility",
-          "Ownership cadence normalized to bi-weekly",
-          "Leadership time shifted from troubleshooting to planning",
-        ],
-      },
-    ].map((x) => (
-      <Card key={x.title} className="rounded-3xl shadow-sm">
-        <CardContent className="p-6">
-          <div className="text-base font-semibold">{x.title}</div>
-          <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
-          <ul className="mt-4 space-y-2 text-sm">
-            {x.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2">
-                <Check className="mt-0.5 h-4 w-4 text-muted-foreground" />
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-    ))}
+   {[
+  {
+    title: "Cashflow is the truth",
+    desc: "I manage performance the way a lender does: rent collections → operating costs → reserves → debt service. NOI matters, but liquidity timing and controllable levers matter more.",
+    bullets: [
+      "Separate paper variance vs. cash variance",
+      "Track timing risk (reimbursements, CAM true-ups, capex draws)",
+      "Protect debt service before optional spend",
+    ],
+  },
+  {
+    title: "Covenant discipline (DSCR + triggers)",
+    desc: "Loan covenants are guardrails. I monitor DSCR and break-even trends forward-looking, flag risks early, and build a cushion plan before coverage compresses.",
+    bullets: [
+      "Monitor DSCR trajectory, not just point-in-time",
+      "Identify top 2–3 covenant drift triggers (downtime, credits, repairs)",
+      "Create 60–120 day action plan to preserve cushion",
+    ],
+  },
+  {
+    title: "Reserves + capital planning",
+    desc: "Reserves aren’t a line item—they’re a schedule. I run capex/tenant spend with governance so commitments match funding, timing, and approval lanes.",
+    bullets: [
+      "Capex and TI/LC tracked like a forecast, not a wish list",
+      "Spend tied to payback, risk reduction, and covenant impact",
+      "Avoid last-minute capital calls and reactive deferrals",
+    ],
+  },
+  {
+    title: "Lender-ready reporting",
+    desc: "Clean, consistent reporting prevents scrambling. I focus on a clear narrative: what changed, why it matters, and what we’re doing next—framed in capital terms.",
+    bullets: [
+      "Month-end package + mid-month risk check cadence",
+      "Decision framing: payback, downside risk, covenant impact",
+      "Fewer surprises, faster alignment with ownership/debt partners",
+    ],
+  },
+].map((x) => (
+  <Card key={x.title} className="rounded-3xl shadow-sm">
+    <CardContent className="p-6">
+      <div className="text-base font-semibold">{x.title}</div>
+      <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
+      <ul className="mt-4 space-y-2 text-sm">
+        {x.bullets.map((b) => (
+          <li key={b} className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4 text-muted-foreground" />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+    </CardContent>
+  </Card>
+))}
+
   </div>
 </Section>
 
