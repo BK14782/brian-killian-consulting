@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import SchemaPerson from "@/components/SchemaPerson";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Brian Killian Consulting",
   },
   description:
-    "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+    "Nationwide operational and financial advisory for commercial/residential real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   alternates: {
     canonical: "https://briankillianconsulting.com",
   },
@@ -34,13 +36,13 @@ export const metadata: Metadata = {
     siteName: "Brian Killian Consulting",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+      "Nationwide operational and financial advisory for commercial/residential real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Brian Killian Consulting | Commercial Property & Portfolio Strategy",
     description:
-      "Nationwide operational and financial advisory for commercial real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
+      "Nationwide operational and financial advisory for commercial/residential real estate, specializing in operational reporting, budgeting, business planning, portfolio strategy, asset performance, capital planning, and owner/investor reporting.",
   },
 };
 
@@ -66,8 +68,10 @@ export default function RootLayout({
       </Script>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
+  <SchemaPerson />
+  {children}
+</body>
+
     </html>
   );
 }
