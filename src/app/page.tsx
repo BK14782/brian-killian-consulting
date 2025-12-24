@@ -11,6 +11,7 @@ import LeadCaptureModal from "@/components/LeadCaptureModal";
 import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import BannerImage from "@/components/BannerImage";
 import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
 const Card = ({ className = "", children }: any) => (
   <div className={`border bg-background shadow-sm ${className}`}>{children}</div>
@@ -434,6 +435,13 @@ export default function Page() {
   </div>
 </Section>
 
+<BannerImage
+  src="/banners/corporate-01.jpg"
+  alt="Professional leadership meeting"
+  caption="Institutional discipline with an operator-first mindset."
+  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+/>
+
 <Section
   id="performance"
   kicker="Performance Philosophy"
@@ -522,6 +530,15 @@ Across portfolios, property types, and ownership structures, the work varies—b
   </div>
 </Section>
 
+<BannerImage
+  src="/banners/leadership-01.jpg"
+  alt="Professional leadership meeting"
+  caption="Leadership that keeps teams aligned and owners informed."
+  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+/>
+
+
+
 
 
       <Section
@@ -537,6 +554,16 @@ Across portfolios, property types, and ownership structures, the work varies—b
 
         </div>
       </Section>
+
+<BannerImage
+  src="/banners/handshake-01.jpg"
+  alt="Handshake between business partners"
+  caption="Clear communication. Reliable follow-through."
+  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+/>
+
+
+
 
 <Section
   id="asset-performance"
@@ -606,6 +633,13 @@ Across portfolios, property types, and ownership structures, the work varies—b
 
   </div>
 </Section>
+
+<BannerImage
+  src="/banners/office-buildings-01.jpg"
+  alt="Handshake between business partners"
+  caption=""
+  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+/>
 
       <Section
         id="approach"
