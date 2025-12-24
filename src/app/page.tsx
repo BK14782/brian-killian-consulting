@@ -9,7 +9,7 @@ const caseStudiesWithHref = caseStudies.map((c) => ({
 import ProfileCard from "@/components/ProfileCard";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import BannerImage from "@/components/BannerImage";
 import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
