@@ -452,7 +452,7 @@ export default function Page() {
   kicker="Performance Philosophy"
   title="How I think about performance"
   subtitle="Operating clarity, decision discipline, and execution systems that reduce noise."
-  tight
+tight
 
 >
   <div className="grid gap-4 lg:grid-cols-3">
@@ -537,7 +537,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
 </Section>
 
 <BannerImage
-  src="/banners/leadership-01.jpg"
+  src="/banners/corporate-02.jpg"
   alt="Professional leadership meeting"
   caption="Leadership that keeps teams aligned and owners informed."
   className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
@@ -643,7 +643,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
 </Section>
 
 <BannerImage
-  src="/banners/office-buildings-01.jpg"
+  src="/banners/corporate-03.jpg"
   alt="Handshake between business partners"
   caption=""
   className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
@@ -693,6 +693,14 @@ Across portfolios, property types, and ownership structures, the work varies—b
           ))}
         </div>
       </Section>
+
+<BannerImage
+  src="/banners/approach-01.jpg"
+  alt="Professional leadership meeting"
+  caption="Custom designed and tailored for your goals."
+  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+/>
+
 
       <Section
         id="about"
