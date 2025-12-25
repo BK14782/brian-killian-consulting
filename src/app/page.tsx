@@ -444,7 +444,7 @@ export default function Page() {
   src="/banners/corporate-01.jpg"
   alt="Professional leadership meeting"
   caption="Institutional discipline with an operator-first mindset."
-  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
 <Section
@@ -540,7 +540,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   src="/banners/corporate-02.jpg"
   alt="Professional leadership meeting"
   caption="Leadership that keeps teams aligned and owners informed."
-  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
 
@@ -566,7 +566,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   src="/banners/handshake-01.jpg"
   alt="Handshake between business partners"
   caption="Clear communication. Reliable follow-through."
-  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
 
@@ -646,7 +646,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   src="/banners/corporate-03.jpg"
   alt="Handshake between business partners"
   caption=""
-  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
       <Section
@@ -698,7 +698,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   src="/banners/approach-01.jpg"
   alt="Professional leadership meeting"
   caption="Custom designed and tailored for your goals."
-  className="h-[240px] w-full object-cover sm:h-[320px] md:h-[380px] scale-[1.02] object-cover saturate-110 contrast-105"
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
 
