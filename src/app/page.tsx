@@ -775,7 +775,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="Let’s talk about your portfolio"
         subtitle="Share what you’re trying to improve and I’ll propose a simple scope with clear outcomes."
         tight
-        flushTop
+      
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
