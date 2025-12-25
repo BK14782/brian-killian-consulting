@@ -459,7 +459,7 @@ export default function Page() {
   title="How I think about performance"
   subtitle="Operating clarity, decision discipline, and execution systems that reduce noise."
 tight
-flushTop
+
 >
   <div className="grid gap-4 lg:grid-cols-3">
     <Card className="rounded-3xl shadow-sm lg:col-span-2">
@@ -559,7 +559,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="Selected case studies"
         subtitle="Representative examples of outcomes and methods. Details can be anonymized for confidentiality."
         tight
-        flushTop
+        
       >
         <div className="grid gap-4 lg:grid-cols-2">
 {caseStudiesWithHref.map((c) => (
@@ -585,7 +585,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   title="How I think about asset performance"
   subtitle="Asset performance is NOI under constraints—cashflow timing, reserves, debt service, and covenant discipline."
   tight
-  flushTop
+  
 >
   <p className="mb-6 max-w-3xl text-sm text-muted-foreground">
     Once operating discipline is in place, financial performance becomes manageable
@@ -663,7 +663,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="A repeatable operating approach"
         subtitle="Practical, structured, and easy for teams to adopt—built for owners who want clarity and control."
         tight
-        flushTop
+        
       >
         <div className="grid gap-4 md:grid-cols-2">
           {[
@@ -717,7 +717,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="Built in operations. Fluent in investor language."
         subtitle="A practical operator who turns field realities into numbers, narratives, and repeatable systems."
         tight
-        flushTop
+        
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
