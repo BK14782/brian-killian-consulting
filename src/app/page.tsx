@@ -54,12 +54,17 @@ type SectionProps = {
   subtitle?: string;
   children: React.ReactNode;
   tight?: boolean;
+  flushTop?: boolean;
 };
 
- const Section = ({ id, kicker, title, subtitle, children, tight }: SectionProps) => (
+const Section = ({ id, kicker, title, subtitle, children, tight, flushTop }: SectionProps) => (
   <section
     id={id}
-    className={`scroll-mt-24 ${tight ? "py-6 md:py-8" : "py-14 md:py-18"}`}
+    className={`scroll-mt-24 ${
+      tight
+        ? `${flushTop ? "pt-0 pb-6 md:pb-8" : "py-6 md:py-8"}`
+        : `${flushTop ? "pt-0 pb-14 md:pb-18" : "py-14 md:py-18"}`
+    }`}
   >
     <div className="mx-auto max-w-6xl px-4">
       <div className="max-w-3xl">
@@ -69,11 +74,10 @@ type SectionProps = {
             <span>{kicker}</span>
           </div>
         )}
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          {title}
-        </h2>
+        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
         {subtitle && <p className="mt-2 text-muted-foreground">{subtitle}</p>}
       </div>
+
       <div className="mt-8">{children}</div>
     </div>
   </section>
@@ -85,7 +89,8 @@ type NavProps = {
   onLetsTalk: () => void;
 };
 
-const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
+
+const Nav = ({ active, onNav }: NavProps) => {
   const items = [
     { id: "services", label: "Services" },
     { id: "case-studies", label: "Case Studies" },
@@ -102,6 +107,7 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
           <div className="grid h-9 w-9 place-items-center rounded-2xl border bg-background shadow-sm">
             <Building2 className="h-5 w-5" />
           </div>
+
           <div className="leading-tight">
             <div className="text-sm font-semibold">Brian Killian Consulting</div>
             <div className="text-xs text-muted-foreground">
@@ -126,14 +132,14 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
           ))}
         </div>
 
-
-<Button onClick={onLetsTalk}>
-  Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
-</Button>
+        <Button onClick={() => onNav("contact")} className="rounded-2xl">
+          Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
+        </Button>
       </div>
     </div>
   );
-}; 
+};
+
 
 
  const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
@@ -453,7 +459,7 @@ export default function Page() {
   title="How I think about performance"
   subtitle="Operating clarity, decision discipline, and execution systems that reduce noise."
 tight
-
+flushtop
 >
   <div className="grid gap-4 lg:grid-cols-3">
     <Card className="rounded-3xl shadow-sm lg:col-span-2">
@@ -553,6 +559,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="Selected case studies"
         subtitle="Representative examples of outcomes and methods. Details can be anonymized for confidentiality."
         tight
+        flushtop
       >
         <div className="grid gap-4 lg:grid-cols-2">
 {caseStudiesWithHref.map((c) => (
@@ -578,6 +585,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   title="How I think about asset performance"
   subtitle="Asset performance is NOI under constraints—cashflow timing, reserves, debt service, and covenant discipline."
   tight
+  flushtop
 >
   <p className="mb-6 max-w-3xl text-sm text-muted-foreground">
     Once operating discipline is in place, financial performance becomes manageable
@@ -655,6 +663,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="A repeatable operating approach"
         subtitle="Practical, structured, and easy for teams to adopt—built for owners who want clarity and control."
         tight
+        flushtop
       >
         <div className="grid gap-4 md:grid-cols-2">
           {[
@@ -708,6 +717,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         title="Built in operations. Fluent in investor language."
         subtitle="A practical operator who turns field realities into numbers, narratives, and repeatable systems."
         tight
+        flushtop
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
@@ -744,12 +754,28 @@ Across portfolios, property types, and ownership structures, the work varies—b
         </div>
       </Section>
 
+
+<div className="mx-auto max-w-6xl px-4 mt-16">
+  <div className="mb-6 max-w-3xl">
+    <div className="text-sm font-semibold">Before we talk</div>
+    <p className="mt-1 text-sm text-muted-foreground">
+      A quick reminder of who you’ll be working with and how I approach engagements.
+    </p>
+  </div>
+
+  <ProfileCard />
+</div>
+
+
+
+
       <Section
         id="contact"
         kicker="Contact"
         title="Let’s talk about your portfolio"
         subtitle="Share what you’re trying to improve and I’ll propose a simple scope with clear outcomes."
         tight
+        flushtop
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
