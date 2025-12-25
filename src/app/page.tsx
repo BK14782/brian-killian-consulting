@@ -53,21 +53,26 @@ type SectionProps = {
   title: string;
   subtitle?: string;
   children: React.ReactNode;
+  tight?: boolean;
 };
 
-const Section = ({ id, kicker, title, subtitle, children }: SectionProps) => (
-
-  <section id={id} className="scroll-mt-24 py-14 md:py-18">
+ const Section = ({ id, kicker, title, subtitle, children, tight }: SectionProps) => (
+  <section
+    id={id}
+    className={`scroll-mt-24 ${tight ? "py-6 md:py-8" : "py-14 md:py-18"}`}
+  >
     <div className="mx-auto max-w-6xl px-4">
       <div className="max-w-3xl">
-        {kicker ? (
+        {kicker && (
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground shadow-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
             <span>{kicker}</span>
           </div>
-        ) : null}
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
-        {subtitle ? <p className="mt-2 text-muted-foreground">{subtitle}</p> : null}
+        )}
+        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          {title}
+        </h2>
+        {subtitle && <p className="mt-2 text-muted-foreground">{subtitle}</p>}
       </div>
       <div className="mt-8">{children}</div>
     </div>
@@ -447,6 +452,7 @@ export default function Page() {
   kicker="Performance Philosophy"
   title="How I think about performance"
   subtitle="Operating clarity, decision discipline, and execution systems that reduce noise."
+  tight
 
 >
   <div className="grid gap-4 lg:grid-cols-3">
@@ -546,6 +552,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         kicker="Proof"
         title="Selected case studies"
         subtitle="Representative examples of outcomes and methods. Details can be anonymized for confidentiality."
+        tight
       >
         <div className="grid gap-4 lg:grid-cols-2">
 {caseStudiesWithHref.map((c) => (
@@ -570,6 +577,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
   kicker="Performance philosophy"
   title="How I think about asset performance"
   subtitle="Asset performance is NOI under constraints—cashflow timing, reserves, debt service, and covenant discipline."
+  tight
 >
   <p className="mb-6 max-w-3xl text-sm text-muted-foreground">
     Once operating discipline is in place, financial performance becomes manageable
@@ -646,6 +654,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         kicker="How it works"
         title="A repeatable operating approach"
         subtitle="Practical, structured, and easy for teams to adopt—built for owners who want clarity and control."
+        tight
       >
         <div className="grid gap-4 md:grid-cols-2">
           {[
@@ -690,6 +699,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         kicker="About"
         title="Built in operations. Fluent in investor language."
         subtitle="A practical operator who turns field realities into numbers, narratives, and repeatable systems."
+        tight
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
@@ -731,6 +741,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         kicker="Contact"
         title="Let’s talk about your portfolio"
         subtitle="Share what you’re trying to improve and I’ll propose a simple scope with clear outcomes."
+        tight
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
