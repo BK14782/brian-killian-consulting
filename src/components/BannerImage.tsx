@@ -9,7 +9,7 @@ type BannerImageProps = {
   priority?: boolean;
   height?: number;
   caption?: string;
-  className?: string;
+  className?: string; // applied to the <Image />
 };
 
 export default function BannerImage({
@@ -31,7 +31,7 @@ export default function BannerImage({
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          obs.disconnect();
+          obs.disconnect(); // animate once
         }
       },
       { threshold: 0.2, rootMargin: "80px 0px" }
@@ -45,9 +45,10 @@ export default function BannerImage({
     <div
       ref={ref}
       className={[
-        "mb-0 transition-all duration-700 ease-out will-change-transform",
+        "mx-auto max-w-6xl px-4", // keeps it aligned with the rest of the site
+        "mb-0", // no extra space BELOW the banner
+        "transition-all duration-700 ease-out will-change-transform",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
-        className,
       ].join(" ")}
     >
       <div className="relative overflow-hidden rounded-2xl border border-neutral-200/70 shadow-sm">
@@ -58,13 +59,15 @@ export default function BannerImage({
           priority={priority}
           width={1600}
           height={height}
-          className="h-[120px] w-full object-cover sm:h-[160px] md:h-[200px]"
+          className={[
+            "w-full object-cover",
+            "h-[120px] sm:h-[160px] md:h-[200px]", // banner height control
+            className, // your extra filters like saturate/contrast
+          ].join(" ")}
         />
       </div>
 
-      {caption ? (
-        <p className="mt-3 text-sm text-neutral-600">{caption}</p>
-      ) : null}
+      {caption ? <p className="mt-2 text-sm text-neutral-600">{caption}</p> : null}
     </div>
   );
 }
