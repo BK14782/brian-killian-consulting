@@ -61,7 +61,7 @@ export default function BannerImage({
           height={height}
           className={[
             "w-full object-cover",
-            "h-[120px] sm:h-[160px] md:h-[200px]", // banner height control
+            "h-[80px] sm:h-[110px] md:h-[135px] object-[center_40%]", // banner height control
             className, // your extra filters like saturate/contrast
           ].join(" ")}
         />
