@@ -31,7 +31,7 @@ export default function BannerImage({
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          obs.disconnect(); // animate once
+          obs.disconnect();
         }
       },
       { threshold: 0.2, rootMargin: "80px 0px" }
@@ -45,8 +45,7 @@ export default function BannerImage({
     <div
       ref={ref}
       className={[
-        "mx-auto max-w-6xl px-4",
-        "transition-all duration-700 ease-out will-change-transform",
+        "mb-0 transition-all duration-700 ease-out will-change-transform",
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
         className,
       ].join(" ")}
@@ -60,11 +59,12 @@ export default function BannerImage({
           width={1600}
           height={height}
           className="h-[120px] w-full object-cover sm:h-[160px] md:h-[200px]"
-
         />
       </div>
 
-      {caption ? <p className="mt-3 text-sm text-neutral-600">{caption}</p> : null}
+      {caption ? (
+        <p className="mt-3 text-sm text-neutral-600">{caption}</p>
+      ) : null}
     </div>
   );
 }
