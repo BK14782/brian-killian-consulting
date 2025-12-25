@@ -61,13 +61,13 @@ export default function BannerImage({
           height={height}
           className={[
             "w-full object-cover",
-            "h-[80px] sm:h-[110px] md:h-[135px] object-[center_40%]", // banner height control
+            "h-[60px] sm:h-[85px] md:h-[95px] object-[center_40%]", // banner height control
             className, // your extra filters like saturate/contrast
           ].join(" ")}
         />
       </div>
 
-      {caption ? <p className="mt-2 text-sm text-neutral-600">{caption}</p> : null}
+      {caption ? <p className="mt-1 text-sm text-neutral-600">{caption}</p> : null}
     </div>
   );
 }
