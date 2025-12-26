@@ -1,5 +1,11 @@
+
+
+
 import type { Metadata } from "next";
 import Link from "next/link";
+import LetsTalkCTA from "@/components/LetsTalkCTA";
+
+
 
 export const metadata: Metadata = {
   title: "Property Management Consulting",
@@ -63,6 +69,7 @@ const Button = ({
 };
 
 export default function PropertyManagementConsultingPage() {
+ ;
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumb / back link */}
@@ -97,24 +104,16 @@ export default function PropertyManagementConsultingPage() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="/#contact"
-              className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90"
-            >
-              Book a free 30-minute call
-            </a>
+           <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90" />
+
+
             <a
               href="/#case-studies"
               className="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-foreground/5"
             >
               View case studies
             </a>
-            <a
-              href="/#pricing"
-              className="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-foreground/5"
-            >
-              See pricing
-            </a>
+            
           </div>
         </div>
       </section>
@@ -237,12 +236,9 @@ export default function PropertyManagementConsultingPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="/#contact"
-                className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90"
-              >
-                Book a free 30-minute call
-              </a>
+              <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90" />
+
+
               <Link
                 href="/services"
                 className="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-foreground/5"
@@ -267,6 +263,8 @@ export default function PropertyManagementConsultingPage() {
           operations, and repeatable systems—so performance is clear and outcomes are predictable.
         </p>
       </section>
+          
+
     </main>
   );
 }
