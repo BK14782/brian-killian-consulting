@@ -78,6 +78,40 @@ const breadcrumbJsonLd = {
   ]
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you write the reporting narrative, or just provide templates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Either. I can provide templates and standards, or help write the narrative while your team builds the underlying data—then transition to your internal cadence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this work across multiple owners with different expectations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Yes. We can maintain a core standard package and add lightweight variations for specific owners or reporting requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this integrate with our existing systems (Yardi, MRI, etc.)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Yes. The package can be built around exports and your current reporting outputs. The goal is clarity and cadence, not a system change."
+      }
+    }
+  ]
+};
+
 
 export default function OwnerInvestorReportingPage() {
   return (

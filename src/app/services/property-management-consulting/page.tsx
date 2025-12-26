@@ -110,6 +110,40 @@ const breadcrumbJsonLd = {
   ]
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What problems do you typically help solve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Common focus areas include reporting clarity, budgeting and reforecasting cadence, vendor performance, operational controls, and reducing NOI surprises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with owners, operators, or both?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Both. I align reporting and operating expectations across ownership and the on-the-ground team so decisions are clearer and execution is more consistent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do we start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "We start with a short call to confirm goals and scope, then define deliverables, timeline, and the first set of improvements to implement."
+      }
+    }
+  ]
+};
+
 
 export default function PropertyManagementConsultingPage() {
  ;

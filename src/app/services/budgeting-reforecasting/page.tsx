@@ -78,6 +78,41 @@ const breadcrumbJsonLd = {
   ]
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work in our templates, or bring your own?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Either. I can improve your current model and process, or provide clean templates and map your data into them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does this typically take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Most engagements range from 2–6 weeks depending on portfolio size, data cleanliness, and how many templates or cycles we implement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this replace our PM/accounting team’s process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "No. This strengthens the existing process with clearer assumptions, thresholds, cadence, and handoffs so the team can operate consistently."
+      }
+    }
+  ]
+};
+
+
 export default function BudgetingReforecastingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">

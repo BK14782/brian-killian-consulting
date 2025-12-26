@@ -78,6 +78,40 @@ const breadcrumbJsonLd = {
   ]
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will this create more work for my team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "The goal is the opposite. We keep the audit lightweight, then deliver practical SOPs and templates that reduce rework and clarify expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you need access to our systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Not always. Many audits can be done with exports, samples, and interviews. If deeper access helps, we’ll define what’s needed and why."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s the typical engagement length?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Many audits take 2–5 weeks depending on portfolio size and how many workflows and stakeholders are in scope."
+      }
+    }
+  ]
+};
+
 
 export default function OperationalAuditPage() {
   return (

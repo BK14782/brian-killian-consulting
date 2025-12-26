@@ -80,6 +80,41 @@ const breadcrumbJsonLd = {
   ]
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you manage projects day-to-day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "I can support execution with structure, reporting, and governance. If you need full project management coverage, we can define scope and integration with your internal resources."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with our existing vendors and templates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "Yes. I can improve your existing templates and workflows, or provide clean tools and align them to your current process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of projects does this work best for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text":
+          "It’s ideal for multi-project programs where approvals, scope clarity, and consistent reporting drive outcomes—especially when timelines and stakeholders are complex."
+      }
+    }
+  ]
+};
+
+
 export default function CapitalPlanningPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
