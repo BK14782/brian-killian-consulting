@@ -1,11 +1,7 @@
 "use client";
 
-import { caseStudies } from "@/lib/caseStudies";
 
-const caseStudiesWithHref = caseStudies.map((c) => ({
-  ...c,
-  href: `/case-studies/${c.slug}`,
-}));
+import { caseStudies } from "@/lib/caseStudies";
 import ProfileCard from "@/components/ProfileCard";
 import LeadCaptureModal from "@/components/LeadCaptureModal";
 import Link from "next/link";
@@ -13,13 +9,19 @@ import React, { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import BannerImage from "@/components/BannerImage";
 import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
+
+const caseStudiesWithHref = caseStudies.map((c) => ({
+  ...c,
+  href: `/case-studies/${c.slug}`,
+}));
+const CardContent = ({ className = "", children }: any) => (
+  <div className={className}>{children}</div>
+);
+
 const Card = ({ className = "", children }: any) => (
   <div className={`border bg-background shadow-sm ${className}`}>{children}</div>
 );
 
-const CardContent = ({ className = "", children }: any) => (
-  <div className={className}>{children}</div>
-);
 
 const Button = ({ className = "", variant, children, ...props }: any) => {
 
@@ -90,16 +92,18 @@ type NavProps = {
 };
 
 
-const Nav = ({ active, onNav }: NavProps) => {
-  const items = [
-    { id: "services", label: "Services" },
-    { id: "case-studies", label: "Case Studies" },
-    { id: "performance", label: "Performance" },
-    { id: "approach", label: "Approach" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" },
-  ];
+const items = [
+  { id: "services", label: "Services" },
+  { id: "deliverables", label: "Deliverables" },
+  { id: "case-studies", label: "Case Studies" },
+  { id: "performance", label: "Performance" },
+  { id: "engagements", label: "Engagements" },
+  { id: "approach", label: "Approach" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
 
+const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
   return (
     <div className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -549,8 +553,128 @@ Across portfolios, property types, and ownership structures, the work varies—b
   className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
 
+<Section
+  id="deliverables"
+  kicker="Deliverables"
+  title="What owners receive"
+  subtitle="Decision-ready outputs—built to reduce noise, tighten predictability, and keep teams aligned."
+>
+  <div className="grid gap-4 lg:grid-cols-3">
+    <Card className="rounded-3xl shadow-sm lg:col-span-2">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">Outputs you can forward</div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Clear, owner-ready materials—no consulting theater. Depending on scope, you’ll receive a
+          tailored set of templates, narratives, and dashboards your team can run without me.
+        </p>
 
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          {[
+            "Monthly operating reporting with variance narratives + forward risk flags",
+            "Budget + reforecast models tied to execution assumptions and timing",
+            "Approval-ready proposal templates (scope, risk, ROI clarity, decision points)",
+            "Capital planning roadmaps with phasing, governance rules, and reporting cadence",
+            "Lease-up dashboards tracking pace, concessions, and rent health",
+            "Cross-functional operating cadence + escalation framework (who owns what, when)",
+            "Board/IC-ready summary pages when needed (clean, concise, defensible)",
+            "Transfer package: SOPs, checklists, and training so improvements stick",
+          ].map((item) => (
+            <div key={item} className="flex items-start gap-3 rounded-2xl border bg-background/60 p-4">
+              <div className="mt-0.5 grid h-7 w-7 place-items-center rounded-xl border bg-background">
+                <Check className="h-4 w-4" />
+              </div>
+              <div className="text-sm text-muted-foreground">{item}</div>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
 
+    <Card className="rounded-3xl shadow-sm">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">Built-in governance</div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Owners get clarity on approvals, exceptions, and accountability—so decisions don’t drift and
+          reporting stays predictable.
+        </p>
+
+        <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+          {[
+            "Approval thresholds + lanes",
+            "Exception handling + escalation rules",
+            "Vendor scope controls to reduce change orders",
+            "Cadence that prevents “status chasing”",
+          ].map((x) => (
+            <div key={x} className="flex items-start gap-3">
+              <span className="mt-2 inline-block h-2 w-2 rounded-full border" />
+              <span>{x}</span>
+            </div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  </div>
+</Section>
+
+<BannerImage
+  src="/banners/deliverables-01.jpg"
+  alt="Handshake between business partners"
+  caption="Clear communication. Reliable follow-through."
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
+  />
+
+<Section
+  id="engagements"
+  kicker="Engagements"
+  title="How clients use me"
+  subtitle="Flexible scopes—from quick stabilization to ongoing performance oversight."
+>
+  <div className="grid gap-4 md:grid-cols-2">
+    {[
+      {
+        title: "Diagnostic + stabilization",
+        desc: "Get control fast—clarify variance drivers, reset cadence, and eliminate recurring surprises.",
+        bullets: ["30–60 day reset", "Reporting + controls", "Owner-ready narrative"],
+      },
+      {
+        title: "Project-based execution",
+        desc: "Deliver a defined outcome—budgets, templates, capital planning, or lease-up operating rhythm.",
+        bullets: ["2–8 weeks", "Templates + training", "Measurable deliverables"],
+      },
+      {
+        title: "Interim / fractional leadership",
+        desc: "Hands-on leadership while you hire or restructure—keeping performance stable during transitions.",
+        bullets: ["Acting ops lead", "Vendor governance", "Team alignment + accountability"],
+      },
+      {
+        title: "Ongoing advisory",
+        desc: "Maintain discipline—monthly/quarterly oversight to keep reporting, controls, and execution tight.",
+        bullets: ["Portfolio oversight", "KPIs + cadence", "Continuous improvement"],
+      },
+    ].map((x) => (
+      <Card key={x.title} className="rounded-3xl shadow-sm">
+        <CardContent className="p-6">
+          <div className="text-base font-semibold">{x.title}</div>
+          <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {x.bullets.map((b) => (
+              <Badge key={b} variant="outline" className="rounded-full">
+                {b}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</Section>
+
+<BannerImage
+  src="/banners/engagements-01.jpg"
+  alt="Handshake between business partners"
+  caption="Clear communication. Reliable follow-through."
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
+/>
 
 
       <Section
