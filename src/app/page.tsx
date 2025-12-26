@@ -381,6 +381,7 @@ export default function Page() {
   kicker="Why work with me"
   title="A calm, operator-first approach"
   subtitle="Consulting that feels like an experienced partner — not a slide deck."
+  tight
 >
   <div className="grid gap-4 lg:grid-cols-3">
     <Card className="rounded-3xl shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:border-amber-500/30">
@@ -551,13 +552,14 @@ Across portfolios, property types, and ownership structures, the work varies—b
   alt="Professional leadership meeting"
   caption="Leadership that keeps teams aligned and owners informed."
   className="scale-[1.02] object-cover saturate-110 contrast-105"
-/>
+  />
 
 <Section
   id="deliverables"
   kicker="Deliverables"
   title="What owners receive"
   subtitle="Decision-ready outputs—built to reduce noise, tighten predictability, and keep teams aligned."
+  tight
 >
   <div className="grid gap-4 lg:grid-cols-3">
     <Card className="rounded-3xl shadow-sm lg:col-span-2">
@@ -621,13 +623,14 @@ Across portfolios, property types, and ownership structures, the work varies—b
   alt="Handshake between business partners"
   caption="Clear communication. Reliable follow-through."
   className="scale-[1.02] object-cover saturate-110 contrast-105"
-  />
+   />
 
 <Section
   id="engagements"
   kicker="Engagements"
   title="How clients use me"
   subtitle="Flexible scopes—from quick stabilization to ongoing performance oversight."
+  tight
 >
   <div className="grid gap-4 md:grid-cols-2">
     {[
@@ -904,9 +907,9 @@ Across portfolios, property types, and ownership structures, the work varies—b
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
             <CardContent className="p-6">
-              <div className="text-sm font-semibold">Quick note</div>
+              <div className="text-sm font-semibold"></div>
               <p className="mt-3 text-sm text-muted-foreground">
-                Replace the contact details below with your preferred email and add a scheduling link if you’d like.
+                
               </p>
 <div className="mt-6 grid gap-3">
   <div className="rounded-2xl border bg-background/60 p-4">
