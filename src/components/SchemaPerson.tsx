@@ -3,15 +3,15 @@ export default function SchemaPerson() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://www.briankillianconsulting.com/#brian-killian",
+    "@id": "https://briankillianconsulting.com/#brian-killian",
     name: "Brian Killian",
     jobTitle: "Principal",
-    url: "https://www.briankillianconsulting.com/",
-    image: "https://www.briankillianconsulting.com/brian-killian.jpg",
+    url: "https://briankillianconsulting.com/",
+    image: "https://briankillianconsulting.com/brian-killian.jpg",
     worksFor: {
       "@type": "Organization",
       name: "Brian Killian Consulting",
-      url: "https://www.briankillianconsulting.com/",
+      url: "https://briankillianconsulting.com/",
     },
     sameAs: [
       // Replace with your real LinkedIn URL (must match what you use on the site)
