@@ -36,10 +36,34 @@ const Card = ({
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Owner & Investor Reporting",
+  "description":
+    "Owner and investor reporting support for property portfolios: KPI dashboards, variance narratives, package standards, and a consistent cadence owners can rely on.",
+  "serviceType": "Owner & investor reporting consulting",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Brian Killian Consulting",
+    "url": "https://briankillianconsulting.com",
+    "areaServed": "US"
+  },
+  "areaServed": "US",
+  "url": "https://briankillianconsulting.com/services/owner-investor-reporting"
+};
+
+
+
 export default function OwnerInvestorReportingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumbs */}
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>
+
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
           Home
