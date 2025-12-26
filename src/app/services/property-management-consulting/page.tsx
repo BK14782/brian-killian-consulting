@@ -79,7 +79,13 @@ const jsonLd = {
     "@type": "ProfessionalService",
     "name": "Brian Killian Consulting",
     "url": "https://briankillianconsulting.com",
-    "areaServed": "US"
+    "areaServed": "US",
+    "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Seattle",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+    }
   },
   "areaServed": "US",
   "url": "https://briankillianconsulting.com/services/property-management-consulting"
