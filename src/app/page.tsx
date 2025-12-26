@@ -985,17 +985,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
         </div>
       </Section>
 
- <Section id="contact" title="Contact">
-  <div className="rounded-3xl border bg-background p-6">
-    <p className="text-sm text-muted-foreground">
-      Ready to talk? Click “Let’s talk” to share a few details and I’ll follow up.
-    </p>
-  </div>
-</Section>
-
-
-
-
+ 
 <LeadCaptureModal isOpen={leadOpen} onClose={() => setLeadOpen(false)} />
 
       <Footer />
