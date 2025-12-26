@@ -36,11 +36,35 @@ const Card = ({
   </div>
 );
 
+
+   
+      const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Capital Planning",
+  "description":
+    "Capital planning support for owners and operators: scopes, budgets, schedules, bids, approvals, and clean owner-facing reporting.",
+  "serviceType": "Capital planning consulting",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Brian Killian Consulting",
+    "url": "https://briankillianconsulting.com",
+    "areaServed": "US"
+  },
+  "areaServed": "US",
+  "url": "https://briankillianconsulting.com/services/capital-planning"
+};
+
 export default function CapitalPlanningPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      {/* Breadcrumbs */}
-      <div className="text-sm text-muted-foreground">
+         {/* Breadcrumbs */}
+         <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>
+
+          <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
           Home
         </Link>{" "}

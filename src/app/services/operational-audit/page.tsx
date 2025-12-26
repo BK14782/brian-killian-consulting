@@ -36,10 +36,34 @@ const Card = ({
   </div>
 );
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Operational Audit",
+  "description":
+    "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",
+  "serviceType": "Operational audit consulting",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Brian Killian Consulting",
+    "url": "https://briankillianconsulting.com",
+    "areaServed": "US"
+  },
+  "areaServed": "US",
+  "url": "https://briankillianconsulting.com/services/operational-audit"
+};
+
+
+
 export default function OperationalAuditPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumbs */}
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>
+
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
           Home
