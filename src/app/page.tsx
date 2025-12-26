@@ -136,9 +136,7 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
           ))}
         </div>
 
-        <Button onClick={() => onNav("contact")} className="rounded-2xl">
-          Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
-        </Button>
+      
       </div>
     </div>
   );
@@ -352,6 +350,22 @@ const Footer = () => (
   </footer>
 );
 
+function FloatingLetsTalkButton({ onClick }: { onClick: () => void }) {
+  return (
+    <div className="fixed bottom-5 right-5 z-50">
+      <Button
+        onClick={onClick}
+        className="rounded-2xl shadow-lg"
+      >
+        Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
+      </Button>
+    </div>
+  );
+}
+
+
+
+
 export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
@@ -362,21 +376,19 @@ export default function Page() {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  return (
+return (
     <div className="min-h-screen bg-background text-foreground">
-      <Nav
-        active={active}
-        onNav={scrollTo}
-        onLetsTalk={() => setLeadOpen(true)}
-      />
+      {/* One floating button only */}
+      <FloatingLetsTalkButton onClick={() => setLeadOpen(true)} />
 
+      <Nav active={active} onNav={scrollTo} onLetsTalk={() => setLeadOpen(true)} />
       <Hero onLetsTalk={() => setLeadOpen(true)} />
 
       <div className="mx-auto max-w-6xl px-4 mt-10">
         <ProfileCard />
       </div>
-
-<Section
+          
+     <Section
   id="why"
   kicker="Why work with me"
   title="A calm, operator-first approach"
@@ -973,9 +985,18 @@ Across portfolios, property types, and ownership structures, the work varies—b
         </div>
       </Section>
 
+ <Section id="contact" title="Contact">
+  <div className="rounded-3xl border bg-background p-6">
+    <p className="text-sm text-muted-foreground">
+      Ready to talk? Click “Let’s talk” to share a few details and I’ll follow up.
+    </p>
+  </div>
+</Section>
+
+
+
+
 <LeadCaptureModal isOpen={leadOpen} onClose={() => setLeadOpen(false)} />
-
-
 
       <Footer />
     </div>
