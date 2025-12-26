@@ -15,7 +15,7 @@ export default function SchemaPerson() {
     },
     sameAs: [
       // Replace with your real LinkedIn URL (must match what you use on the site)
-      "https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE",
+      "https://www.linkedin.com/in/briannkillian/",
     ],
   };
 
