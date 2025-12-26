@@ -93,7 +93,7 @@ type NavProps = {
 
 
 const items = [
-  { id: "services", label: "Services" },
+  { id: "services", label: "Services", href: "/services" },
   { id: "deliverables", label: "Deliverables" },
   { id: "case-studies", label: "Case Studies" },
   { id: "performance", label: "Performance" },
@@ -121,19 +121,30 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
         </div>
 
         <div className="hidden items-center gap-6 md:flex">
-          {items.map((it) => (
-            <button
-              key={it.id}
-              onClick={() => onNav(it.id)}
-              className={`text-sm transition ${
-                active === it.id
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {it.label}
-            </button>
-          ))}
+          {items.map((it) =>
+  it.href ? (
+    <Link
+      key={it.id}
+      href={it.href}
+      className="text-sm text-muted-foreground hover:text-foreground transition"
+    >
+      {it.label}
+    </Link>
+  ) : (
+    <button
+      key={it.id}
+      onClick={() => onNav(it.id)}
+      className={`text-sm transition ${
+        active === it.id
+          ? "text-foreground"
+          : "text-muted-foreground hover:text-foreground"
+      }`}
+    >
+      {it.label}
+    </button>
+  )
+)}
+
         </div>
 
       
@@ -449,13 +460,15 @@ return (
     </ul>
 
     <div className="mt-5 flex flex-wrap items-center gap-3">
-      <a
-        href="#contact"
-        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
-      >
-        Book a free 30-minute portfolio review
-        <ChevronRight className="ml-2 h-4 w-4" />
-      </a>
+      <button
+  type="button"
+  onClick={() => setLeadOpen(true)}
+  className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+>
+  Let’s talk
+  <ChevronRight className="ml-2 h-4 w-4" />
+</button>
+
       <div className="text-sm text-muted-foreground">
         Typical engagements range from 2–6 weeks depending on portfolio size and complexity.
       </div>
@@ -565,6 +578,44 @@ Across portfolios, property types, and ownership structures, the work varies—b
   caption="Leadership that keeps teams aligned and owners informed."
   className="scale-[1.02] object-cover saturate-110 contrast-105"
   />
+
+
+<Section id="services" title="Advisory support where owners feel it most">
+  <div className="text-xs font-medium tracking-wide text-muted-foreground">
+    Services
+  </div>
+
+  <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+    Targeted engagements designed to improve clarity, control, and decision-making across operations,
+    reporting, and capital planning.
+  </p>
+
+  <div className="mt-6 grid gap-6 md:grid-cols-2">
+    {services.map((service, idx) => (
+      <div key={idx} className="rounded-2xl border bg-background p-6">
+        <div className="flex items-center gap-3">
+          <service.icon className="h-5 w-5 text-muted-foreground" />
+          <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
+        </div>
+
+        <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+          {service.bullets.map((bullet, i) => (
+            <li key={i} className="flex gap-2">
+              <span>•</span>
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Section>
+
+
+
+
+
+
 
 <Section
   id="deliverables"
