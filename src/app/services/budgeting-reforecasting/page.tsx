@@ -53,6 +53,30 @@ const jsonLd = {
   "url": "https://briankillianconsulting.com/services/budgeting-reforecasting"
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://briankillianconsulting.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://briankillianconsulting.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Budgeting & Reforecasting",
+      "item": "https://briankillianconsulting.com/services/budgeting-reforecasting"
+    }
+  ]
+};
 
 export default function BudgetingReforecastingPage() {
   return (
@@ -63,10 +87,7 @@ export default function BudgetingReforecastingPage() {
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
 
-      <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-/>
+/
 
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">

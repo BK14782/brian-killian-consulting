@@ -55,6 +55,31 @@ const Card = ({
   "url": "https://briankillianconsulting.com/services/capital-planning"
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://briankillianconsulting.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://briankillianconsulting.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Capital Planning",
+      "item": "https://briankillianconsulting.com/services/capital-planning"
+    }
+  ]
+};
+
 export default function CapitalPlanningPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">

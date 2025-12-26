@@ -53,6 +53,30 @@ const jsonLd = {
   "url": "https://briankillianconsulting.com/services/operational-audit"
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://briankillianconsulting.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://briankillianconsulting.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Operational Audit",
+      "item": "https://briankillianconsulting.com/services/operational-audit"
+    }
+  ]
+};
 
 
 export default function OperationalAuditPage() {
