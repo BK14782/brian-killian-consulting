@@ -49,30 +49,11 @@ const CardContent = ({
   children: React.ReactNode;
 }) => <div className={className}>{children}</div>;
 
-const Button = ({
-  className = "",
-  variant,
-  children,
-  ...props
-}: any) => {
-  const base =
-    "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium transition border";
-  const styles =
-    variant === "outline"
-      ? "bg-transparent hover:bg-foreground/5"
-      : "bg-foreground text-background hover:bg-foreground/90 border-transparent";
-  return (
-    <button className={`${base} ${styles} ${className}`} {...props}>
-      {children}
-  </button>
-  );
-};
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-property-management-consulting",
-  "name": "Property Management Consulting",
+name: "Property Management Consulting",
   "description":
     "Nationwide property management consulting for owners and operators. Improve reporting, tighten budgets and forecasts, strengthen vendor performance, and increase NOI predictability.",
   "serviceType": "Property management consulting",
@@ -146,7 +127,7 @@ const faqJsonLd = {
 export default function PropertyManagementConsultingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      {/* Breadcrumb / back link */}
+      /* Structured data */
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

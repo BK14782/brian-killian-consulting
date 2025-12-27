@@ -42,7 +42,7 @@ const Card = ({
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-capital-planning",
-  "name": "Capital Planning",
+  name: "Capital Planning",
   "description":
     "Capital planning support for owners and operators: scopes, budgets, schedules, bids, approvals, and clean owner-facing reporting.",
   "serviceType": "Capital planning consulting",
@@ -116,7 +116,7 @@ const faqJsonLd = {
 export default function CapitalPlanningPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-         {/* Breadcrumbs */}
+         /* Structured data */
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

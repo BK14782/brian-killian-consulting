@@ -40,7 +40,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-budgeting-reforecasting",
-  "name": "Budgeting & Reforecasting",
+name: "Budgeting & Reforecasting",
   "description":
     "Budgeting and reforecasting consulting for owners and operators: cadence, assumptions, variance controls, and reporting that reduces surprises.",
   "serviceType": "Budgeting & reforecasting consulting",
@@ -114,7 +114,7 @@ const faqJsonLd = {
 export default function BudgetingReforecastingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      {/* Breadcrumbs */}
+      /* Strucutred data */
  <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

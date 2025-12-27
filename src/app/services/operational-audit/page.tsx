@@ -40,7 +40,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-operational-audit",
-  "name": "Operational Audit",
+name:"Operational Audit",
   "description":
     "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",
   "serviceType": "Operational audit consulting",
@@ -115,7 +115,7 @@ const faqJsonLd = {
 export default function OperationalAuditPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      {/* Breadcrumbs */}
+    /* Structured data */
   <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
