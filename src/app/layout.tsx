@@ -4,7 +4,6 @@ import Script from "next/script";
 import "./globals.css";
 import SchemaPerson from "@/components/SchemaPerson";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -46,33 +45,61 @@ export const metadata: Metadata = {
   },
 };
 
+// NOTE: the URL to a public asset should NOT include /public
+// If your file is /public/banners/logo-01.jpg, the URL is /banners/logo-01.jpg
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://briankillianconsulting.com/#organization",
+  name: "Brian Killian Consulting",
+  url: "https://briankillianconsulting.com",
+  logo: "https://briankillianconsulting.com/banners/logo-01.jpg",
+  sameAs: ["https://www.linkedin.com/in/briannkillian/"],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      availableLanguage: ["English"],
+      url: "https://briankillianconsulting.com/contact",
+    },
+  ],
+  areaServed: "US",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-9556P3Q5N4"
-        strategy="afterInteractive"
-      />
-      <Script id="ga4" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-9556P3Q5N4');
-        `}
-      </Script>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
+        {/* Organization schema (sitewide) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-  <SchemaPerson />
-  {children}
-</body>
+        {/* Person schema (sitewide) */}
+        <SchemaPerson />
 
+        {/* App content */}
+        {children}
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9556P3Q5N4"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9556P3Q5N4');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
-
