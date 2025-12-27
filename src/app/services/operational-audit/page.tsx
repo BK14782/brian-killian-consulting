@@ -45,16 +45,8 @@ const jsonLd = {
     "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",
   "serviceType": "Operational audit consulting",
   provider: {
-  "@id": "https://briankillianconsulting.com/#organization",
-    "name": "Brian Killian Consulting",
-    "url": "https://briankillianconsulting.com",
-    "areaServed": "US",
-     "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seattle",
-    "addressRegion": "WA",
-    "addressCountry": "US"
-    }
+    "@id": "https://briankillianconsulting.com/#organization",
+  
   },
   "areaServed": "US",
   "url": "https://briankillianconsulting.com/services/operational-audit"

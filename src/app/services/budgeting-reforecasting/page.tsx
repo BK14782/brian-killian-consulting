@@ -45,16 +45,7 @@ const jsonLd = {
     "Budgeting and reforecasting consulting for owners and operators: cadence, assumptions, variance controls, and reporting that reduces surprises.",
   "serviceType": "Budgeting & reforecasting consulting",
   provider: {
-  "@id": "https://briankillianconsulting.com/#organization",
-    "name": "Brian Killian Consulting",
-    "url": "https://briankillianconsulting.com",
-    "areaServed": "US",
-     "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seattle",
-    "addressRegion": "WA",
-    "addressCountry": "US"
-    }
+    "@id": "https://briankillianconsulting.com/#organization",
   },
   "areaServed": "US",
   "url": "https://briankillianconsulting.com/services/budgeting-reforecasting"

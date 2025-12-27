@@ -76,17 +76,8 @@ const jsonLd = {
   "description":
     "Nationwide property management consulting for owners and operators. Improve reporting, tighten budgets and forecasts, strengthen vendor performance, and increase NOI predictability.",
   "serviceType": "Property management consulting",
-  provider: {
-  "@id": "https://briankillianconsulting.com/#organization",
-    "name": "Brian Killian Consulting",
-    "url": "https://briankillianconsulting.com",
-    "areaServed": "US",
-    "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seattle",
-    "addressRegion": "WA",
-    "addressCountry": "US"
-    }
+   provider: {
+    "@id": "https://briankillianconsulting.com/#organization",
   },
   "areaServed": "US",
   "url": "https://briankillianconsulting.com/services/property-management-consulting"

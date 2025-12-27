@@ -46,17 +46,8 @@ const Card = ({
   "description":
     "Capital planning support for owners and operators: scopes, budgets, schedules, bids, approvals, and clean owner-facing reporting.",
   "serviceType": "Capital planning consulting",
- provider: {
-  "@id": "https://briankillianconsulting.com/#organization",
-    "name": "Brian Killian Consulting",
-    "url": "https://briankillianconsulting.com",
-    "areaServed": "US",
-     "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Seattle",
-    "addressRegion": "WA",
-    "addressCountry": "US"
-    }
+  provider: {
+    "@id": "https://briankillianconsulting.com/#organization",
   },
   "areaServed": "US",
   "url": "https://briankillianconsulting.com/services/capital-planning"
