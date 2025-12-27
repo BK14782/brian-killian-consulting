@@ -63,6 +63,53 @@ const organizationJsonLd = {
       url: "https://briankillianconsulting.com/contact",
     },
   ],
+  hasOfferCatalog: {
+  "@type": "OfferCatalog",
+  name: "Services",
+  itemListElement: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Property Management Consulting",
+        url: "https://briankillianconsulting.com/services/property-management-consulting",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Budgeting & Reforecasting",
+        url: "https://briankillianconsulting.com/services/budgeting-reforecasting",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Capital Planning",
+        url: "https://briankillianconsulting.com/services/capital-planning",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Operational Audit",
+        url: "https://briankillianconsulting.com/services/operational-audit",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Owner & Investor Reporting",
+        url: "https://briankillianconsulting.com/services/owner-investor-reporting",
+      },
+    },
+  ],
+},
+
   areaServed: "US",
 };
 
