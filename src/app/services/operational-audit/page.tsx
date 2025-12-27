@@ -44,8 +44,8 @@ const jsonLd = {
   "description":
     "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",
   "serviceType": "Operational audit consulting",
-  "provider": {
-    "@type": "ProfessionalService",
+  provider: {
+  "@id": "https://briankillianconsulting.com/#organization",
     "name": "Brian Killian Consulting",
     "url": "https://briankillianconsulting.com",
     "areaServed": "US",

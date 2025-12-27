@@ -76,8 +76,8 @@ const jsonLd = {
   "description":
     "Nationwide property management consulting for owners and operators. Improve reporting, tighten budgets and forecasts, strengthen vendor performance, and increase NOI predictability.",
   "serviceType": "Property management consulting",
-  "provider": {
-    "@type": "ProfessionalService",
+  provider: {
+  "@id": "https://briankillianconsulting.com/#organization",
     "name": "Brian Killian Consulting",
     "url": "https://briankillianconsulting.com",
     "areaServed": "US",

@@ -44,8 +44,8 @@ const jsonLd = {
   "description":
     "Owner and investor reporting support for property portfolios: KPI dashboards, variance narratives, package standards, and a consistent cadence owners can rely on.",
   "serviceType": "Owner & investor reporting consulting",
-  "provider": {
-    "@type": "ProfessionalService",
+ provider: {
+  "@id": "https://briankillianconsulting.com/#organization",
     "name": "Brian Killian Consulting",
     "url": "https://briankillianconsulting.com",
     "areaServed": "US",

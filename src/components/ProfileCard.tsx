@@ -24,8 +24,9 @@ export default function ProfileCard() {
         </div>
 
         <Link
-          href="https://www.linkedin.com/in/briannkillian"
+          href="https://www.linkedin.com/in/briannkillian/"
           target="_blank"
+          rel="noopener noreferrer"
           className="mt-2 inline-flex items-center gap-1 text-sm underline underline-offset-4"
         >
           View LinkedIn →
