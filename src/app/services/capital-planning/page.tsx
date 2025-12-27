@@ -3,7 +3,7 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Capital Planning",
+  title: "Capital Planning | Brian Killian Consulting",
   description:
     "Capital planning support for owners and operators: scopes, budgets, schedules, bids, approvals, and clean owner-facing reporting.",
   alternates: {
@@ -117,10 +117,21 @@ export default function CapitalPlanningPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
          {/* Breadcrumbs */}
-         <script
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+/>
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+/>
+
 
           <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">

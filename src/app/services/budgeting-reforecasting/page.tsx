@@ -3,7 +3,7 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Budgeting & Reforecasting",
+  title: "Budgeting & Reforecasting | Brian Killian Consulting",
   description:
     "Budgeting and reforecasting consulting for owners and operators: cadence, assumptions, variance controls, and reporting that reduces surprises.",
   alternates: {
@@ -115,10 +115,21 @@ export default function BudgetingReforecastingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumbs */}
-      <script
+ <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+/>
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+/>
+
 
 /
 

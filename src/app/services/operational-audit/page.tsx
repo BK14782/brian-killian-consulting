@@ -3,7 +3,7 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Operational Audit",
+  title: "Operational Audit | Brian Killian Consulting",
   description:
     "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",
   alternates: {
@@ -116,10 +116,21 @@ export default function OperationalAuditPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumbs */}
-      <script
+  <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+/>
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+/>
+
 
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">

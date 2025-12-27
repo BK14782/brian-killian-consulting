@@ -3,7 +3,7 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Owner & Investor Reporting",
+  title: "Owner & Investor Reporting | Brian Killian Consulting",
   description:
     "Owner and investor reporting support for property portfolios: KPI dashboards, variance narratives, package standards, and a consistent cadence owners can rely on.",
   alternates: {
@@ -116,10 +116,21 @@ export default function OwnerInvestorReportingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumbs */}
-      <script
+  <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+/>
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+/>
+
 
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">

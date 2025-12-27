@@ -8,7 +8,7 @@ import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 
 export const metadata: Metadata = {
-  title: "Property Management Consulting",
+  title: "Property Management Consulting | Brian Killian Consulting",
   description:
     "Nationwide property management consulting for owners and operators. Improve reporting, tighten budgets and forecasts, strengthen vendor performance, and increase NOI predictability.",
   alternates: {
@@ -64,7 +64,7 @@ const Button = ({
   return (
     <button className={`${base} ${styles} ${className}`} {...props}>
       {children}
-    </button>
+  </button>
   );
 };
 
@@ -144,14 +144,25 @@ const faqJsonLd = {
 
 
 export default function PropertyManagementConsultingPage() {
- ;
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumb / back link */}
-      <script
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+/>
+
+<script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 />
+
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+/>
+
 
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
@@ -335,6 +346,25 @@ export default function PropertyManagementConsultingPage() {
           </CardContent>
         </Card>
       </section>
+
+<section className="mt-12">
+  <h2 className="text-xl font-semibold tracking-tight">Related services</h2>
+  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+    <Link href="/services/budgeting-reforecasting" className="underline underline-offset-4 hover:text-foreground">
+      Budgeting &amp; Reforecasting
+    </Link>
+    <Link href="/services/owner-investor-reporting" className="underline underline-offset-4 hover:text-foreground">
+      Owner &amp; Investor Reporting
+    </Link>
+    <Link href="/services/capital-planning" className="underline underline-offset-4 hover:text-foreground">
+      Capital Planning
+    </Link>
+    <Link href="/services/operational-audit" className="underline underline-offset-4 hover:text-foreground">
+      Operational Audit
+    </Link>
+  </div>
+</section>
+
 
       {/* OPTIONAL: quick trust line */}
       <section className="mt-10">
