@@ -48,8 +48,8 @@ name:"Operational Audit",
     "@id": "https://briankillianconsulting.com/#organization",
   
   },
-  "areaServed": "US",
-  "url": "https://briankillianconsulting.com/services/operational-audit"
+  areaServed: "US",
+  url: "https://briankillianconsulting.com/services/operational-audit"
 };
 
 const breadcrumbJsonLd = {
@@ -154,6 +154,28 @@ export default function OperationalAuditPage() {
         workflows) and deliver practical fixes: SOPs, checklists, cadence, and owner-ready reporting.
       </p>
 
+<div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
+  <a href="#deliverables" className="underline underline-offset-4 hover:text-foreground">
+    What you get
+  </a>
+  <a href="#how-we-engage" className="underline underline-offset-4 hover:text-foreground">
+    How it works
+  </a>
+  <a href="#outcomes" className="underline underline-offset-4 hover:text-foreground">
+    Outcomes
+  </a>
+  <a href="#best-fit" className="underline underline-offset-4 hover:text-foreground">
+    Best fit
+  </a>
+  <a href="#faq" className="underline underline-offset-4 hover:text-foreground">
+    FAQ
+  </a>
+  <a href="#related-services" className="underline underline-offset-4 hover:text-foreground">
+    Related services
+  </a>
+</div>
+
+
       <div className="mt-6 flex flex-wrap gap-3">
         <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90" />
         <Link
@@ -165,7 +187,7 @@ export default function OperationalAuditPage() {
       </div>
 
       {/* What you get */}
-      <section className="mt-12">
+      <section id="deliverables" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">What you get</h2>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
           A clear picture of what’s working, what’s breaking, and the highest-leverage improvements
@@ -212,7 +234,7 @@ export default function OperationalAuditPage() {
       </section>
 
       {/* How it works */}
-      <section className="mt-12">
+      <section id="how-we-engage" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">How it works</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-4">
           {[
@@ -242,7 +264,7 @@ export default function OperationalAuditPage() {
       </section>
 
       {/* Outcomes */}
-      <section className="mt-12">
+     <section id="outcomes" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">Typical outcomes</h2>
         <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
           <li>• Reduced “fire drill” work through clearer roles and recurring cadence</li>
@@ -253,7 +275,7 @@ export default function OperationalAuditPage() {
       </section>
 
       {/* Best fit */}
-      <section className="mt-12">
+      <section id="best-fit" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">Best fit for</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <Card className="p-6">
@@ -274,7 +296,7 @@ export default function OperationalAuditPage() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-12">
+      <section id="faq" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">FAQ</h2>
         <div className="mt-5 grid gap-4">
           {[
@@ -298,6 +320,37 @@ export default function OperationalAuditPage() {
           ))}
         </div>
       </section>
+
+<section id="related-services" className="mt-12">
+  <h2 className="text-xl font-semibold tracking-tight">Related services</h2>
+  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+    <Link
+      href="/services/property-management-consulting"
+      className="underline underline-offset-4 hover:text-foreground"
+    >
+      Property Management Consulting
+    </Link>
+    <Link
+      href="/services/budgeting-reforecasting"
+      className="underline underline-offset-4 hover:text-foreground"
+    >
+      Budgeting &amp; Reforecasting
+    </Link>
+    <Link
+      href="/services/capital-planning"
+      className="underline underline-offset-4 hover:text-foreground"
+    >
+      Capital Planning
+    </Link>
+    <Link
+      href="/services/owner-investor-reporting"
+      className="underline underline-offset-4 hover:text-foreground"
+    >
+      Owner &amp; Investor Reporting
+    </Link>
+  </div>
+</section>
+
 
       {/* Final CTA */}
       <section className="mt-12">

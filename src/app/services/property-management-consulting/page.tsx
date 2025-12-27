@@ -219,7 +219,6 @@ export default function PropertyManagementConsultingPage() {
 
       {/* WHO THIS IS FOR */}
       <section id="who-this-is-for" className="mt-10 grid gap-4 md:grid-cols-3">
-
         <Card>
           <CardContent className="p-6">
             <div className="text-sm font-semibold">Private owners / family offices</div>
@@ -253,7 +252,6 @@ export default function PropertyManagementConsultingPage() {
 
       {/* WHAT YOU GET */}
       <section id="deliverables" className="mt-12">
-
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
             What you get (deliverables owners actually use)
@@ -312,9 +310,7 @@ export default function PropertyManagementConsultingPage() {
       </section>
 
       {/* HOW WE ENGAGE */}
-      <section id="how-we-engage" className="mt-12">
-
-        <Card className="bg-background/60">
+      <section id="how-we-engage" className="mt-12">   <Card className="bg-background/60">
           <CardContent className="p-6 md:p-8">
             <div className="grid gap-6 md:grid-cols-3">
               <div>
