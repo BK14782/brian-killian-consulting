@@ -144,7 +144,6 @@ const faqJsonLd = {
 
 
 export default function PropertyManagementConsultingPage() {
-
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
       {/* Breadcrumb / back link */}
@@ -194,6 +193,34 @@ export default function PropertyManagementConsultingPage() {
             can trust.
           </p>
 
+<div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
+  <a
+    href="#who-this-is-for"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    Who this is for
+  </a>
+  <a
+    href="#deliverables"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    Deliverables
+  </a>
+  <a
+    href="#how-we-engage"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    How we engage
+  </a>
+  <a
+    href="#related-services"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    Related services
+  </a>
+</div>
+
+
           <div className="mt-6 flex flex-wrap gap-3">
            <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90" />
 
@@ -210,7 +237,8 @@ export default function PropertyManagementConsultingPage() {
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section className="mt-10 grid gap-4 md:grid-cols-3">
+      <section id="who-this-is-for" className="mt-10 grid gap-4 md:grid-cols-3">
+
         <Card>
           <CardContent className="p-6">
             <div className="text-sm font-semibold">Private owners / family offices</div>
@@ -243,7 +271,8 @@ export default function PropertyManagementConsultingPage() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="mt-12">
+      <section id="deliverables" className="mt-12">
+
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
             What you get (deliverables owners actually use)
@@ -302,7 +331,8 @@ export default function PropertyManagementConsultingPage() {
       </section>
 
       {/* HOW WE ENGAGE */}
-      <section className="mt-12">
+      <section id="how-we-engage" className="mt-12">
+
         <Card className="bg-background/60">
           <CardContent className="p-6 md:p-8">
             <div className="grid gap-6 md:grid-cols-3">
@@ -347,7 +377,8 @@ export default function PropertyManagementConsultingPage() {
         </Card>
       </section>
 
-<section className="mt-12">
+<section id="related-services" className="mt-12">
+
   <h2 className="text-xl font-semibold tracking-tight">Related services</h2>
   <div className="mt-3 flex flex-wrap gap-3 text-sm">
     <Link href="/services/budgeting-reforecasting" className="underline underline-offset-4 hover:text-foreground">
