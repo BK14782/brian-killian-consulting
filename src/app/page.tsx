@@ -8,29 +8,52 @@ import Link from "next/link";
 import React, { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import BannerImage from "@/components/BannerImage";
-import { Check, ChevronRight, Mail, Phone, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
+import { Check, ChevronRight, Mail, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
 
 const caseStudiesWithHref = caseStudies.map((c) => ({
   ...c,
   href: `/case-studies/${c.slug}`,
 }));
-const CardContent = ({ className = "", children }: any) => (
+type CardContentProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+const CardContent = ({ className = "", children }: CardContentProps) => (
   <div className={className}>{children}</div>
 );
 
-const Card = ({ className = "", children }: any) => (
-  <div className={`border bg-background shadow-sm ${className}`}>{children}</div>
+type CardProps = {
+  className?: string;
+  children: React.ReactNode;
+};
+
+const Card = ({ className = "", children }: CardProps) => (
+  <div className={`border bg-background shadow-sm ${className}`}>
+    {children}
+  </div>
 );
 
 
-const Button = ({ className = "", variant, children, ...props }: any) => {
 
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "solid" | "outline";
+};
+
+const Button = ({
+  className = "",
+  variant = "solid",
+  children,
+  ...props
+}: ButtonProps) => {
   const base =
     "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium transition border";
+
   const styles =
     variant === "outline"
       ? "bg-transparent hover:bg-foreground/5"
       : "bg-foreground text-background hover:bg-foreground/90 border-transparent";
+
   return (
     <button className={`${base} ${styles} ${className}`} {...props}>
       {children}
@@ -38,16 +61,30 @@ const Button = ({ className = "", variant, children, ...props }: any) => {
   );
 };
 
-const Badge = ({ className = "", variant, children }: any) => {
+
+type BadgeProps = {
+  className?: string;
+  variant?: "solid" | "secondary" | "outline";
+  children: React.ReactNode;
+};
+
+const Badge = ({
+  className = "",
+  variant = "solid",
+  children,
+}: BadgeProps) => {
   const base = "inline-flex items-center rounded-full px-3 py-1 text-xs border";
+
   const styles =
     variant === "secondary"
       ? "bg-foreground/5"
       : variant === "outline"
       ? "bg-transparent"
       : "bg-foreground text-background border-transparent";
+
   return <span className={`${base} ${styles} ${className}`}>{children}</span>;
 };
+
 
 type SectionProps = {
   id: string;
@@ -94,11 +131,11 @@ type NavProps = {
 
 const items = [
   { id: "services", label: "Services", href: "/services" },
-  { id: "deliverables", label: "Deliverables" },
-  { id: "case-studies", label: "Case Studies" },
   { id: "performance", label: "Performance" },
-  { id: "engagements", label: "Engagements" },
-  { id: "approach", label: "Approach" },
+  { id: "deliverables", label: "Deliverables" },
+ { id: "engagements", label: "Engagements" },
+  { id: "case-studies", label: "Case Studies" },
+    { id: "approach", label: "Approach" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
@@ -254,6 +291,7 @@ const services = [
   {
     icon: LineChart,
     title: "Operational & Financial Reporting",
+    href: "/services/owner-investor-reporting",
     bullets: [
       "Monthly operating reports (MOR) that tell the story",
       "Variance narratives + forward-looking risk flags",
@@ -263,6 +301,7 @@ const services = [
   {
     icon: FileText,
     title: "Budgeting, Reforecasting & Business Plans",
+    href: "/services/budgeting-reforcasting",
     bullets: [
       "Budget build, reforecast cadence, and controls",
       "One- to five-year business plans and capital roadmaps",
@@ -272,6 +311,7 @@ const services = [
   {
     icon: Workflow,
     title: "Process Management & Improvement",
+    href: "/services/operational-audit",
     bullets: [
       "SOPs across PM/engineering/accounting/project teams",
       "Approval workflows + vendor governance",
@@ -281,6 +321,7 @@ const services = [
   {
     icon: Wrench,
     title: "Capital Planning & Delivery",
+    href: "/services/capital-planning",
     bullets: [
       "Project phasing, scope control, and reporting",
       "Owner/tenant stakeholder alignment",
@@ -412,11 +453,13 @@ export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+ const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  setActive(id); // ✅ add this
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 
 return (
     <div className="min-h-screen bg-background text-foreground">
@@ -643,7 +686,12 @@ Across portfolios, property types, and ownership structures, the work varies—b
 </Section>
 
 
-
+<BannerImage
+  src="/banners/services-01.jpg"
+  alt="Professional leadership meeting"
+  caption="Institutional discipline with an operator-first mindset."
+  className="scale-[1.02] object-cover saturate-110 contrast-105"
+/>
 
 
 
