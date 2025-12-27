@@ -75,38 +75,46 @@ export default function ServicesPage() {
         <span className="text-foreground">Services</span>
       </div>
 
-      <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
-        Services
-        <div className="mt-2 text-xs text-muted-foreground">
- 
-</div>
+     <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
+  Services
+</h1>
 
-      </h1>
       <p className="mt-3 max-w-3xl text-muted-foreground">
         Practical, repeatable operating improvements for owners and operators—built around reporting clarity,
         disciplined process, and measurable outcomes.
       </p>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
-        {items.map((x, i) => (
-  <Card key={x.href}>
-    <CardContent className="p-6">
-      <div className="text-xs text-muted-foreground">Item #{i + 1}</div>
-      <div className="text-base font-semibold">{x.title}</div>
-      <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
-      <div className="mt-4">
-        <Link
-          href={x.href}
-          className="text-sm underline underline-offset-4 hover:text-foreground"
-        >
-          View details
-        </Link>
-      </div>
-    </CardContent>
-  </Card>
-))}
+<p className="mt-4 text-sm text-muted-foreground">
+  Not sure where to start?{" "}
+  <Link
+    href="/contact"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    Let’s talk
+  </Link>
+  .
+</p>
 
-      </div>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+  {items.map((x) => (
+    <Card key={x.href}>
+      <CardContent className="p-6">
+        <div className="text-base font-semibold">{x.title}</div>
+        <div className="mt-2 text-sm text-muted-foreground">{x.desc}</div>
+        <div className="mt-4">
+          <Link
+            href={x.href}
+            className="text-sm underline underline-offset-4 hover:text-foreground"
+          >
+            View details
+          </Link>
+        </div>
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
     </main>
   );
 }
