@@ -41,6 +41,7 @@ const Card = ({
       const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://briankillianconsulting.com/#service-capital-planning",
   "name": "Capital Planning",
   "description":
     "Capital planning support for owners and operators: scopes, budgets, schedules, bids, approvals, and clean owner-facing reporting.",

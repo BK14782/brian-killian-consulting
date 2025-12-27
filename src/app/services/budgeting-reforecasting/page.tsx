@@ -39,6 +39,7 @@ const Card = ({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://briankillianconsulting.com/#service-budgeting-reforecasting",
   "name": "Budgeting & Reforecasting",
   "description":
     "Budgeting and reforecasting consulting for owners and operators: cadence, assumptions, variance controls, and reporting that reduces surprises.",

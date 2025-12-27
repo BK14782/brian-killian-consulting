@@ -39,6 +39,7 @@ const Card = ({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://briankillianconsulting.com/#service-operational-audit",
   "name": "Operational Audit",
   "description":
     "Operational audit consulting for property teams: workflows, vendor controls, reporting cadence, and practical SOPs that reduce risk and save time.",

@@ -39,6 +39,7 @@ const Card = ({
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://briankillianconsulting.com/#service-owner-investor-reporting",
   "name": "Owner & Investor Reporting",
   "description":
     "Owner and investor reporting support for property portfolios: KPI dashboards, variance narratives, package standards, and a consistent cadence owners can rely on.",
