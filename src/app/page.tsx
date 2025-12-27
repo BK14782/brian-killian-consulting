@@ -147,7 +147,38 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
 
         </div>
 
-      
+{/* Mobile menu */}
+<details className="relative md:hidden">
+  <summary className="list-none inline-flex cursor-pointer items-center justify-center rounded-2xl border px-3 py-2 text-sm font-medium hover:bg-foreground/5">
+    Menu
+  </summary>
+
+  <div className="absolute right-0 mt-2 w-64 overflow-hidden rounded-2xl border bg-background shadow-lg">
+    <div className="flex flex-col p-2 text-sm">
+      {items.map((it) =>
+        it.href ? (
+          <Link
+            key={it.id}
+            href={it.href}
+            className="rounded-xl px-3 py-2 hover:bg-foreground/5"
+          >
+            {it.label}
+          </Link>
+        ) : (
+          <button
+            key={it.id}
+            onClick={() => onNav(it.id)}
+            className="rounded-xl px-3 py-2 text-left hover:bg-foreground/5"
+          >
+            {it.label}
+          </button>
+        )
+      )}
+    </div>
+  </div>
+</details>
+
+
       </div>
     </div>
   );
