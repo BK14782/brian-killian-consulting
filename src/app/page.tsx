@@ -89,6 +89,7 @@ const Badge = ({
 type SectionProps = {
   id: string;
   kicker?: string;
+  kickerHref?: string;
   title: string;
   subtitle?: string;
   children: React.ReactNode;
@@ -96,7 +97,19 @@ type SectionProps = {
   flushTop?: boolean;
 };
 
-const Section = ({ id, kicker, title, subtitle, children, tight, flushTop }: SectionProps) => (
+
+
+const Section = ({
+  id,
+  kicker,
+  kickerHref,
+  title,
+  subtitle,
+  children,
+  tight,
+  flushTop,
+}: SectionProps) => (
+
   <section
     id={id}
     className={`scroll-mt-24 ${
@@ -107,12 +120,25 @@ const Section = ({ id, kicker, title, subtitle, children, tight, flushTop }: Sec
   >
     <div className="mx-auto max-w-6xl px-4">
       <div className="max-w-3xl">
-        {kicker && (
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground shadow-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
-            <span>{kicker}</span>
-          </div>
-        )}
+      {kicker && (
+  kickerHref ? (
+    <div className="mb-3">
+      <Link
+        href={kickerHref}
+        className="inline-flex items-center rounded-full border bg-foreground px-3 py-1 text-xs font-medium text-background hover:bg-foreground/90"
+      >
+        {kicker}
+      </Link>
+    </div>
+  ) : (
+    <div className="mb-3 inline-flex items-center gap-2 rounded-full border bg-background px-3 py-1 text-xs text-muted-foreground">
+      <span className="h-1.5 w-1.5 rounded-full bg-foreground/70" />
+      <span>{kicker}</span>
+    </div>
+  )
+)}
+
+
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
         {subtitle && <p className="mt-2 text-muted-foreground">{subtitle}</p>}
       </div>
@@ -273,9 +299,13 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
 
         <FadeIn delayMs={320}>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button onClick={onLetsTalk}>
-              Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Button
+  onClick={onLetsTalk}
+  className="bg-foreground text-background hover:bg-foreground/90 whitespace-nowrap"
+>
+  Let’s talk
+</Button>
+
 
             <div className="text-sm text-muted-foreground">
               No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
@@ -654,27 +684,24 @@ Across portfolios, property types, and ownership structures, the work varies—b
   />
 
 
-<Section id="services" title="Advisory support where owners feel it most">
-  <div className="text-xs font-medium tracking-wide text-muted-foreground">
-    Services
-  </div>
-
-  <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
-    Targeted engagements designed to improve clarity, control, and decision-making across operations,
-    reporting, and capital planning.
-  </p>
-
+<Section
+  id="services"
+  kicker="Services"
+  kickerHref="/services"
+  title="Advisory support where owners feel it most"
+  subtitle="Targeted engagements designed to improve clarity, control, and decision-making across operations, reporting, and capital planning."
+>
   <div className="mt-6 grid gap-6 md:grid-cols-2">
-    {services.map((service, idx) => (
-      <div key={idx} className="rounded-2xl border bg-background p-6">
+    {services.map((service) => (
+      <div key={service.title} className="rounded-2xl border bg-background p-6">
         <div className="flex items-center gap-3">
           <service.icon className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
         </div>
 
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-          {service.bullets.map((bullet, i) => (
-            <li key={i} className="flex gap-2">
+          {service.bullets.map((bullet) => (
+            <li key={bullet} className="flex gap-2">
               <span>•</span>
               <span>{bullet}</span>
             </li>
@@ -686,14 +713,13 @@ Across portfolios, property types, and ownership structures, the work varies—b
 </Section>
 
 
+
 <BannerImage
   src="/banners/services-01.jpg"
   alt="Professional leadership meeting"
   caption="Institutional discipline with an operator-first mindset."
   className="scale-[1.02] object-cover saturate-110 contrast-105"
 />
-
-
 
 
 <Section
