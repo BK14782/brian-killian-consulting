@@ -41,14 +41,14 @@ const jsonLd = {
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-budgeting-reforecasting",
 name: "Budgeting & Reforecasting",
-  "description":
+  description:
     "Budgeting and reforecasting consulting for owners and operators: cadence, assumptions, variance controls, and reporting that reduces surprises.",
-  "serviceType": "Budgeting & reforecasting consulting",
+  serviceType: "Budgeting & reforecasting consulting",
   provider: {
     "@id": "https://briankillianconsulting.com/#organization",
   },
   "areaServed": "US",
-  "url": "https://briankillianconsulting.com/services/budgeting-reforecasting"
+  "url": "https://briankillianconsulting.com/services/budgeting-reforecasting",
 };
 
 const breadcrumbJsonLd = {
@@ -114,7 +114,7 @@ const faqJsonLd = {
 export default function BudgetingReforecastingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      /* Strucutred data */
+      {/* Structured data */}
  <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -131,7 +131,6 @@ export default function BudgetingReforecastingPage() {
 />
 
 
-/
 
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
@@ -156,6 +155,28 @@ export default function BudgetingReforecastingPage() {
         surprises get surfaced early.
       </p>
 
+<div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
+  <a href="#deliverables" className="underline underline-offset-4 hover:text-foreground">
+    What you get
+  </a>
+  <a href="#how-we-engage" className="underline underline-offset-4 hover:text-foreground">
+    How it works
+  </a>
+  <a href="#outcomes" className="underline underline-offset-4 hover:text-foreground">
+    Outcomes
+  </a>
+  <a href="#best-fit" className="underline underline-offset-4 hover:text-foreground">
+    Best fit
+  </a>
+  <a href="#faq" className="underline underline-offset-4 hover:text-foreground">
+    FAQ
+  </a>
+  <a href="#related-services" className="underline underline-offset-4 hover:text-foreground">
+    Related services
+  </a>
+</div>
+
+
       <div className="mt-6 flex flex-wrap gap-3">
         <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-4 py-2 text-sm font-medium text-background hover:bg-foreground/90" />
         <Link
@@ -167,7 +188,7 @@ export default function BudgetingReforecastingPage() {
       </div>
 
       {/* What you get */}
-      <section className="mt-12">
+      <section id="deliverables" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">What you get</h2>
         <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
           Deliverables are tailored to your portfolio and reporting expectations, but the goal is
@@ -214,7 +235,7 @@ export default function BudgetingReforecastingPage() {
       </section>
 
       {/* How it works */}
-      <section className="mt-12">
+      <section id="how-we-engage" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">How it works</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-4">
           {[
@@ -244,7 +265,7 @@ export default function BudgetingReforecastingPage() {
       </section>
 
       {/* Outcomes */}
-      <section className="mt-12">
+      <section id="outcomes" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">Typical outcomes</h2>
         <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
           <li>• Cleaner variance stories that reduce back-and-forth with ownership</li>
@@ -255,7 +276,7 @@ export default function BudgetingReforecastingPage() {
       </section>
 
       {/* Best fit */}
-      <section className="mt-12">
+      <section id="best-fit" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">Best fit for</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <Card className="p-6">
@@ -276,7 +297,7 @@ export default function BudgetingReforecastingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-12">
+      <section id="faq" className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">FAQ</h2>
         <div className="mt-5 grid gap-4">
           {[
@@ -300,6 +321,25 @@ export default function BudgetingReforecastingPage() {
           ))}
         </div>
       </section>
+
+<section id="related-services" className="mt-12">
+  <h2 className="text-xl font-semibold tracking-tight">Related services</h2>
+  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+    <Link href="/services/property-management-consulting" className="underline underline-offset-4 hover:text-foreground">
+      Property Management Consulting
+    </Link>
+    <Link href="/services/capital-planning" className="underline underline-offset-4 hover:text-foreground">
+      Capital Planning
+    </Link>
+    <Link href="/services/operational-audit" className="underline underline-offset-4 hover:text-foreground">
+      Operational Audit
+    </Link>
+    <Link href="/services/owner-investor-reporting" className="underline underline-offset-4 hover:text-foreground">
+      Owner &amp; Investor Reporting
+    </Link>
+  </div>
+</section>
+
 
       {/* Final CTA */}
       <section className="mt-12">

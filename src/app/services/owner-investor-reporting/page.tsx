@@ -41,9 +41,9 @@ const jsonLd = {
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-owner-investor-reporting",
   name: "Owner & Investor Reporting",
-  "description":
+  description:
     "Owner and investor reporting support for property portfolios: KPI dashboards, variance narratives, package standards, and a consistent cadence owners can rely on.",
-  "serviceType": "Owner & investor reporting consulting",
+  serviceType: "Owner & investor reporting consulting",
  provider: {
     "@id": "https://briankillianconsulting.com/#organization",
   
@@ -115,7 +115,7 @@ const faqJsonLd = {
 export default function OwnerInvestorReportingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      /* Structured data */ 
+      {/* Structured data */}
   <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

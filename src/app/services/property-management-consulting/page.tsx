@@ -127,7 +127,7 @@ const faqJsonLd = {
 export default function PropertyManagementConsultingPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
-      /* Structured data */
+     {/* Structured data */}
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
