@@ -3,22 +3,22 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Customer Experience & Leadership | Brian Killian Consulting",
+  title: "Tenant Experience & Leadership | Brian Killian Consulting",
   description:
-    "Customer experience and leadership consulting for owners and operators: tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention.",
+    "Tenant experience and leadership consulting for owners and operators: tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention.",
   alternates: {
     canonical: "https://briankillianconsulting.com/services/customer-experience-leadership",
   },
   openGraph: {
     type: "website",
     url: "https://briankillianconsulting.com/services/customer-experience-leadership",
-    title: "Customer Experience & Leadership | Brian Killian Consulting",
+    title: "Tenant Experience & Leadership | Brian Killian Consulting",
     description:
       "Tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Customer Experience & Leadership | Brian Killian Consulting",
+    title: "Tenant Experience & Leadership | Brian Killian Consulting",
     description:
       "Tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention.",
   },
@@ -28,10 +28,10 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-customer-experience-leadership",
-  name: "Customer Experience & Leadership",
+  name: "Tenant Experience & Leadership",
   description:
-    "Customer experience and leadership support for owners and operators: tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention and execution.",
-  serviceType: "Customer experience & leadership consulting",
+    "Tenant experience and leadership support for owners and operators: tenant meeting cadence, warm-touch service standards, vendor SLAs/KPIs, escalation playbooks, and operator-first coaching that improves retention and execution.",
+  serviceType: "Tenant experience & leadership consulting",
   provider: { "@id": "https://briankillianconsulting.com/#organization" },
   areaServed: "US",
   url: "https://briankillianconsulting.com/services/customer-experience-leadership",
@@ -46,7 +46,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Customer Experience & Leadership",
+      name: "Tenant Experience & Leadership",
       item: "https://briankillianconsulting.com/services/customer-experience-leadership",
     },
   ],
@@ -125,7 +125,7 @@ export default function CustomerExperienceLeadershipPage() {
           Services
         </Link>{" "}
         <span className="mx-2">/</span>
-        <span className="text-foreground">Customer Experience &amp; Leadership</span>
+        <span className="text-foreground">Tenant Experience &amp; Leadership</span>
       </div>
 
      <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
@@ -180,7 +180,7 @@ export default function CustomerExperienceLeadershipPage() {
       </div>
 
       <div className="mt-10">
-        <LetsTalkCTA />
+        <LetsTalkCTA className="inline-flex items-center justify-center rounded-2xl border bg-foreground px-5 py-3 text-sm font-medium text-background shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:bg-foreground/90 border-transparent" />
       </div>
 
       <div className="mt-6">

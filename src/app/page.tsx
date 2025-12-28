@@ -361,7 +361,7 @@ const services = [
   },
   {
     icon: ShieldCheck,
-    title: "Customer Experience & Retention",
+    title: "Tenant Experience & Retention",
     href: "/services/customer-experience-leadership",
     bullets: [
       "Service standards, comms cadence, and playbooks",

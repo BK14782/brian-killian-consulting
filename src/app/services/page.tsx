@@ -62,12 +62,12 @@ export default function ServicesPage() {
     desc:
       "Monthly packages that tell the story: KPIs, variance narratives, and forward-looking risk flags.",
   },
-    {
+ {
   href: "/services/customer-experience-leadership",
-  title: "Customer Experience & Leadership",
-  desc:
-    "Tenant meeting cadence, warm-touch service standards, vendor SLAs, and operator coaching that improves retention and execution.",
+  title: "Tenant Experience & Leadership",
+  desc: "Tenant communication + engagement systems, service recovery playbooks, and leadership rhythms that keep execution consistent.",
 },
+
 
 
 ];

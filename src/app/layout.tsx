@@ -52,9 +52,10 @@ const organizationJsonLd = {
   "@type": "Organization",
   "@id": "https://briankillianconsulting.com/#organization",
   name: "Brian Killian Consulting",
-  url: "https://briankillianconsulting.com",
+  url: "https://briankillianconsulting.com/",
   logo: "https://briankillianconsulting.com/banners/logo-01.jpg",
   sameAs: ["https://www.linkedin.com/in/briannkillian/"],
+  areaServed: "US",
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -64,57 +65,58 @@ const organizationJsonLd = {
     },
   ],
   hasOfferCatalog: {
-  "@type": "OfferCatalog",
-  name: "Services",
-  itemListElement: [
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        "@id": "https://briankillianconsulting.com/#service-property-management-consulting"
-      }
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        "@id": "https://briankillianconsulting.com/#service-budgeting-reforecasting"
-      }
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        "@id": "https://briankillianconsulting.com/#service-capital-planning"
-      }
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        "@id": "https://briankillianconsulting.com/#service-operational-audit"
-      }
-    },
-    {
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        "@id": "https://briankillianconsulting.com/#service-owner-investor-reporting"
-      }
-    },
-    {
-  "@type": "Offer",
-  itemOffered: {
-    "@type": "Service",
-    "@id": "https://briankillianconsulting.com/#service-customer-experience-leadership"
-  }
-},
-
-  ]
-},
-
-
-  areaServed: "US",
+    "@type": "OfferCatalog",
+    "@id": "https://briankillianconsulting.com/#services-catalog",
+    name: "Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id":
+            "https://briankillianconsulting.com/#service-property-management-consulting",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id":
+            "https://briankillianconsulting.com/#service-budgeting-reforecasting",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://briankillianconsulting.com/#service-capital-planning",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://briankillianconsulting.com/#service-operational-audit",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id":
+            "https://briankillianconsulting.com/#service-owner-investor-reporting",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id":
+            "https://briankillianconsulting.com/#service-customer-experience-leadership",
+        },
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

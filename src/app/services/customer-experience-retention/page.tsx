@@ -3,22 +3,22 @@ import Link from "next/link";
 import LetsTalkCTA from "@/components/LetsTalkCTA";
 
 export const metadata: Metadata = {
-  title: "Customer Experience & Retention | Brian Killian Consulting",
+  title: "Tenant Experience & Retention | Brian Killian Consulting",
   description:
-    "Customer experience and retention consulting for real estate owners and operators: service standards, communication cadence, vendor SLAs, and escalation playbooks that improve outcomes.",
+    "Tenant experience and retention consulting for real estate owners and operators: service standards, communication cadence, vendor SLAs, and escalation playbooks that improve outcomes.",
   alternates: {
     canonical: "https://briankillianconsulting.com/services/customer-experience-retention",
   },
   openGraph: {
     type: "website",
     url: "https://briankillianconsulting.com/services/customer-experience-retention",
-    title: "Customer Experience & Retention | Brian Killian Consulting",
+    title: "Tenant Experience & Retention | Brian Killian Consulting",
     description:
       "Service standards, comms cadence, vendor SLAs/KPIs, and escalation playbooks that reduce churn and improve tenant experience.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Customer Experience & Retention | Brian Killian Consulting",
+    title: "Tenant Experience & Retention | Brian Killian Consulting",
     description:
       "Service standards, comms cadence, vendor SLAs/KPIs, and escalation playbooks that reduce churn and improve tenant experience.",
   },
@@ -28,10 +28,10 @@ const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://briankillianconsulting.com/#service-customer-experience-retention",
-  name: "Customer Experience & Retention",
+  name: "Tenant Experience & Retention",
   description:
-    "Customer experience and retention support for owners and operators: service standards, communication cadence, vendor SLAs/KPIs, and escalation playbooks.",
-  serviceType: "Customer experience & retention consulting",
+    "Tenant experience and retention support for owners and operators: service standards, communication cadence, vendor SLAs/KPIs, and escalation playbooks.",
+  serviceType: "Tenant experience & retention consulting",
   provider: { "@id": "https://briankillianconsulting.com/#organization" },
   areaServed: "US",
   url: "https://briankillianconsulting.com/services/customer-experience-retention",
@@ -46,7 +46,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "Customer Experience & Retention",
+      name: "Tenant Experience & Retention",
       item: "https://briankillianconsulting.com/services/customer-experience-retention",
     },
   ],
@@ -104,11 +104,11 @@ export default function CustomerExperienceRetentionPage() {
           Services
         </Link>{" "}
         <span className="mx-2">/</span>
-        <span className="text-foreground">Customer Experience &amp; Retention</span>
+        <span className="text-foreground">Tenant Experience &amp; Retention</span>
       </div>
 
       <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
-        Customer experience that feels consistent — not accidental.
+        Tenant experience that feels consistent — not accidental.
       </h1>
 
       <p className="mt-3 max-w-3xl text-muted-foreground">
