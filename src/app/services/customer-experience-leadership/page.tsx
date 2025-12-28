@@ -58,33 +58,43 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What does “warm-touch” customer service mean in property operations?",
+      name: "What do you mean by tenant communication and “over-communication”?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "It means proactive, human follow-through: clear expectations, consistent updates, and small relationship-building touches that reduce friction and build trust with tenants and owners.",
+          "It means setting clear expectations early and sending timely updates—especially during disruptions—so tenants aren’t guessing. The goal is fewer escalations and higher trust.",
       },
     },
     {
       "@type": "Question",
-      name: "Do you help implement a tenant meeting cadence?",
+      name: "Do you help with tenant engagement and activities?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Yes. We define who attends, how often, what’s reviewed, and the exact agenda/template so meetings drive action instead of becoming a status readout.",
+          "Yes. I can help plan and execute simple engagement programs—events, activations, and feedback loops—that fit your property, budget, and tenant mix.",
       },
     },
     {
       "@type": "Question",
-      name: "Is this a training program or operational consulting?",
+      name: "Can this help boost tenant sales?",
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Operational consulting with coaching built in. The goal is a repeatable service model—standards, cadence, templates, and leadership rhythms that stick.",
+          "When relevant (especially retail or amenity tenants), I can help coordinate promotions, signage moments, communications, and property-led activations that support foot traffic and tenant visibility.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does the leadership portion focus on?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text:
+          "Collaboration, empathy, servant leadership, and change management—plus cross-functional execution so PM, engineering, and accounting stay aligned and commitments get closed out consistently.",
       },
     },
   ],
 };
+
 
 const Card = ({ title, items }: { title: string; items: string[] }) => (
   <div className="rounded-3xl border bg-background p-6 shadow-sm">
@@ -118,45 +128,55 @@ export default function CustomerExperienceLeadershipPage() {
         <span className="text-foreground">Customer Experience &amp; Leadership</span>
       </div>
 
-      <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
-        Customer experience that builds trust — backed by leadership rhythms that execute.
-      </h1>
+     <h1 className="mt-6 text-3xl font-semibold tracking-tight md:text-4xl">
+  Tenant experience that builds loyalty — powered by calm, collaborative leadership.
+</h1>
+
 
       <p className="mt-3 max-w-3xl text-muted-foreground">
-        This offering combines tenant-facing service standards with operator-first leadership coaching. The outcome is a
-        predictable service model: consistent tenant meetings, warm-touch communication, clear vendor expectations, and a
-        team cadence that closes loops.
-      </p>
+  This offering is built for retention and reputation. On the tenant side, it improves communication, engagement,
+  and day-to-day relationship management—so tenants feel informed, supported, and seen. On the team side, it
+  strengthens leadership rhythms and collaboration across PM/engineering/accounting so follow-through is consistent
+  and issues don’t fall through the cracks.
+</p>
+
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <Card
-          title="Customer experience & retention (what changes)"
-          items={[
-            "Tenant meeting cadence (monthly/quarterly) with a decision-driving agenda",
-            "Warm-touch standards: proactive updates, follow-through, and relationship-building moments",
-            "Escalation lanes and response-time expectations that reduce friction",
-            "Owner/tenant communication templates that keep narratives consistent",
-          ]}
-        />
-        <Card
-          title="Leadership & servant-service mindset (how it sticks)"
-          items={[
-            "Servant-leadership operating principles (clarity, accountability, calm execution)",
-            "Team cadence: weekly priorities, scorecards, and clean handoffs across PM/ENG/Accounting",
-            "Vendor governance that supports the occupant experience (SLAs/KPIs + escalation)",
-            "Coaching and implementation support so the playbook becomes habit",
-          ]}
-        />
+  title="Tenant relations & engagement (what changes)"
+  items={[
+    "Tenant communication cadence: clear expectations, over-communication when it matters, and fewer surprises",
+    "Tenant meeting rhythm (monthly/quarterly) with agendas that drive decisions and follow-up",
+    "Engagement programming support: events, activations, and simple feedback loops that improve satisfaction",
+    "Service recovery playbooks: fast acknowledgement, timelines, and consistent updates until closed",
+    "Retail/amenity alignment to boost sales where relevant (promos, signage, foot-traffic moments, tenant coordination)",
+  ]}
+/>
+
+<Card
+  title="Leadership & cross-functional execution (how it sticks)"
+  items={[
+    "Servant-leadership behaviors: empathy, patience, calm execution, and clear accountability",
+    "Cross-functional collaboration between PM/ENG/Accounting: handoffs, roles, and ‘definition of done’",
+    "Change management that lands: involve team members in decisions, communicate why, and reinforce habits",
+    "Positive work environments: clarity + respect + psychological safety so issues surface early",
+    "Motivating associates: scorecards, recognition, development rhythms, and removing blockers",
+  ]}
+/>
+
       </div>
 
       <div className="mt-10 rounded-3xl border bg-background/60 p-6">
         <div className="text-sm font-semibold">Typical deliverables</div>
         <ul className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-          <li>• Tenant meeting agenda + notes template + follow-up tracker</li>
-          <li>• Service standards (response times, comms cadence, definitions of “done”)</li>
-          <li>• Vendor SLA/KPI scorecard + escalation flow</li>
-          <li>• Weekly operating rhythm: priorities, scorecard, and accountability template</li>
-        </ul>
+  <li>• Tenant communications toolkit: cadence, templates, and escalation messaging</li>
+  <li>• Tenant meeting agendas + follow-up tracker + “closed loop” standards</li>
+  <li>• Engagement plan: events/activations, feedback loops, and simple satisfaction metrics</li>
+  <li>• Retail/tenant sales support ideas (when applicable): promotions, signage moments, coordination</li>
+  <li>• Cross-functional playbook: roles, handoffs, and decision lanes across PM/ENG/Accounting</li>
+  <li>• Leadership rhythms: 1:1s, team cadence, recognition, and change-management checklist</li>
+</ul>
+
       </div>
 
       <div className="mt-10">
