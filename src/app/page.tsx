@@ -362,6 +362,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: "Customer Experience & Retention",
+    href: "/services/customer-experience-leadership",
     bullets: [
       "Service standards, comms cadence, and playbooks",
       "Vendor SLAs/KPIs that support the occupant experience",
@@ -371,6 +372,7 @@ const services = [
    {
     icon: ShieldCheck,
     title: "Leadership & Coaching",
+    href: "/services/customer-experience-leadership",
     bullets: [
       "One-on-one mentorship",
       "Growth & servant leadership development",

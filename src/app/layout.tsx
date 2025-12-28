@@ -63,40 +63,53 @@ const organizationJsonLd = {
       url: "https://briankillianconsulting.com/contact",
     },
   ],
-hasOfferCatalog: {
+  hasOfferCatalog: {
   "@type": "OfferCatalog",
   name: "Services",
   itemListElement: [
     {
       "@type": "Offer",
       itemOffered: {
+        "@type": "Service",
         "@id": "https://briankillianconsulting.com/#service-property-management-consulting"
       }
     },
     {
       "@type": "Offer",
       itemOffered: {
+        "@type": "Service",
         "@id": "https://briankillianconsulting.com/#service-budgeting-reforecasting"
       }
     },
     {
       "@type": "Offer",
       itemOffered: {
+        "@type": "Service",
         "@id": "https://briankillianconsulting.com/#service-capital-planning"
       }
     },
     {
       "@type": "Offer",
       itemOffered: {
+        "@type": "Service",
         "@id": "https://briankillianconsulting.com/#service-operational-audit"
       }
     },
     {
       "@type": "Offer",
       itemOffered: {
+        "@type": "Service",
         "@id": "https://briankillianconsulting.com/#service-owner-investor-reporting"
       }
-    }
+    },
+    {
+  "@type": "Offer",
+  itemOffered: {
+    "@type": "Service",
+    "@id": "https://briankillianconsulting.com/#service-customer-experience-leadership"
+  }
+},
+
   ]
 },
 
