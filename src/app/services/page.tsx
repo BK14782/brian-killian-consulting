@@ -62,6 +62,19 @@ export default function ServicesPage() {
     desc:
       "Monthly packages that tell the story: KPIs, variance narratives, and forward-looking risk flags.",
   },
+    {
+    href: "/services/customer-experience-retention",
+    title: "Customer Experience & Retention",
+    desc:
+      "Service standards, comms cadence, and vendor SLAs that improve the occupant experience and reduce churn.",
+  },
+  {
+    href: "/services/leadership-coaching",
+    title: "Leadership & Coaching",
+    desc:
+      "Mentorship, team operating rhythms, and cross-functional leadership development that scales execution.",
+  },
+
 ];
 
 
