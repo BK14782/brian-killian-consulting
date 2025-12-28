@@ -301,10 +301,11 @@ const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
   onClick={onLetsTalk}
-  className="bg-foreground text-background hover:bg-foreground/90 whitespace-nowrap"
+  className="bg-foreground text-background hover:bg-foreground/90"
 >
   Let’s talk
 </Button>
+
 
 
             <div className="text-sm text-muted-foreground">
@@ -693,7 +694,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
 >
   <div className="mt-6 grid gap-6 md:grid-cols-2">
     {services.map((service) => (
-      <div key={service.title} className="rounded-2xl border bg-background p-6">
+      <div key={service.title} className="rounded-2xl border p-6">
         <div className="flex items-center gap-3">
           <service.icon className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
