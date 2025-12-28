@@ -154,26 +154,6 @@ export default function OperationalAuditPage() {
         workflows) and deliver practical fixes: SOPs, checklists, cadence, and owner-ready reporting.
       </p>
 
-<div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
-  <a href="#deliverables" className="underline underline-offset-4 hover:text-foreground">
-    What you get
-  </a>
-  <a href="#how-we-engage" className="underline underline-offset-4 hover:text-foreground">
-    How it works
-  </a>
-  <a href="#outcomes" className="underline underline-offset-4 hover:text-foreground">
-    Outcomes
-  </a>
-  <a href="#best-fit" className="underline underline-offset-4 hover:text-foreground">
-    Best fit
-  </a>
-  <a href="#faq" className="underline underline-offset-4 hover:text-foreground">
-    FAQ
-  </a>
-  <a href="#related-services" className="underline underline-offset-4 hover:text-foreground">
-    Related services
-  </a>
-</div>
 
 
       <div className="mt-6 flex flex-wrap gap-3">

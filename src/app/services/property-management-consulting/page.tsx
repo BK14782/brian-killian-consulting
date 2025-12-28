@@ -174,32 +174,7 @@ export default function PropertyManagementConsultingPage() {
             can trust.
           </p>
 
-<div className="mt-4 flex flex-wrap gap-3 text-sm text-muted-foreground">
-  <a
-    href="#who-this-is-for"
-    className="underline underline-offset-4 hover:text-foreground"
-  >
-    Who this is for
-  </a>
-  <a
-    href="#deliverables"
-    className="underline underline-offset-4 hover:text-foreground"
-  >
-    Deliverables
-  </a>
-  <a
-    href="#how-we-engage"
-    className="underline underline-offset-4 hover:text-foreground"
-  >
-    How we engage
-  </a>
-  <a
-    href="#related-services"
-    className="underline underline-offset-4 hover:text-foreground"
-  >
-    Related services
-  </a>
-</div>
+
 
 
           <div className="mt-6 flex flex-wrap gap-3">

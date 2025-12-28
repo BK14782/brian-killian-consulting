@@ -125,7 +125,7 @@ const Section = ({
     <div className="mb-3">
       <Link
         href={kickerHref}
-        className="inline-flex items-center rounded-full border bg-foreground px-3 py-1 text-xs font-medium text-background hover:bg-foreground/90"
+        className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-muted-foreground transition hover:border-foreground hover:text-foreground hover:bg-foreground/5"
       >
         {kicker}
       </Link>
@@ -565,14 +565,16 @@ return (
     </ul>
 
     <div className="mt-5 flex flex-wrap items-center gap-3">
-      <button
+      <Button
   type="button"
   onClick={() => setLeadOpen(true)}
-  className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+  className="px-5 py-3 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 >
   Let’s talk
   <ChevronRight className="ml-2 h-4 w-4" />
-</button>
+</Button>
+
+
 
       <div className="text-sm text-muted-foreground">
         Typical engagements range from 2–6 weeks depending on portfolio size and complexity.
@@ -694,7 +696,7 @@ Across portfolios, property types, and ownership structures, the work varies—b
 >
   <div className="mt-6 grid gap-6 md:grid-cols-2">
     {services.map((service) => (
-      <div key={service.title} className="rounded-2xl border p-6">
+      <div key={service.title} className="rounded-2xl border bg-background p-6 shadow-sm">
         <div className="flex items-center gap-3">
           <service.icon className="h-5 w-5 text-muted-foreground" />
           <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
