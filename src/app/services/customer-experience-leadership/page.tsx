@@ -215,18 +215,20 @@ export default function TenantExperienceLeadershipPage() {
       </Card>
 
       {/* CTAs */}
-      <div className="mt-8 flex flex-wrap gap-3">
-        {/* Make sure this renders as a black button in your LetsTalkCTA component.
-            If LetsTalkCTA supports className, keep this; if not, tell me and I’ll adapt. */}
-        <LetsTalkCTA className="bg-foreground text-background hover:bg-foreground/90" />
+<div className="mt-8 flex flex-wrap gap-3">
+  <LetsTalkCTA
+    className="inline-flex items-center justify-center rounded-2xl bg-foreground px-5 py-3 text-sm font-medium text-background shadow-sm transition hover:bg-foreground/90"
+  />
 
-        <Link
-          href="/services"
-          className="inline-flex items-center justify-center rounded-2xl border px-4 py-2 text-sm font-medium hover:bg-foreground/5"
-        >
-          Back to services
-        </Link>
-      </div>
+  <Link
+    href="/services"
+    className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-foreground/5"
+  >
+    Back to services
+  </Link>
+</div>
+
+
 
       {/* Related services */}
       <div className="mt-10 border-t pt-8">
@@ -248,6 +250,8 @@ export default function TenantExperienceLeadershipPage() {
             Owner &amp; Investor Reporting
           </Link>
         </div>
+
+
 
         <p className="mt-6 text-sm text-muted-foreground">
           Note: Details can be anonymized for confidentiality. I focus on owner-ready reporting, disciplined
