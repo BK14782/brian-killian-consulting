@@ -10,6 +10,7 @@ import FadeIn from "@/components/FadeIn";
 import BannerImage from "@/components/BannerImage";
 import { Check, ChevronRight, Mail, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
 
+
 const caseStudiesWithHref = caseStudies.map((c) => ({
   ...c,
   href: `/case-studies/${c.slug}`,
@@ -148,12 +149,6 @@ const Section = ({
   </section>
 );
 
-type NavProps = {
-  active: string;
-  onNav: (id: string) => void;
-  onLetsTalk: () => void;
-};
-
 
 const items = [
   { id: "services", label: "Services", href: "/services" },
@@ -166,7 +161,13 @@ const items = [
   { id: "contact", label: "Contact" },
 ];
 
-const Nav = ({ active, onNav, onLetsTalk }: NavProps) => {
+type NavProps = {
+  active: string;
+  onNav: (id: string) => void;
+};
+
+
+const Nav = ({ active, onNav }: NavProps) => {
   return (
     <div className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -382,19 +383,6 @@ const services = [
 ];
 
 
-type CaseStudy = {
-  tag: string;
-  title: string;
-  outcome: string;
-  context: string;
-  bullets: string[];
-  metrics: string[];
-  href: string;
-  slug: string;
-};
-
-
-
 type CaseStudyCardProps = {
   href: string;
   tag: string;
@@ -470,9 +458,10 @@ function FloatingLetsTalkButton({ onClick }: { onClick: () => void }) {
   return (
     <div className="fixed bottom-5 right-5 z-50">
       <Button
-        onClick={onClick}
-        className="rounded-2xl shadow-lg"
-      >
+  type="button"
+  onClick={onClick}
+  className="rounded-2xl shadow-lg bg-foreground text-background hover:bg-foreground/90 border-transparent"
+>
         Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
       </Button>
     </div>
@@ -481,10 +470,11 @@ function FloatingLetsTalkButton({ onClick }: { onClick: () => void }) {
 
 
 
-
 export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
+const openLead = () => setLeadOpen(true);
+const closeLead = () => setLeadOpen(false);
 
  const scrollTo = (id: string) => {
   const el = document.getElementById(id);
@@ -494,13 +484,17 @@ export default function Page() {
 };
 
 
+
+
+
 return (
     <div className="min-h-screen bg-background text-foreground">
       {/* One floating button only */}
-      <FloatingLetsTalkButton onClick={() => setLeadOpen(true)} />
+     <FloatingLetsTalkButton onClick={openLead} />
 
-      <Nav active={active} onNav={scrollTo} onLetsTalk={() => setLeadOpen(true)} />
-      <Hero onLetsTalk={() => setLeadOpen(true)} />
+      <Nav active={active} onNav={scrollTo} />
+<Hero onLetsTalk={openLead} />
+
 
       <div className="mx-auto max-w-6xl px-4 mt-10">
         <ProfileCard />
@@ -1146,8 +1140,10 @@ Across portfolios, property types, and ownership structures, the work varies—b
         </div>
       </Section>
 
- 
-<LeadCaptureModal isOpen={leadOpen} onClose={() => setLeadOpen(false)} />
+
+
+<LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
+
 
       <Footer />
     </div>

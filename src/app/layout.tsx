@@ -53,7 +53,7 @@ const organizationJsonLd = {
   "@id": "https://briankillianconsulting.com/#organization",
   name: "Brian Killian Consulting",
   url: "https://briankillianconsulting.com/",
-  logo: "https://briankillianconsulting.com/banners/logo-01.jpg",
+  logo: "https://briankillianconsulting.com/public/banners/logo-01.jpg",
   sameAs: ["https://www.linkedin.com/in/briannkillian/"],
   areaServed: "US",
   contactPoint: [
