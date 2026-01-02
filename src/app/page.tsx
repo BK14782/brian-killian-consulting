@@ -1107,7 +1107,6 @@ Across portfolios, property types, and ownership structures, the work varies—b
   >
     Schedule a Call
   </a>
-import styles from "./CapabilitiesButton.module.css";
 
 <a
   href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
