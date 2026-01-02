@@ -1107,12 +1107,13 @@ Across portfolios, property types, and ownership structures, the work varies—b
   >
     Schedule a Call
   </a>
+import styles from "./CapabilitiesButton.module.css";
 
-  <a
-  href="/brian-killian-consulting/public/banners/Consutling_Webpage_Forms_and_Services_PDF.pdf"
+<a
+  href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="capabilities-btn"
+  className={styles.button}
 >
   Capabilities PDF
 </a>
