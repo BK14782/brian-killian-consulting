@@ -1108,13 +1108,15 @@ Across portfolios, property types, and ownership structures, the work varies—b
     Schedule a Call
   </a>
 
-  <button
-    type="button"
-    disabled
-    className="rounded-2xl border px-4 py-2 opacity-60 cursor-not-allowed"
-  >
-    Capabilities PDF (coming soon)
-  </button>
+  <a
+  href="/brian-killian-consulting/public/banners/Consutling_Webpage_Forms_and_Services_PDF.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="capabilities-btn"
+>
+  Capabilities PDF
+</a>
+
 </div>
 
             </CardContent>
