@@ -27,7 +27,7 @@ export default function LetsTalkCTA({
         }}
         className={className}
       >
-        {label} [CTA_COMPONENT]
+        {label} 
 
       </button>
 
