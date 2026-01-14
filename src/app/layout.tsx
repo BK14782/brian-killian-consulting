@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SchemaPerson from "@/components/SchemaPerson";
+import ScrollDepthTracker from "@/components/ScrollDepthTracker";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -132,7 +134,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-
+        <ScrollDepthTracker />
         {/* Person schema (sitewide) */}
         <SchemaPerson />
 

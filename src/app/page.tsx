@@ -476,8 +476,7 @@ export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
 const openLead = () => {
-  console.log("CTA CLICK FIRED");
-  gaEvent("cta_lets_talk_click", {
+    gaEvent("cta_lets_talk_click", {
     location: "homepage",
     page: window.location.pathname,
   });
