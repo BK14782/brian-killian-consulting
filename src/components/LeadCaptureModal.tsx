@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { gaEvent } from "@/lib/ga";
 
 type Props = {
   isOpen: boolean;
@@ -17,6 +18,20 @@ export default function LeadCaptureModal({ isOpen, onClose }: Props) {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+
+useEffect(() => {
+  const handler = (e: MessageEvent) => {
+    if (e.data?.event === "calendly.event_scheduled") {
+      gaEvent("calendly_submit", {
+        page: window.location.pathname,
+      });
+    }
+  };
+
+  window.addEventListener("message", handler);
+  return () => window.removeEventListener("message", handler);
+}, []);
+
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
