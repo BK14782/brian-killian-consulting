@@ -475,7 +475,15 @@ function FloatingLetsTalkButton({ onClick }: { onClick: () => void }) {
 export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
   const [active, setActive] = useState("services");
-const openLead = () => setLeadOpen(true);
+const openLead = () => {
+  console.log("CTA CLICK FIRED");
+  gaEvent("cta_lets_talk_click", {
+    location: "homepage",
+    page: window.location.pathname,
+  });
+  setLeadOpen(true);
+};
+
 const closeLead = () => setLeadOpen(false);
 
  const scrollTo = (id: string) => {
@@ -565,7 +573,8 @@ return (
     <div className="mt-5 flex flex-wrap items-center gap-3">
       <Button
   type="button"
-  onClick={() => setLeadOpen(true)}
+  onClick={openLead}
+
   className="px-5 py-3 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
 >
   Let’s talk
