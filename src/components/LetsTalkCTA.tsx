@@ -15,10 +15,12 @@ export default function LetsTalkCTA({
 
   return (
     <>
-      onClick={() => {
+    onClick={() => {
+  console.log("CTA CLICK FIRED");
   gaEvent("cta_test_click", { page: window.location.pathname });
   setOpen(true);
 }}
+
 
 
 
