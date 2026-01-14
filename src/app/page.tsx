@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import BannerImage from "@/components/BannerImage";
 import { Check, ChevronRight, Mail, LineChart, ShieldCheck, Wrench, FileText, Workflow, Building2 } from "lucide-react";
+import { gaEvent } from "@/lib/ga";
+
 
 
 const caseStudiesWithHref = caseStudies.map((c) => ({
@@ -1100,13 +1102,21 @@ Across portfolios, property types, and ownership structures, the work varies—b
   </a>
 
   <a
-    href="https://calendly.com/killianbrian82/30min"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
-  >
-    Schedule a Call
-  </a>
+  href="https://calendly.com/killianbrian82/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() =>
+    gaEvent("calendly_open", {
+      location: "schedule_call_link",
+      page: window.location.pathname,
+      url: "https://calendly.com/killianbrian82/30min",
+    })
+  }
+  className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
+>
+  Schedule a Call
+</a>
+
 
 <a
   href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
