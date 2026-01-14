@@ -27,7 +27,8 @@ export default function LetsTalkCTA({
         }}
         className={className}
       >
-        {label}
+        {label} [CTA_COMPONENT]
+
       </button>
 
       <LeadCaptureModal isOpen={open} onClose={() => setOpen(false)} />
