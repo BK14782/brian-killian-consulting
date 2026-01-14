@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServicesViewedTracker from "@/components/ServicesViewedTracker";
+
 
 export const metadata: Metadata = {
   title: "Services",
@@ -77,6 +79,7 @@ export default function ServicesPage() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12">
+      <ServicesViewedTracker />
       <div className="text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground underline underline-offset-4">
           Home
