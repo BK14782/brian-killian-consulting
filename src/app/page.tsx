@@ -755,7 +755,7 @@ export default function Page() {
       </Section>
 
       <BannerImage
-        src="/banners/handshake-01.jpg"
+        src="/banners/next-step-01.jpg"
         alt="Handshake between business partners"
         caption="Clear communication. Reliable follow-through."
         className="scale-[1.02] object-cover saturate-110 contrast-105"
