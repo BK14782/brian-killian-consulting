@@ -406,7 +406,7 @@ const CaseStudyCard = ({
     <Card className="relative overflow-hidden rounded-3xl shadow-sm transition hover:shadow-md">
       {/* Translucent per-card background image (uses the same image as the case study page) */}
       <div
-        className="absolute inset-0 opacity-[0.10] pointer-events-none"
+        className="absolute inset-0 opacity-[0.45] pointer-events-none"
         style={{
           backgroundImage: `url(${heroImage || "/banners/handshake-01.jpg"})`,
           backgroundSize: "cover",
