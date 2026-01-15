@@ -463,7 +463,7 @@ export default function Page() {
       <Hero onLetsTalk={openLead} />
 
       {/* Keep your ProfileCard near the top, but after the hero */}
-      <div className="mx-auto max-w-6xl px-4 mt-10">
+      <div className="mx-auto max-w-6xl px-4 -mt-2">
         <ProfileCard />
       </div>
 
@@ -663,43 +663,68 @@ export default function Page() {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           <Card className="rounded-3xl shadow-sm lg:col-span-2">
-            <CardContent className="p-6">
-              <div className="flex flex-wrap items-center gap-3">
-                <Button type="button" onClick={openLead} className="px-5 py-3">
-                  Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
+  <CardContent className="p-6">
+    <div className="flex flex-wrap items-center gap-3">
+      <Button type="button" onClick={openLead} className="px-5 py-3">
+        Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
+      </Button>
 
-                <a
-                  href="https://calendly.com/killianbrian82/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    gaEvent("calendly_open", {
-                      location: "primary_cta_section",
-                      page: window.location.pathname,
-                      url: "https://calendly.com/killianbrian82/30min",
-                    })
-                  }
-                  className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800"
-                >
-                  Schedule a Call
-                </a>
+      <a
+        href="https://calendly.com/killianbrian82/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() =>
+          gaEvent("calendly_open", {
+            location: "primary_cta_section",
+            page: window.location.pathname,
+            url: "https://calendly.com/killianbrian82/30min",
+          })
+        }
+        className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800"
+      >
+        Schedule a Call
+      </a>
 
-                <a
-                  href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-foreground/5"
-                >
-                  Capabilities PDF
-                </a>
-              </div>
+      <a
+        href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-foreground/5"
+      >
+        Capabilities PDF
+      </a>
+    </div>
 
-              <p className="mt-4 text-sm text-muted-foreground">
-                You’ll leave the call with a quick read on what’s driving noise and the first 2–3 moves to create momentum.
-              </p>
-            </CardContent>
-          </Card>
+    <p className="mt-4 text-sm text-muted-foreground">
+      You’ll leave the call with a quick read on what’s driving noise and the first 2–3 moves to create momentum.
+    </p>
+
+    {/* What you get (fills space + improves conversion) */}
+    <div className="mt-6 rounded-3xl border bg-background/60 p-5">
+      <div className="text-sm font-semibold">What you’ll get in 30 minutes</div>
+
+      <ul className="mt-4 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+        <li className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          Identify the top 2–3 drivers of noise (reporting, budget drift, vendors, capital).
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          Clarify what “good” looks like: KPIs, cadence, ownership, and decision lanes.
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="mt-0.5 h-4 w-4" />
+          A simple first-week plan: what to fix now vs. what to stabilize over 30–60 days.
+        </li>
+              </ul>
+
+      <div className="mt-4 text-xs text-muted-foreground">
+        Confidentiality is standard—share as much or as little detail as you’d like.
+      </div>
+    </div>
+  </CardContent>
+</Card>
+
 
           <Card className="rounded-3xl shadow-sm">
             <CardContent className="p-6">
@@ -735,6 +760,29 @@ export default function Page() {
         caption="Clear communication. Reliable follow-through."
         className="scale-[1.02] object-cover saturate-110 contrast-105"
       />
+
+{/* CASE STUDIES */}
+      <Section
+        id="case-studies"
+        kicker="Proof"
+        title="Selected case studies"
+        subtitle="Real examples of outcomes and execution approach (details anonymized)."
+        tight
+      >
+        <div className="grid gap-4 lg:grid-cols-2">
+          {caseStudiesWithHref.map((c) => (
+            <CaseStudyCard key={c.slug} {...c} />
+          ))}
+        </div>
+      </Section>
+
+      <BannerImage
+        src="/banners/handshake-01.jpg"
+        alt="Handshake between business partners"
+        caption="Clear communication. Reliable follow-through."
+        className="scale-[1.02] object-cover saturate-110 contrast-105"
+      />
+
 
       {/* 6) DEEPER NARRATIVE / SEO (all your detailed sections remain below) */}
 
@@ -957,28 +1005,6 @@ export default function Page() {
 
       <BannerImage
         src="/banners/engagements-01.jpg"
-        alt="Handshake between business partners"
-        caption="Clear communication. Reliable follow-through."
-        className="scale-[1.02] object-cover saturate-110 contrast-105"
-      />
-
-      {/* CASE STUDIES */}
-      <Section
-        id="case-studies"
-        kicker="Proof"
-        title="Selected case studies"
-        subtitle="Representative examples of outcomes and methods. Details can be anonymized for confidentiality."
-        tight
-      >
-        <div className="grid gap-4 lg:grid-cols-2">
-          {caseStudiesWithHref.map((c) => (
-            <CaseStudyCard key={c.slug} {...c} />
-          ))}
-        </div>
-      </Section>
-
-      <BannerImage
-        src="/banners/handshake-01.jpg"
         alt="Handshake between business partners"
         caption="Clear communication. Reliable follow-through."
         className="scale-[1.02] object-cover saturate-110 contrast-105"
