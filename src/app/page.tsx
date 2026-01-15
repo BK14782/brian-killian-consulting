@@ -722,7 +722,7 @@ export default function Page() {
             url: "https://calendly.com/killianbrian82/30min",
           })
         }
-        className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-5 py-3 text-sm font-medium text-white hover:bg-neutral-800"
+        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium text-foreground hover:bg-foreground/5"
       >
         Schedule a Call
       </a>
@@ -731,11 +731,36 @@ export default function Page() {
         href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium hover:bg-foreground/5"
+        className="inline-flex items-center justify-center rounded-2xl border px-5 py-3 text-sm font-medium text-foreground hover:bg-foreground/5"
       >
         Capabilities PDF
       </a>
     </div>
+
+      <div className="mt-3 text-sm text-muted-foreground">
+        Prefer to browse first?{" "}
+        <Link
+          href="/services"
+          className="underline underline-offset-4 hover:text-foreground"
+        >
+          View services
+        </Link>{" "}
+        or{" "}
+        <button
+          type="button"
+          aria-label="Scroll to case studies section"
+          onClick={() =>
+            document
+              .getElementById("case-studies")
+              ?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="underline underline-offset-4 hover:text-foreground"
+>
+  See case studies
+</button>
+
+        .
+      </div>
 
     <p className="mt-4 text-sm text-muted-foreground">
       You’ll leave the call with a quick read on what’s driving noise and the first 2–3 moves to create momentum.
