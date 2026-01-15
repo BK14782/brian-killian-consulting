@@ -244,13 +244,13 @@ const Nav = ({ active, onNav }: NavProps) => {
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
   <header className="relative overflow-hidden text-white">
     {/* Navy → white fade */}
-    <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 z-10">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
       <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
       <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
     </div>
 
-    <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
+    <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="max-w-3xl">
         <FadeIn delayMs={0}>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/75">
@@ -411,7 +411,7 @@ const CaseStudyCard = ({
     <Card className="relative overflow-hidden rounded-3xl shadow-sm transition hover:shadow-md">
       {/* Translucent per-card background image (uses the same image as the case study page) */}
       <div
-        className="absolute inset-0 opacity-[0.20] pointer-events-none"
+        className="absolute inset-0 opacity-[0.30] pointer-events-none"
         style={{
           backgroundImage: `url(${heroImage || "/banners/handshake-01.jpg"})`,
           backgroundSize: "cover",
@@ -498,9 +498,9 @@ export default function Page() {
             <Link
               key={x.href}
               href={x.href}
-              className="group block rounded-3xl border bg-background shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-foreground/20"
+              className="group block rounded-3xl border bg-background shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-foreground/25 hover:ring-1 hover:ring-foreground/15"
             >
-              <div className="p-6">
+              <div className="p-6 transition-colors group-hover:bg-foreground/[0.02]">
                 <div className="flex items-center gap-3">
                   <x.icon className="h-5 w-5 text-muted-foreground" />
                   <div className="text-base font-semibold">{x.title}</div>
@@ -603,7 +603,7 @@ export default function Page() {
             <Button
               type="button"
               onClick={openLead}
-              className="px-5 py-3 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              className="px-5 py-3 shadow-sm transition hover:shadow-md"
             >
               Let’s talk <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
@@ -674,8 +674,8 @@ export default function Page() {
 
         <BannerImage
         src="/banners/Are-we-a-fit-01.jpg"
-        alt="Handshake between business partners"
-        caption="Clear communication. Reliable follow-through."
+        alt="Are we a fit?"
+        caption="Clear priorities. Shared targets. Reliable follow-through."
         className="scale-[1.02] object-cover saturate-110 contrast-105"
       />
 
@@ -1229,7 +1229,7 @@ export default function Page() {
   <div className="mx-auto max-w-6xl px-4 mt-16 py-12">
           </div>
 
-      <div className="mx-auto max-w-6xl px-4 mt-16">
+      <div className="mx-auto max-w-6xl px-4 mt-6">
         <div className="mb-6 max-w-3xl">
           <div className="text-sm font-semibold">Before we talk</div>
           <p className="mt-1 text-sm text-muted-foreground">
