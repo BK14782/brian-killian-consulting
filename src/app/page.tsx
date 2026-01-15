@@ -243,17 +243,17 @@ const Nav = ({ active, onNav }: NavProps) => {
 /* HERO */
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
   <header className="relative overflow-hidden">
-    {/* Warm background wash */}
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute -left-40 -top-40 h-[520px] w-[520px] rounded-full bg-amber-500/15 blur-3xl" />
-      <div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-sky-500/15 blur-3xl" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/60" />
-    </div>
+    {/* Navy → white fade */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
+    <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
+    <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
+  </div>
 
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="max-w-3xl">
         <FadeIn delayMs={0}>
-          <div className="inline-flex items-center gap-2 rounded-full border bg-background/70 px-3 py-1 text-xs text-muted-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/75">
             <span className="h-2 w-2 rounded-full bg-amber-500/60" />
             Nationwide consulting • Commercial & residential portfolios
           </div>
@@ -392,7 +392,9 @@ type CaseStudyCardProps = {
   outcome: string;
   bullets: string[];
   metrics: string[];
+  heroImage?: string; // NEW
 };
+
 
 const CaseStudyCard = ({
   href,
@@ -402,10 +404,23 @@ const CaseStudyCard = ({
   outcome,
   bullets,
   metrics,
+  heroImage,
 }: CaseStudyCardProps) => (
   <Link href={href} className="block">
-    <Card className="rounded-3xl shadow-sm hover:shadow-md transition">
-      <CardContent className="p-6 space-y-4">
+    <Card className="relative overflow-hidden rounded-3xl shadow-sm transition hover:shadow-md">
+      {/* Translucent per-card background image (uses the same image as the case study page) */}
+      <div
+        className="absolute inset-0 opacity-[0.10] pointer-events-none"
+        style={{
+          backgroundImage: `url(${heroImage || "/banners/handshake-01.jpg"})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      {/* Soft overlay so text stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/75 to-background pointer-events-none" />
+
+      <CardContent className="relative p-6 space-y-4">
         <Badge variant="secondary" className="w-fit">
           {tag}
         </Badge>
@@ -432,6 +447,7 @@ const CaseStudyCard = ({
     </Card>
   </Link>
 );
+
 
 export default function Page() {
   const [leadOpen, setLeadOpen] = useState(false);
@@ -481,7 +497,7 @@ export default function Page() {
             <Link
               key={x.href}
               href={x.href}
-              className="block rounded-3xl border bg-background shadow-sm transition hover:shadow-md"
+              className="group block rounded-3xl border bg-background shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md hover:border-foreground/20"
             >
               <div className="p-6">
                 <div className="flex items-center gap-3">
@@ -489,9 +505,11 @@ export default function Page() {
                   <div className="text-base font-semibold">{x.title}</div>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{x.desc}</p>
-                <div className="mt-4 inline-flex items-center text-sm underline underline-offset-4">
-                  View details <ChevronRight className="ml-1 h-4 w-4" />
-                </div>
+                <div className="mt-4 inline-flex items-center text-sm underline underline-offset-4 transition group-hover:text-foreground">
+                View details{" "}
+                <ChevronRight className="ml-1 h-4 w-4 transition group-hover:translate-x-0.5" />
+              </div>
+
               </div>
             </Link>
           ))}
@@ -652,6 +670,14 @@ export default function Page() {
           </Card>
         </div>
       </Section>
+
+        <BannerImage
+        src="/banners/Are-we-a-fit-01.jpg"
+        alt="Handshake between business partners"
+        caption="Clear communication. Reliable follow-through."
+        className="scale-[1.02] object-cover saturate-110 contrast-105"
+      />
+
 
       {/* 5) PRIMARY CTA (new, simple decision moment) */}
       <Section
@@ -1198,6 +1224,12 @@ export default function Page() {
         </div>
       </Section>
 
+<div className="bg-gradient-to-b from-background to-sky-50">
+  <div className="mx-auto max-w-6xl px-4 mt-16 py-12">
+    ...
+    <ProfileCard />
+  </div>
+
       <div className="mx-auto max-w-6xl px-4 mt-16">
         <div className="mb-6 max-w-3xl">
           <div className="text-sm font-semibold">Before we talk</div>
@@ -1300,6 +1332,7 @@ export default function Page() {
 
       <LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
       <Footer />
+    </div>
     </div>
   );
 }
