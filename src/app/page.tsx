@@ -533,18 +533,14 @@ export default function Page() {
           Experience across institutional, private, and owner-operator portfolios — office, mixed-use, industrial, and multifamily.
         </div>
 
-        <div className="mt-6 text-sm text-muted-foreground">
-          Prefer a quick conversation first?{" "}
-          <button
-            type="button"
-            onClick={openLead}
-            className="underline underline-offset-4 hover:text-foreground"
-          >
-            Let’s talk
-          </button>
-          .
-        </div>
-      </Section>
+        </Section>
+
+           <BannerImage
+        src="/banners/services-01.jpg"
+        alt="Professional leadership meeting"
+        caption="Institutional discipline with an operator-first mindset."
+        className="scale-[1.02] object-cover saturate-110 contrast-105"
+      />
 
 {/* HOW ENGAGEMENTS TYPICALLY START (micro-section) */}
 <Section
@@ -584,9 +580,9 @@ export default function Page() {
 
 
       <BannerImage
-        src="/banners/services-01.jpg"
+        src="/banners/how-it-works-01.jpg"
         alt="Professional leadership meeting"
-        caption="Institutional discipline with an operator-first mindset."
+        caption="From intial conversation to focused execution, without unnecessary complecity."
         className="scale-[1.02] object-cover saturate-110 contrast-105"
       />
 
