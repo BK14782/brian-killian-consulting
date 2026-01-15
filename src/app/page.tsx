@@ -673,55 +673,61 @@ export default function Page() {
         className="scale-[1.02] object-cover saturate-110 contrast-105"
       />
 
-      {/* 4) WHO THIS IS FOR / NOT FOR (new, compact, reduces overwhelm) */}
-      <Section
-        id="fit"
-        kicker="Fit"
-        title="Who this is for (and who it isn’t)"
-        subtitle="This helps you self-qualify quickly, without reading every section."
-        tight
-      >
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-6">
-              <div className="text-sm font-semibold">This is for you if…</div>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                {[
-                  "You want predictable reporting and fewer surprises month-to-month",
-                  "Budgets or forecasts drift, and the story behind variance isn’t clear",
-                  "Vendor performance needs structure (scope, SLAs, accountability)",
-                  "Capital planning needs stronger governance and decision-ready proposals",
-                  "Your team is busy, but progress feels noisy or reactive",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <Check className="mt-0.5 h-4 w-4" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+      {/* 4) WHO THIS IS FOR / NOT FOR (executive qualifier) */}
+<Section
+  id="fit"
+  kicker="Fit"
+  title="Who this is for (and who it isn’t)"
+  subtitle="A quick self-check so you can decide fast—without wading through every detail."
+  tight
+>
+  <p className="max-w-3xl text-sm text-muted-foreground">
+    My work is most effective when expectations are clear, decisions are deliberate,
+    and operating rhythm matters as much as outcomes.
+  </p>
 
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-6">
-              <div className="text-sm font-semibold">This is probably not for you if…</div>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                {[
-                  "You want a long slide deck instead of practical templates and execution support",
-                  "You’re looking for general advice without implementing systems or cadence",
-                  "You need full-time staffing rather than a focused, outcomes-based engagement",
-                  "You’re not ready to define measurable outcomes up front",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <span className="mt-2 inline-block h-2 w-2 rounded-full border" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
+  <div className="mt-6 grid gap-4 md:grid-cols-2">
+    <Card className="rounded-3xl shadow-sm">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">This is a good fit if you:</div>
+        <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+          {[
+            "Want predictable reporting and fewer surprises month-to-month",
+            "Need budgets/forecasts that explain variance clearly and early",
+            "Want vendor performance governed by scope, standards, and accountability",
+            "Need capital planning that is decision-ready (options, risks, phasing, approvals)",
+            "Have a busy team—but progress feels noisy, reactive, or inconsistent",
+          ].map((t) => (
+            <li key={t} className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4" />
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+
+    <Card className="rounded-3xl shadow-sm">
+      <CardContent className="p-6">
+        <div className="text-sm font-semibold">This may not be a fit if you:</div>
+        <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+          {[
+            "Need day-to-day property management staffing rather than advisory support",
+            "Want a long slide deck instead of practical templates and follow-through",
+            "Prefer general advice without implementing systems, cadence, or ownership",
+            "Aren’t ready to define measurable outcomes up front",
+          ].map((t) => (
+            <li key={t} className="flex items-start gap-2">
+              <span className="mt-2 inline-block h-2 w-2 rounded-full border" />
+              <span>{t}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  </div>
+</Section>
+
 
         <BannerImage
         src="/banners/Are-we-a-fit-01.jpg"
