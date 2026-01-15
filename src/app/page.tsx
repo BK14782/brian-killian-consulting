@@ -240,66 +240,77 @@ const Nav = ({ active, onNav }: NavProps) => {
   );
 };
 
-/* HERO */
+/* HERO (includes ProfileCard in the hero layout) */
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
   <header className="relative">
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-      <div className="max-w-3xl">
-        <FadeIn delayMs={0}>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/75">
-            <span className="h-2 w-2 rounded-full bg-amber-500/60" />
-            Nationwide consulting • Commercial & residential portfolios
-          </div>
-        </FadeIn>
-
-        <FadeIn delayMs={80}>
-          <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
-            Clear thinking and steady execution for complex real estate portfolios
-          </h1>
-        </FadeIn>
-
-        <FadeIn delayMs={160}>
-          <p className="mt-5 text-base text-white/80 md:text-lg">
-            With over 20 years in property and asset operations, I help owners and investors bring
-            structure, visibility, and confidence to portfolio decisions.
-          </p>
-        </FadeIn>
-
-        <FadeIn delayMs={240}>
-          <div className="mt-6 grid gap-2 text-sm text-white/80 sm:grid-cols-3">
-            <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-white/80" />
-              20+ years in property & asset operations
+      <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+        {/* Left: hero copy */}
+        <div className="lg:col-span-7">
+          <FadeIn delayMs={0}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/75">
+              <span className="h-2 w-2 rounded-full bg-amber-500/60" />
+              Nationwide consulting • Commercial & residential portfolios
             </div>
-            <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-white/80" />
-              Office, mixed-use, industrial, multifamily
-            </div>
-            <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 text-white/80" />
-              Institutional + private ownership experience
-            </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
 
-        <FadeIn delayMs={320}>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button
-              onClick={onLetsTalk}
-              className="bg-white !text-[#0B1F3A] hover:bg-white/90 border-transparent"
-            >
-              Let’s talk
-            </Button>
+          <FadeIn delayMs={80}>
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">
+              Clear thinking and steady execution for complex real estate portfolios
+            </h1>
+          </FadeIn>
 
-            <div className="text-sm text-white/75">
-              No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
+          <FadeIn delayMs={160}>
+            <p className="mt-5 text-base text-white/80 md:text-lg">
+              With over 20 years in property and asset operations, I help owners and investors bring
+              structure, visibility, and confidence to portfolio decisions.
+            </p>
+          </FadeIn>
+
+          <FadeIn delayMs={240}>
+            <div className="mt-6 grid gap-2 text-sm text-white/80 sm:grid-cols-3">
+              <div className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 text-white/80" />
+                20+ years in property & asset operations
+              </div>
+              <div className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 text-white/80" />
+                Office, mixed-use, industrial, multifamily
+              </div>
+              <div className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 text-white/80" />
+                Institutional + private ownership experience
+              </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+
+          <FadeIn delayMs={320}>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Button
+                onClick={onLetsTalk}
+                className="bg-white !text-[#0B1F3A] hover:bg-white/90 border-transparent"
+              >
+                Let’s talk
+              </Button>
+
+              <div className="text-sm text-white/75">
+                No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Right: profile panel (integrated) */}
+        <div className="lg:col-span-5">
+          {/* Keep this variant as "dark" for now. If you prefer a different look,
+              we’ll adjust once you paste the full ProfileCard component. */}
+          <ProfileCard variant="dark" />
+        </div>
       </div>
     </div>
   </header>
 );
+
 
 
 
@@ -483,16 +494,9 @@ export default function Page() {
     <div className="relative z-10">
       </div>
     <Hero onLetsTalk={openLead} />
-
-    {/* Photo/ProfileCard section still inside the navy fade */}
-    <div className="mx-auto max-w-6xl px-4 -mt-14 pb-14 relative">
-  <div className="absolute inset-x-0 -top-10 h-16 bg-gradient-to-b from-transparent to-[#0B1F3A]/0 pointer-events-none" />
-  <ProfileCard variant="dark" />
-</div>
-
     </div>
 
-
+   
 
       {/* 2) SERVICES SNAPSHOT (cards only, early on the page) */}
       <Section

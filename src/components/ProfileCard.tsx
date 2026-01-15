@@ -11,10 +11,12 @@ export default function ProfileCard({
   return (
     <div
       className={[
-        "flex items-center gap-4 rounded-3xl border p-6 backdrop-blur",
+        // shared layout
+        "flex items-center gap-4 rounded-3xl p-6 backdrop-blur",
+        // light vs dark styling
         isDark
-          ? "border-white/20 bg-white/10 text-white"
-          : "border-border bg-background text-foreground",
+          ? "bg-white/5 text-white ring-1 ring-white/10"
+          : "border border-border bg-background text-foreground shadow-sm",
       ].join(" ")}
     >
       <Image
@@ -45,7 +47,7 @@ export default function ProfileCard({
           rel="noopener noreferrer"
           className={[
             "mt-2 inline-flex items-center gap-1 text-sm underline underline-offset-4 transition",
-            isDark ? "text-white hover:text-white/90" : "hover:text-foreground",
+            isDark ? "text-white/90 hover:text-white" : "hover:text-foreground",
           ].join(" ")}
         >
           View LinkedIn →
