@@ -242,13 +242,13 @@ const Nav = ({ active, onNav }: NavProps) => {
 
 /* HERO */
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
-  <header className="relative overflow-hidden">
+  <header className="relative overflow-hidden text-white">
     {/* Navy → white fade */}
-  <div className="absolute inset-0 -z-10">
-    <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
-    <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
-    <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
-  </div>
+    <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
+      <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
+    </div>
 
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="max-w-3xl">
@@ -266,24 +266,24 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
         </FadeIn>
 
         <FadeIn delayMs={160}>
-          <p className="mt-5 text-base text-muted-foreground md:text-lg">
+          <p className="mt-5 text-base text-white/80 md:text-lg">
             With over 20 years in property and asset operations, I help owners and investors bring
             structure, visibility, and confidence to portfolio decisions.
           </p>
         </FadeIn>
 
         <FadeIn delayMs={240}>
-          <div className="mt-6 grid gap-2 text-sm text-muted-foreground sm:grid-cols-3">
+          <div className="mt-6 grid gap-2 text-sm text-white/80 sm:grid-cols-3">
             <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
+              <Check className="mt-0.5 h-4 w-4 text-white/80" />
               20+ years in property & asset operations
             </div>
             <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
+              <Check className="mt-0.5 h-4 w-4 text-white/80" />
               Office, mixed-use, industrial, multifamily
             </div>
             <div className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
+              <Check className="mt-0.5 h-4 w-4 text-white/80" />
               Institutional + private ownership experience
             </div>
           </div>
@@ -293,12 +293,12 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
               onClick={onLetsTalk}
-              className="bg-foreground text-background hover:bg-foreground/90"
+              className="bg-white text-[#0B1F3A] hover:bg-white/90 border-transparent"
             >
               Let’s talk
             </Button>
 
-            <div className="text-sm text-muted-foreground">
+            <div className="text-sm text-white/75">
               No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
             </div>
           </div>
@@ -307,6 +307,7 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
     </div>
   </header>
 );
+
 
 const Footer = () => (
   <footer className="border-t py-10 mt-16">
@@ -1226,9 +1227,7 @@ export default function Page() {
 
 <div className="bg-gradient-to-b from-background to-sky-50">
   <div className="mx-auto max-w-6xl px-4 mt-16 py-12">
-    ...
-    <ProfileCard />
-  </div>
+          </div>
 
       <div className="mx-auto max-w-6xl px-4 mt-16">
         <div className="mb-6 max-w-3xl">
