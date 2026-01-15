@@ -546,6 +546,43 @@ export default function Page() {
         </div>
       </Section>
 
+{/* HOW ENGAGEMENTS TYPICALLY START (micro-section) */}
+<Section
+  id="start"
+  kicker="How it starts"
+  title="How engagements typically begin"
+  subtitle="A clear path from conversation to measurable outcomes—without a long ramp-up."
+  tight
+>
+  <div className="grid gap-4 md:grid-cols-3">
+    {[
+      {
+        title: "1) 30-minute call",
+        desc:
+          "We clarify what’s driving noise, what “good” looks like, and whether I’m the right fit.",
+      },
+      {
+        title: "2) Short diagnostic / sprint",
+        desc:
+          "A focused 2–6 week scope to stabilize reporting, budgets, vendor performance, or a specific project.",
+      },
+      {
+        title: "3) Deliverables + optional execution",
+        desc:
+          "You receive decision-ready outputs (templates, cadence, scorecards)—and I can help implement if needed.",
+      },
+    ].map((x) => (
+      <Card key={x.title} className="rounded-3xl shadow-sm">
+        <CardContent className="p-6">
+          <div className="text-sm font-semibold">{x.title}</div>
+          <p className="mt-3 text-sm text-muted-foreground">{x.desc}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</Section>
+
+
       <BannerImage
         src="/banners/services-01.jpg"
         alt="Professional leadership meeting"
