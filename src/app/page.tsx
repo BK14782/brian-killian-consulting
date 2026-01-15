@@ -242,16 +242,8 @@ const Nav = ({ active, onNav }: NavProps) => {
 
 /* HERO */
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
-   <header className="relative">
+  <header className="relative">
     <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-    {/* Navy → white fade */}
-    <div className="absolute inset-0 z-10">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
-      <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
-    </div>
-
-    <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 md:py-20">
       <div className="max-w-3xl">
         <FadeIn delayMs={0}>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs text-white/75">
@@ -293,12 +285,11 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
         <FadeIn delayMs={320}>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
-            onClick={onLetsTalk}
-            className="bg-white !text-[#0B1F3A] hover:bg-white/90 border-transparent"
-          >
-            Let’s talk
-          </Button>
-
+              onClick={onLetsTalk}
+              className="bg-white !text-[#0B1F3A] hover:bg-white/90 border-transparent"
+            >
+              Let’s talk
+            </Button>
 
             <div className="text-sm text-white/75">
               No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
@@ -307,9 +298,10 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
         </FadeIn>
       </div>
     </div>
-    </div>
   </header>
 );
+
+
 
 
 const Footer = () => (
@@ -492,11 +484,12 @@ export default function Page() {
     <Hero onLetsTalk={openLead} />
 
     {/* Photo/ProfileCard section still inside the navy fade */}
-    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10">
-      <ProfileCard />
-    </div>
+    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10 [&_.text-muted-foreground]:text-white/80">
+  <ProfileCard />
+</div>
   </div>
 </div>
+
 
       {/* 2) SERVICES SNAPSHOT (cards only, early on the page) */}
       <Section
@@ -594,24 +587,25 @@ export default function Page() {
           <div className="text-sm font-semibold">
             What you can expect on the free 30-minute call
           </div>
-          <ul className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
-              A quick read on what’s driving pain (reporting, cost, capital, execution)
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
-              The first 2–3 moves that will create momentum
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
-              Whether I’m the right fit — and if not, what to do next
-            </li>
-            <li className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4" />
-              A simple scope option with clear outcomes (if you want one)
-            </li>
-          </ul>
+          <ul className="mt-4 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
+          <li className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4" />
+            Identify the top 2–3 drivers of noise (reporting, budget drift, vendors, capital).
+          </li>
+          <li className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4" />
+            Clarify what “good” looks like: KPIs, cadence, ownership, and decision lanes.
+          </li>
+          <li className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4" />
+            A simple first-week plan: what to fix now vs. what to stabilize over 30–60 days.
+          </li>
+          <li className="flex items-start gap-2">
+            <Check className="mt-0.5 h-4 w-4" />
+            Confirm fit (or I’ll point you toward the right next step if I’m not the best match).
+          </li>
+        </ul>
+
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <Button
@@ -1239,12 +1233,14 @@ export default function Page() {
         </div>
       </Section>
 
+{/* Bottom fade (Before we talk → Contact → Footer) */}
 <div className="bg-gradient-to-b from-background to-sky-50">
+  {/* BEFORE WE TALK */}
   <div className="mx-auto max-w-6xl px-4 py-12">
     <div className="mb-6 max-w-3xl">
       <button
         type="button"
-        className="inline-flex items-center rounded-full border bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground transition hover:bg-foreground/10"
+        className="inline-flex items-center rounded-full border bg-white px-3 py-1 text-xs font-medium text-foreground shadow-sm transition hover:bg-foreground/5"
       >
         Before we talk
       </button>
@@ -1256,100 +1252,105 @@ export default function Page() {
 
     <ProfileCard />
   </div>
-</div>
 
+  {/* CONTACT (kept inside the fade) */}
+  <Section
+    id="contact"
+    kicker="Contact"
+    title="Let’s talk about your portfolio"
+    subtitle="Share what you’re trying to improve and I’ll propose a simple scope with clear outcomes."
+    tight
+  >
+    <div className="grid gap-4 lg:grid-cols-3">
+      <Card className="rounded-3xl shadow-sm lg:col-span-2">
+        <CardContent className="p-6">
+          <div className="mt-6 grid gap-3">
+            <div className="rounded-2xl border bg-background/60 p-4">
+              <div className="flex items-center gap-2 text-sm font-medium">
+                <Mail className="h-4 w-4" /> Email
+              </div>
+              <div className="mt-2 text-sm text-muted-foreground">
+                <a
+                  href="mailto:brian@briankillianconsulting.com"
+                  className="underline underline-offset-4"
+                >
+                  brian@briankillianconsulting.com
+                </a>
+              </div>
+            </div>
+          </div>
 
-      {/* CONTACT */}
-      <Section
-        id="contact"
-        kicker="Contact"
-        title="Let’s talk about your portfolio"
-        subtitle="Share what you’re trying to improve and I’ll propose a simple scope with clear outcomes."
-        tight
-      >
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card className="rounded-3xl shadow-sm lg:col-span-2">
-            <CardContent className="p-6">
-              <div className="mt-6 grid gap-3">
-                <div className="rounded-2xl border bg-background/60 p-4">
-                  <div className="flex items-center gap-2 text-sm font-medium">
-                    <Mail className="h-4 w-4" /> Email
-                  </div>
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    <a
-                      href="mailto:brian@briankillianconsulting.com"
-                      className="underline underline-offset-4"
-                    >
-                      brian@briankillianconsulting.com
-                    </a>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="mailto:brian@briankillianconsulting.com"
+              className="inline-flex items-center justify-center rounded-2xl border px-4 py-2"
+            >
+              Email Brian
+            </a>
+
+            <a
+              href="https://calendly.com/killianbrian82/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                gaEvent("calendly_open", {
+                  location: "schedule_call_link",
+                  page: window.location.pathname,
+                  url: "https://calendly.com/killianbrian82/30min",
+                })
+              }
+              className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
+            >
+              Schedule a Call
+            </a>
+
+            <a
+              href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
+            >
+              Capabilities PDF
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="rounded-3xl shadow-sm">
+        <CardContent className="p-6">
+          <div className="text-sm font-semibold">Starter scopes</div>
+          <div className="mt-4 space-y-3 text-sm">
+            {[
+              "Reporting & KPI reset",
+              "Budget + reforecast controls",
+              "Vendor optimization sprint",
+              "Capital planning + phasing",
+            ].map((t) => (
+              <div key={t} className="flex items-start gap-3">
+                <div className="mt-0.5 grid h-7 w-7 place-items-center rounded-xl border bg-background">
+                  <Check className="h-4 w-4" />
+                </div>
+                <div>
+                  <div className="font-medium">{t}</div>
+                  <div className="text-muted-foreground">
+                    2–6 weeks depending on portfolio size.
                   </div>
                 </div>
               </div>
-
-              <div className="mt-4 flex flex-wrap gap-3">
-                <a
-                  href="mailto:brian@briankillianconsulting.com"
-                  className="inline-flex items-center justify-center rounded-2xl border px-4 py-2"
-                >
-                  Email Brian
-                </a>
-
-                <a
-                  href="https://calendly.com/killianbrian82/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    gaEvent("calendly_open", {
-                      location: "schedule_call_link",
-                      page: window.location.pathname,
-                      url: "https://calendly.com/killianbrian82/30min",
-                    })
-                  }
-                  className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
-                >
-                  Schedule a Call
-                </a>
-
-                <a
-                  href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
-                >
-                  Capabilities PDF
-                </a>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-3xl shadow-sm">
-            <CardContent className="p-6">
-              <div className="text-sm font-semibold">Starter scopes</div>
-              <div className="mt-4 space-y-3 text-sm">
-                {[
-                  "Reporting & KPI reset",
-                  "Budget + reforecast controls",
-                  "Vendor optimization sprint",
-                  "Capital planning + phasing",
-                ].map((t) => (
-                  <div key={t} className="flex items-start gap-3">
-                    <div className="mt-0.5 grid h-7 w-7 place-items-center rounded-xl border bg-background">
-                      <Check className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-medium">{t}</div>
-                      <div className="text-muted-foreground">2–6 weeks depending on portfolio size.</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-
-      <LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
-      <Footer />
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </div>
-  );
+  </Section>
+
+  {/* Footer INSIDE the fade */}
+  <Footer />
+</div>
+
+{/* Modals should be outside the gradient wrapper */}
+<LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
+</div>
+);
 }
+
