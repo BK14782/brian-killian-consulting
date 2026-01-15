@@ -485,9 +485,11 @@ export default function Page() {
     <Hero onLetsTalk={openLead} />
 
     {/* Photo/ProfileCard section still inside the navy fade */}
-    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10">
-            <ProfileCard variant="dark" />
-          </div>
+    <div className="mx-auto max-w-6xl px-4 -mt-14 pb-14 relative">
+  <div className="absolute inset-x-0 -top-10 h-16 bg-gradient-to-b from-transparent to-[#0B1F3A]/0 pointer-events-none" />
+  <ProfileCard variant="dark" />
+</div>
+
     </div>
 
 
