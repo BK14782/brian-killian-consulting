@@ -242,7 +242,8 @@ const Nav = ({ active, onNav }: NavProps) => {
 
 /* HERO */
 const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
-  <header className="relative overflow-hidden text-white">
+   <header className="relative">
+    <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
     {/* Navy → white fade */}
     <div className="absolute inset-0 z-10">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
@@ -292,11 +293,12 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
         <FadeIn delayMs={320}>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button
-              onClick={onLetsTalk}
-              className="bg-white text-[#0B1F3A] hover:bg-white/90 border-transparent"
-            >
-              Let’s talk
-            </Button>
+            onClick={onLetsTalk}
+            className="bg-white !text-[#0B1F3A] hover:bg-white/90 border-transparent"
+          >
+            Let’s talk
+          </Button>
+
 
             <div className="text-sm text-white/75">
               No sales pitch — just clarity on what’s working, what isn’t, and where to focus first.
@@ -304,6 +306,7 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
           </div>
         </FadeIn>
       </div>
+    </div>
     </div>
   </header>
 );
@@ -411,7 +414,7 @@ const CaseStudyCard = ({
     <Card className="relative overflow-hidden rounded-3xl shadow-sm transition hover:shadow-md">
       {/* Translucent per-card background image (uses the same image as the case study page) */}
       <div
-        className="absolute inset-0 opacity-[0.30] pointer-events-none"
+        className="absolute inset-0 opacity-[0.40] pointer-events-none"
         style={{
           backgroundImage: `url(${heroImage || "/banners/handshake-01.jpg"})`,
           backgroundSize: "cover",
@@ -477,12 +480,23 @@ export default function Page() {
       <FloatingLetsTalkButton onClick={openLead} />
 
       <Nav active={active} onNav={scrollTo} />
-      <Hero onLetsTalk={openLead} />
+      {/* NAVY HERO WRAPPER (extends through photo/ProfileCard) */}
+    <div className="relative overflow-hidden text-white">
+    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A] via-[#0B1F3A]/95 to-background" />
+    <div className="absolute -left-48 -top-48 h-[520px] w-[520px] rounded-full bg-white/10 blur-3xl" />
+    <div className="absolute -right-48 top-24 h-[520px] w-[520px] rounded-full bg-sky-300/10 blur-3xl" />
+    </div>
 
-      {/* Keep your ProfileCard near the top, but after the hero */}
-      <div className="mx-auto max-w-6xl px-4 -mt-2">
-        <ProfileCard />
-      </div>
+    <div className="relative z-10">
+    <Hero onLetsTalk={openLead} />
+
+    {/* Photo/ProfileCard section still inside the navy fade */}
+    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10">
+      <ProfileCard />
+    </div>
+  </div>
+</div>
 
       {/* 2) SERVICES SNAPSHOT (cards only, early on the page) */}
       <Section
@@ -1226,19 +1240,24 @@ export default function Page() {
       </Section>
 
 <div className="bg-gradient-to-b from-background to-sky-50">
-  <div className="mx-auto max-w-6xl px-4 mt-16 py-12">
-          </div>
+  <div className="mx-auto max-w-6xl px-4 py-12">
+    <div className="mb-6 max-w-3xl">
+      <button
+        type="button"
+        className="inline-flex items-center rounded-full border bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground transition hover:bg-foreground/10"
+      >
+        Before we talk
+      </button>
 
-      <div className="mx-auto max-w-6xl px-4 mt-6">
-        <div className="mb-6 max-w-3xl">
-          <div className="text-sm font-semibold">Before we talk</div>
-          <p className="mt-1 text-sm text-muted-foreground">
-            A quick reminder of who you’ll be working with and how I approach engagements.
-          </p>
-        </div>
+      <p className="mt-3 text-sm text-muted-foreground">
+        A quick reminder of who you’ll be working with and how I approach engagements.
+      </p>
+    </div>
 
-        <ProfileCard />
-      </div>
+    <ProfileCard />
+  </div>
+</div>
+
 
       {/* CONTACT */}
       <Section
@@ -1331,7 +1350,6 @@ export default function Page() {
 
       <LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
       <Footer />
-    </div>
     </div>
   );
 }
