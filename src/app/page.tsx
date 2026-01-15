@@ -317,9 +317,17 @@ const Hero = ({ onLetsTalk }: { onLetsTalk: () => void }) => (
 
 const Footer = () => (
   <footer className="border-t py-10 mt-16">
-    <div className="mx-auto max-w-6xl px-4 text-sm text-muted-foreground flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-      <div>© {new Date().getFullYear()} Brian Killian Consulting</div>
-      <div className="flex gap-4">
+    <div className="mx-auto max-w-6xl px-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <div>
+        <div className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Brian Killian Consulting
+        </div>
+        <div className="text-xs text-muted-foreground">
+          Seattle-based • Working nationwide • Commercial & residential portfolios
+        </div>
+      </div>
+
+      <div className="flex gap-4 text-sm text-muted-foreground">
         <a
           href="mailto:brian@briankillianconsulting.com"
           className="hover:text-foreground transition"
@@ -330,6 +338,7 @@ const Footer = () => (
     </div>
   </footer>
 );
+
 
 function FloatingLetsTalkButton({ onClick }: { onClick: () => void }) {
   return (
@@ -1358,6 +1367,11 @@ export default function Page() {
             </div>
           </div>
 
+                <p className="mt-4 text-sm text-muted-foreground">
+                Share what you’re trying to improve and I’ll recommend the fastest path to clarity—whether that’s a short sprint, a reporting reset, or a defined project scope.
+                </p>
+
+
           <div className="mt-4 flex flex-wrap gap-3">
             <a
               href="mailto:brian@briankillianconsulting.com"
@@ -1382,14 +1396,19 @@ export default function Page() {
               Schedule a Call
             </a>
 
-            <a
-              href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-2xl border bg-neutral-900 px-4 py-2 text-white hover:bg-neutral-800"
-            >
-              Capabilities PDF
-            </a>
+            <div className="mt-3 text-sm text-muted-foreground">
+  Prefer a one-pager?{" "}
+  <a
+    href="/banners/Consulting_Webpage_Forms_and_Services_PDF.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline underline-offset-4 hover:text-foreground"
+  >
+    Download capabilities PDF
+  </a>
+  .
+</div>
+
           </div>
         </CardContent>
       </Card>
