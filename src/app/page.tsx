@@ -529,6 +529,9 @@ export default function Page() {
             </Link>
           ))}
         </div>
+        <div className="mt-4 text-sm text-muted-foreground">
+          Experience across institutional, private, and owner-operator portfolios — office, mixed-use, industrial, and multifamily.
+        </div>
 
         <div className="mt-6 text-sm text-muted-foreground">
           Prefer a quick conversation first?{" "}
