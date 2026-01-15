@@ -148,6 +148,7 @@ const Section = ({
 
 const items = [
   { id: "services", label: "Services", href: "/services" },
+  { id: "insights", label: "Insights", href: "/insights" }, 
   { id: "performance", label: "Performance" },
   { id: "deliverables", label: "Deliverables" },
   { id: "engagements", label: "Engagements" },
@@ -156,6 +157,7 @@ const items = [
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
+
 
 type NavProps = {
   active: string;
