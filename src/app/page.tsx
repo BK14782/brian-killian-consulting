@@ -148,7 +148,6 @@ const Section = ({
 
 const items = [
   { id: "services", label: "Services", href: "/services" },
-  { id: "insights", label: "Insights", href: "/insights" }, 
   { id: "performance", label: "Performance" },
   { id: "deliverables", label: "Deliverables" },
   { id: "engagements", label: "Engagements" },
