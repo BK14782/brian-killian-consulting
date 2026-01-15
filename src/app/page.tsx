@@ -484,11 +484,13 @@ export default function Page() {
     <Hero onLetsTalk={openLead} />
 
     {/* Photo/ProfileCard section still inside the navy fade */}
-    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10 [&_.text-muted-foreground]:text-white/80">
-  <ProfileCard />
-</div>
+    <div className="mx-auto max-w-6xl px-4 -mt-6 pb-10">
+  <div className="[&_*]:text-white [&_.text-muted-foreground]:text-white/80 [&_a]:text-white [&_a:hover]:text-white/90 [&_.border]:border-white/20">
+    <ProfileCard />
   </div>
 </div>
+    </div>
+
 
 
       {/* 2) SERVICES SNAPSHOT (cards only, early on the page) */}
@@ -1351,6 +1353,6 @@ export default function Page() {
 {/* Modals should be outside the gradient wrapper */}
 <LeadCaptureModal isOpen={leadOpen} onClose={closeLead} />
 </div>
+</div>
 );
 }
-
